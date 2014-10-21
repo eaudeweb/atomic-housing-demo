@@ -24,7 +24,7 @@ urlpatterns = patterns(
         name='listings'),
     url(r'^landlord/listings/add$',
         login_required(views.LandLordListingsAdd.as_view()),
-        name='listings_edit'),
+        name='listings_add'),
     url(r'^landlord/listings/(?P<pk>.*)/edit$',
         login_required(views.LandLordListingsEdit.as_view()),
         name='listings_edit'),

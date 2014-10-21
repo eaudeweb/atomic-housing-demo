@@ -118,7 +118,7 @@ class Listing(models.Model):
     parking = models.IntegerField(choices=PARKING_TYPES, null=True, blank=True)
     furnished = models.BooleanField(default=False)
     heating = models.IntegerField(choices=HEATING_TYPES)
-    heating_emission = models.FloatField(blank=True)
+    heating_emission = models.FloatField(blank=True, default=None, null=True)
     lease = models.IntegerField(choices=LEASE_TYPES)
     rent = models.IntegerField()
     deposit = models.IntegerField()
