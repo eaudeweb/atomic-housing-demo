@@ -86,6 +86,8 @@ class Customer(models.Model):
     nationality = models.CharField(choices=definitions.NATIONALITIES,
                                    max_length=32)
 
+    favorites = models.ManyToManyField('Listing', blank=True)
+
     def __unicode__(self):
         return u"{} {}".format(self.first_name, self.last_name)
 

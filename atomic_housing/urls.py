@@ -37,6 +37,8 @@ urlpatterns = patterns(
     url(r'^search/$', views.SearchView.as_view(), name='search'),
     url(r'^detail/(?P<pk>\d+)/$', views.ListingDetails.as_view(),
         name='detail'),
+    url(r'^favorites/$', views.MyFavorites.as_view(), name='favorites'),
+
     url(r'^admin/', include(admin.site.urls)),
 )
 

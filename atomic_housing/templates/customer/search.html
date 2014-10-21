@@ -19,18 +19,13 @@
 
   <div>
     {% for listing in object_list %}
-      <div class="row">
-        <h2>{{ listing.title }}</h2>
-
-        <p class="address">{{ listing.address }}</p>
-        <span class="price">{{ listing.rent }} EURO</span>
-        <span>Date posted: {{ listing.posted }}</span>
-        <span>District: {{ listing.address_district }}</span>
-        <span>Size: {{ listing.size }}m<sup>2</sup></span>
-        <a href="{% url 'detail' listing.pk %}">Details</a>
-      </div>
+      {% include 'customer/_house.html' %}
     {% empty %}
       <p>No results</p>
     {% endfor %}
   </div>
+
+  {% if user.is_authenticated %}
+  <a href="{% url 'favorites' %}">My Favorites</a>
+  {% endif %}
 {% endblock %}

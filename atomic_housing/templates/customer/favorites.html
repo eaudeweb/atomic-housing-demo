@@ -1,0 +1,17 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+  <h1>My Favorites</h1>
+
+  <div>
+    {% for listing in object_list %}
+      {% include 'customer/_house.html' %}
+      <div class="actions">
+        <a href="#">Remove from Favorites</a>
+      </div>
+    {% endfor %}
+  </div>
+
+
+  <a href="{% url 'search' %}">Back to Search</a>
+{% endblock %}

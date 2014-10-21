@@ -68,3 +68,15 @@ class SearchView(ListView):
 class ListingDetails(DetailView):
     template_name = 'customer/detail.html'
     model = models.Listing
+
+
+class MyFavorites(ListView):
+    template_name = 'customer/favorites.html'
+    model = models.Listing
+
+    def get_queryset(self):
+        try:
+            return self.request.user.customer.favorites.all()
+        except:
+            return []
+
