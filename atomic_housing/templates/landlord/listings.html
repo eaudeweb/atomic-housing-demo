@@ -1,11 +1,31 @@
 {% extends '_layout_landlord.html' %}
 
 {% block content %}
+
   <h1>My Listings</h1>
 
   <table>
-    <tr>
-      <td>TODO</td>
-    </tr>
+
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Owner</th>
+        <th>Posted</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for listing in object_list %}
+        <tr>
+          <td>
+            {% url 'listings_edit' pk=listing.pk as url %}
+            <a href="{{ url }}">{{ listing.title }}</a>
+          </td>
+          <td>{{ listing.owner }}</td>
+          <td>{{ listing.posted }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
   </table>
+
 {% endblock %}

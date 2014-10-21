@@ -3,7 +3,13 @@
 
 {% block content %}
 
-  <h1>Add a new listing</h1>
+  <h1>
+    {% if object %}
+      Edit listing
+    {% else %}
+      Add a new listing
+    {% endif %}
+  </h1>
 
   <form method="POST">
     {% csrf_token %}

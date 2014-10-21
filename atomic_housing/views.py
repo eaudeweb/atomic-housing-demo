@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView, ListView, CreateView
 from django.views.generic import UpdateView, DetailView
+from django.core.urlresolvers import reverse_lazy
 from atomic_housing import models, forms
 
 
@@ -33,16 +34,25 @@ class HSAdminContracts(ListView):
 
 
 # Landlord Views
+class LandLordListings(ListView):
+
+    model = models.Listing
+    template_name = 'landlord/listings.html'
+
 class LandLordListingsAdd(CreateView):
+
     model = models.Listing
     form_class = forms.ListingForm
-    template_name = 'landlord/listing_edit.html'
+    success_url = reverse_lazy('listings')
+    template_name = 'landlord/listings_edit.html'
 
 
-class LandLordListingEdit(UpdateView):
+class LandLordListingsEdit(UpdateView):
+
     model = models.Listing
     form_class = forms.ListingForm
-    template_name = 'landlord/listing_edit.html'
+    success_url = reverse_lazy('listings')
+    template_name = 'landlord/listings_edit.html'
 
 
 # Customer Views

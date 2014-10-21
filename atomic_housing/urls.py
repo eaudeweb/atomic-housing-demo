@@ -19,9 +19,16 @@ urlpatterns = patterns(
     url(r'^hsadmin/contract/list', views.HSAdminContracts.as_view(),
         name='hsadmin_contract_list'),
 
-    url(r'landlord/listings/add',
+    url(r'^landlord/listings$',
+        login_required(views.LandLordListings.as_view()),
+        name='listings'),
+    url(r'^landlord/listings/add$',
         login_required(views.LandLordListingsAdd.as_view()),
-        name='listing_add'),
+        name='listings_edit'),
+    url(r'^landlord/listings/(?P<pk>.*)/edit$',
+        login_required(views.LandLordListingsEdit.as_view()),
+        name='listings_edit'),
+
 
     url(r'^login/$', 'django.contrib.auth.views.login',
         {'template_name': 'login.html'}),
