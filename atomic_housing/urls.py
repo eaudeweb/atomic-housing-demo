@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from django.contrib.auth.decorators import login_required
 from atomic_housing.views import *
 
 urlpatterns = patterns('',
@@ -14,8 +15,13 @@ urlpatterns = patterns('',
     url(r'^hsadmin/contract/list', HSAdminContracts.as_view(),
         name='hsadmin_contract_list'),
 
-    url(r'^landlord/listings/add', LandLordListingsAdd.as_view(),
+    url(r'landlord/listings/add',
+        login_required(LandLordListingsAdd.as_view()),
         name='listing_add'),
+
+    url(r'^login/$', 'django.contrib.auth.views.login',
+        {'template_name': 'login.html'}),
+    url(r'^logout/$', 'django.contrib.auth.views.logout'),
 
     url(r'^search/$', SearchView.as_view(), name='search'),
     url(r'^detail/(?P<pk>\d+)/$', ListingDetails.as_view(), name='detail'),
