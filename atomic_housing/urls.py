@@ -23,7 +23,7 @@ urlpatterns = patterns(
 
     url(r'^login/$', 'django.contrib.auth.views.login',
         {'template_name': 'login.html'}),
-    url(r'^logout/$', 'django.contrib.auth.views.logout'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout_then_login'),
 
     url(r'^search/$', views.SearchView.as_view(), name='search'),
     url(r'^detail/(?P<pk>\d+)/$', views.ListingDetails.as_view(),
