@@ -81,6 +81,9 @@ class Landlord(models.Model):
     phone = models.CharField(max_length=20)
     email = models.CharField(max_length=255)
 
+    def __unicode__(self):
+        return u"{} {}".format(self.first_name, self.last_name)
+
 
 class Customer(models.Model):
     user = models.OneToOneField(User)
@@ -125,6 +128,18 @@ class Listing(models.Model):
     lease = models.IntegerField(choices=LEASE_TYPES)
     rent = models.IntegerField()
     deposit = models.IntegerField()
+
+    @property
+    def title(self):
+        return u"{rooms} rooms {type}".format(
+            rooms=self.rooms, type=self.get_accomodation_display()
+        )
+
+    @property
+    def address(self):
+        return u"{} {} {}".format(
+            self.address_zipcode, self.address_address, self.address_city,
+        )
 
 
 admin.site.register(Listing)
