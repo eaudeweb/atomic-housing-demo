@@ -18,3 +18,7 @@ Development
 5. Run server::
 
     python manage.py runserver
+
+6. Load fixtures::
+
+    python manage.py loaddata sample
