@@ -4,7 +4,6 @@ from atomic_housing.middleware import get_current_request
 
 
 class ListingForm(ModelForm):
-
     class Meta:
         model = models.Listing
         exclude = ('owner', 'status', 'posted',)
@@ -15,3 +14,13 @@ class ListingForm(ModelForm):
         listing.owner = request.user
         listing.save()
         return listing
+
+
+class RegisterCustomerForm(ModelForm):
+    class Meta:
+        model = models.Customer
+
+
+class RegisterLandlordForm(ModelForm):
+    class Meta:
+        model = models.Landlord

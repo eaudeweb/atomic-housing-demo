@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView, ListView, CreateView
+from django.views.generic import TemplateView, ListView, CreateView, FormView
 from django.views.generic import UpdateView, DetailView
 from django.core.urlresolvers import reverse_lazy
 from atomic_housing import models, forms
@@ -35,12 +35,11 @@ class HSAdminContracts(ListView):
 
 # Landlord Views
 class LandLordListings(ListView):
-
     model = models.Listing
     template_name = 'landlord/listings.html'
 
-class LandLordListingsAdd(CreateView):
 
+class LandLordListingsAdd(CreateView):
     model = models.Listing
     form_class = forms.ListingForm
     success_url = reverse_lazy('listings')
@@ -48,7 +47,6 @@ class LandLordListingsAdd(CreateView):
 
 
 class LandLordListingsEdit(UpdateView):
-
     model = models.Listing
     form_class = forms.ListingForm
     success_url = reverse_lazy('listings')
@@ -80,3 +78,17 @@ class MyFavorites(ListView):
         except:
             return []
 
+
+# Registration Views
+class RegisterChoose(TemplateView):
+    template_name = 'register/choose.html'
+
+
+class RegisterCustomer(FormView):
+    template_name = 'register/customer.html'
+    form_class = forms.RegisterCustomerForm
+
+
+class RegisterLandlord(FormView):
+    template_name = 'register/landlord.html'
+    form_class = forms.RegisterLandlordForm

@@ -34,6 +34,13 @@ urlpatterns = patterns(
         {'template_name': 'login.html'}),
     url(r'^logout/$', 'django.contrib.auth.views.logout_then_login'),
 
+    url(r'^register/choose/$', views.RegisterChoose.as_view(),
+        name='register'),
+    url(r'^register/customer/$', views.RegisterCustomer.as_view(),
+        name='register_customer'),
+    url(r'^register/landlord/$', views.RegisterLandlord.as_view(),
+        name='register_landlord'),
+
     url(r'^search/$', views.SearchView.as_view(), name='search'),
     url(r'^detail/(?P<pk>\d+)/$', views.ListingDetails.as_view(),
         name='detail'),
