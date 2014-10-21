@@ -1,7 +1,9 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from atomic_housing import views
+from django.conf.urls.static import static
 
 urlpatterns = patterns(
     '',
@@ -30,3 +32,5 @@ urlpatterns = patterns(
         name='detail'),
     url(r'^admin/', include(admin.site.urls)),
 )
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
