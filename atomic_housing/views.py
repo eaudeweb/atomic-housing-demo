@@ -1,6 +1,5 @@
-from django.views.generic import TemplateView, ListView, CreateView, \
-    UpdateView, \
-    DetailView
+from django.views.generic import TemplateView, ListView, CreateView
+from django.views.generic import UpdateView, DetailView
 from atomic_housing import models, forms
 
 
