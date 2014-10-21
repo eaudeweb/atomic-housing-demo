@@ -98,6 +98,7 @@ class Listing(models.Model):
     posted = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     # info
+    description = models.TextField(blank=True)
     address_city = models.CharField(max_length=255)
     address_address = models.CharField(max_length=255)
     address_zipcode = models.CharField(max_length=10)
