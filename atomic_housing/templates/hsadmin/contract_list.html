@@ -1,0 +1,30 @@
+{% extends '_layout_admin.html' %}
+
+{% block content %}
+  <h1>Contracts</h1>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Landlord</th>
+      <th>Listing</th>
+      <th>Customer</th>
+      <th>Signed</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for contract in object_list %}
+      <tr>
+      <td>{{ contract.listing.owner }}</td>
+      <td>{{ contract.listing.title }}</td>
+      <td>{{ contract.customer }}</td>
+      <td>{{ contract.awarded }}</td>
+      <td>{{ contract.get_status_display }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

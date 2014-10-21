@@ -28,6 +28,11 @@ class HSAdminCustomers(ListView):
     model = models.Customer
 
 
+class HSAdminContracts(ListView):
+    template_name = 'hsadmin/contract_list.html'
+    model = models.Contract
+
+
 # Landlord Views
 class LandLordListingsAdd(CreateView):
     model = models.Listing

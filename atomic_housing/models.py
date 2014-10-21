@@ -51,6 +51,13 @@ LISTING_STATUSES = (
     (LISTING_OCCUPIED, 'occupied'),
 )
 
+(CONTRACT_NEW,
+ CONTRACT_EXPIRED) = range(2)
+CONTRACT_STATUSES = (
+    (CONTRACT_NEW, 'new'),
+    (CONTRACT_EXPIRED, 'expired')
+)
+
 _NATIONALITIES = (
     'Afghan',
     'Albanian',
@@ -274,7 +281,7 @@ class Landlord(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     status = models.IntegerField(choices=ACCOUNT_STATUSES)
-    registered = models.DateTimeField(auto_created=True)
+    registered = models.DateTimeField(auto_now_add=True)
     address = models.CharField(max_length=255)
     phone = models.CharField(max_length=20)
     email = models.CharField(max_length=255)
@@ -288,17 +295,20 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     status = models.IntegerField(choices=ACCOUNT_STATUSES)
-    registered = models.DateTimeField(auto_created=True)
+    registered = models.DateTimeField(auto_now_add=True)
     address = models.CharField(max_length=255)
     phone = models.CharField(max_length=20)
     email = models.CharField(max_length=255)
     nationality = models.CharField(choices=NATIONALITIES, max_length=32)
 
+    def __unicode__(self):
+        return u"{} {}".format(self.first_name, self.last_name)
+
 
 class Listing(models.Model):
     owner = models.ForeignKey(User)
     status = models.IntegerField(choices=LISTING_STATUSES, default=LISTING_NEW)
-    posted = models.DateTimeField(auto_created=True)
+    posted = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     # info
     address_city = models.CharField(max_length=255)
@@ -339,7 +349,19 @@ class Listing(models.Model):
             self.address_zipcode, self.address_address, self.address_city,
         )
 
+    def __unicode__(self):
+        return u"{} in {}".format(self.title, self.address)
+
+
+class Contract(models.Model):
+    status = models.IntegerField(choices=CONTRACT_STATUSES,
+                                 default=CONTRACT_NEW)
+    listing = models.ForeignKey(Listing)
+    customer = models.ForeignKey(Customer)
+    awarded = models.DateTimeField(auto_now_add=True)
+
 
 admin.site.register(Listing)
 admin.site.register(Landlord)
 admin.site.register(Customer)
+admin.site.register(Contract)
