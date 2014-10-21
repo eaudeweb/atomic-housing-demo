@@ -11,5 +11,7 @@ urlpatterns = patterns('',
     url(r'^hsadmin/listing/list', HSAdminListings.as_view(),
         name='hsadmin_listing_list'),
 
+    url(r'landlord/listings/add', LandLordListingsAdd.as_view(), name='listing_add'),
+
     url(r'^admin/', include(admin.site.urls)),
 )

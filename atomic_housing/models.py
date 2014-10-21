@@ -296,8 +296,8 @@ class Customer(models.Model):
 
 
 class Listing(models.Model):
-    owner = models.ForeignKey(Landlord)
-    status = models.IntegerField(choices=LISTING_STATUSES)
+    owner = models.ForeignKey(User)
+    status = models.IntegerField(choices=LISTING_STATUSES, default=LISTING_NEW)
     posted = models.DateTimeField(auto_created=True)
     updated = models.DateTimeField(auto_now=True)
     # info

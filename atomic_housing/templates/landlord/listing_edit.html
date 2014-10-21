@@ -1,0 +1,14 @@
+{% extends '_layout_landlord.html' %}
+
+
+{% block content %}
+
+  <h1>Add a new listing</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+
+{% endblock %}
