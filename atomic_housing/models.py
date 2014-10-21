@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.contrib import admin
 from django.db import models
 
 ACCOMODATION_TYPES = (
@@ -124,3 +125,8 @@ class Listing(models.Model):
     lease = models.IntegerField(choices=LEASE_TYPES)
     rent = models.IntegerField()
     deposit = models.IntegerField()
+
+
+admin.site.register(Listing)
+admin.site.register(Landlord)
+admin.site.register(Customer)
