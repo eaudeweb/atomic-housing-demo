@@ -1,0 +1,48 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+  <h1>{{ object.title }}</h1>
+  <p>Rent: {{ object.rent }} EURO, Deposit {{ object.deposit }} EURO</p>
+  <p>{{ object.address }}</p>
+
+  <dl>
+    <dt>District</dt>
+    <dd>{{ object.address_district }}</dd>
+    <dt>Municipality</dt>
+    <dd>{{ object.address_municipality }}</dd>
+    <dt>Accomodation</dt>
+    <dd>{{ object.get_accomodation_display }}</dd>
+    <dt>Building Year</dt>
+    <dd>{{ object.year }}</dd>
+    <dt>Size</dt>
+    <dd>{{ object.size }} sq meters</dd>
+    <dt>Outdoor</dt>
+    <dd>{{ object.get_outdoor_display }}</dd>
+    <dt>Outdoor Size</dt>
+    <dd>{{ object.outdoor_size }} sq meters</dd>
+    <dt>Rooms</dt>
+    <dd>{{ object.rooms }}</dd>
+    <dt>Bathooms</dt>
+    <dd>{{ object.bathrooms }}</dd>
+    <dt>Toilets</dt>
+    <dd>{{ object.toilets }}</dd>
+    <dt>Bedrooms</dt>
+    <dd>{{ object.bedrooms }}</dd>
+    <dt>Floor</dt>
+    <dd>{{ object.floor }}</dd>
+    <dt>Elevator</dt>
+    <dd>{{ ojbect.elevator }}</dd>
+    <dt>Parking</dt>
+    <dd>{{ ojbect.parking }}</dd>
+    <dt>Furnished</dt>
+    <dd>{{ ojbect.furnished }}</dd>
+    <dt>Heating</dt>
+    <dd>{{ ojbect.heating }}</dd>
+    <dt>Heating emission</dt>
+    <dd>{{ ojbect.heating_emission }}</dd>
+    <dt>Lease</dt>
+    <dd>{{ ojbect.get_lease_display }}</dd>
+  </dl>
+
+  <a href="{% url 'search' %}">Back to Search</a>
+{% endblock %}
