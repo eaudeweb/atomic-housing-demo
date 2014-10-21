@@ -7,6 +7,13 @@
       <option>Apartment</option>
       <option>Single House</option>
     </select>
+    Order by:
+    <select name="order_by">
+      <option>Price (ascending)</option>
+      <option>Price (descending)</option>
+      <option>Date added</option>
+      <option>Size</option>
+    </select>
     <button type="submit">Search!</button>
   </form>
 
@@ -17,6 +24,9 @@
 
         <p class="address">{{ listing.address }}</p>
         <span class="price">{{ listing.rent }} EURO</span>
+        <span>Date posted: {{ listing.posted }}</span>
+        <span>District: {{ listing.address_district }}</span>
+        <span>Size: {{ listing.size }}m<sup>2</sup></span>
         <a href="{% url 'detail' listing.pk %}">Details</a>
       </div>
     {% empty %}
