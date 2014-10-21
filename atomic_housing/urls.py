@@ -1,10 +1,10 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from atomic_housing.views import *
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'atomic_housing.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+
+    url(r'hsadmin/', HSAdminHome.as_view(), name='hsadmin_home'),
 
     url(r'^admin/', include(admin.site.urls)),
 )
