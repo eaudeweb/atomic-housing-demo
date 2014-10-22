@@ -1,8 +1,8 @@
-from django.core.urlresolvers import reverse_lazy
+from django.core.urlresolvers import reverse_lazy, reverse
 from django.forms import formset_factory
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import TemplateView, ListView, CreateView, FormView
-from django.views.generic import UpdateView, DetailView, View
+from django.views.generic import UpdateView, DetailView, DeleteView, View
 
 from atomic_housing import models, forms
 
@@ -87,6 +87,16 @@ class LandLordListingsPhotosEdit(View):
             'listing': listing,
             'formset': formset
         })
+
+
+class LandLordListingsPhotoDelete(DeleteView):
+
+    model = models.ListingPhoto
+    pk_url_kwarg = 'photo_pk'
+    template_name = 'landlord/listings_photos_confirm_delete.html'
+
+    def get_success_url(self):
+        return reverse('listings_photos', kwargs={'pk': self.kwargs['pk']})
 
 
 # Customer Views

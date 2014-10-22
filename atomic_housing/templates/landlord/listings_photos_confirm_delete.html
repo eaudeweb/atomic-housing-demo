@@ -1,0 +1,13 @@
+{% extends '_layout_landlord.html' %}
+
+
+{% block content %}
+
+  <h1>Confirm delete</h1>
+
+  <form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <button type="submit">Confirm</button>
+  </form>
+
+{% endblock %}

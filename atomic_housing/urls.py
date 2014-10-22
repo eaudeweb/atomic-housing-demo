@@ -31,6 +31,9 @@ urlpatterns = patterns(
     url(r'^landlord/listings/(?P<pk>.*)/photos$',
         login_required(views.LandLordListingsPhotosEdit.as_view()),
         name='listings_photos'),
+    url(r'^landlord/listings/(?P<pk>.*)/photos/(?P<photo_pk>.*)/delete$',
+        login_required(views.LandLordListingsPhotoDelete.as_view()),
+        name='listings_photos_delete'),
 
     url(r'^login/$', 'django.contrib.auth.views.login',
         {'template_name': 'login.html'}),

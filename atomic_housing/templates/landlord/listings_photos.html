@@ -12,6 +12,7 @@
       {% for photo in listing.photos.all %}
         <li>
           <a href="{{ photo.name.url }}">{{ photo.name|filename }}</a>
+          <a href="{% url 'listings_photos_delete' pk=listing.pk photo_pk=photo.pk %}"><small>delete</small></a>
         </li>
       {% endfor %}
     </ul>
