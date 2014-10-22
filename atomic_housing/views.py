@@ -1,6 +1,9 @@
-from django.views.generic import TemplateView, ListView, CreateView, FormView
-from django.views.generic import UpdateView, DetailView
 from django.core.urlresolvers import reverse_lazy
+from django.forms import formset_factory
+from django.shortcuts import get_object_or_404, render, redirect
+from django.views.generic import TemplateView, ListView, CreateView, FormView
+from django.views.generic import UpdateView, DetailView, View
+
 from atomic_housing import models, forms
 
 
@@ -51,6 +54,39 @@ class LandLordListingsEdit(UpdateView):
     form_class = forms.ListingForm
     success_url = reverse_lazy('listings')
     template_name = 'landlord/listings_edit.html'
+
+
+class LandLordListingsPhotosEdit(View):
+
+    template_name = 'landlord/listings_photos.html'
+    success_url = reverse_lazy('listings')
+
+    def get(self, request, pk):
+        listing = get_object_or_404(models.Listing, pk=pk)
+        ListingPhotoFormSet = formset_factory(
+            forms.ListingPhotoForm,
+            formset=forms.BaseListingPhotoFormset,
+            extra=1)
+        formset = ListingPhotoFormSet()
+        return render(request, self.template_name, {
+            'listing': listing,
+            'formset': formset,
+        })
+
+    def post(self, request, pk):
+        listing = get_object_or_404(models.Listing, pk=pk)
+        ListingPhotoFormSet = formset_factory(
+            forms.ListingPhotoForm,
+            formset=forms.BaseListingPhotoFormset,
+            extra=1)
+        formset = ListingPhotoFormSet(request.POST, request.FILES)
+        if formset.is_valid():
+            formset.save(listing)
+            return redirect('listings_photos', pk=pk)
+        return render(request, self.template_name, {
+            'listing': listing,
+            'formset': formset
+        })
 
 
 # Customer Views

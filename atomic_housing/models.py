@@ -118,7 +118,7 @@ class Listing(models.Model):
     elevator = models.NullBooleanField(blank=True)
     parking = models.IntegerField(choices=PARKING_TYPES, null=True, blank=True)
     furnished = models.BooleanField(default=False)
-    heating = models.IntegerField(choices=HEATING_TYPES)
+    heating = models.IntegerField(choices=HEATING_TYPES, null=True, blank=True)
     heating_emission = models.FloatField(blank=True, default=None, null=True)
     lease = models.IntegerField(choices=LEASE_TYPES)
     rent = models.IntegerField()
@@ -138,6 +138,12 @@ class Listing(models.Model):
 
     def __unicode__(self):
         return u"{} in {}".format(self.title, self.address)
+
+
+class ListingPhoto(models.Model):
+
+    listing = models.ForeignKey(Listing, related_name='photos')
+    name = models.ImageField(upload_to='listing')
 
 
 class Contract(models.Model):

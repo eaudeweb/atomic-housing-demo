@@ -13,6 +13,7 @@
         <th>Title</th>
         <th>Owner</th>
         <th>Posted</th>
+        <th>Photos</th>
       </tr>
     </thead>
 
@@ -25,6 +26,9 @@
           </td>
           <td>{{ listing.owner }}</td>
           <td>{{ listing.posted }}</td>
+          <td>
+            <a href="{% url 'listings_photos' pk=listing.pk %}">photos</a>
+          </td>
         </tr>
       {% endfor %}
     </tbody>

@@ -28,7 +28,9 @@ urlpatterns = patterns(
     url(r'^landlord/listings/(?P<pk>.*)/edit$',
         login_required(views.LandLordListingsEdit.as_view()),
         name='listings_edit'),
-
+    url(r'^landlord/listings/(?P<pk>.*)/photos$',
+        login_required(views.LandLordListingsPhotosEdit.as_view()),
+        name='listings_photos'),
 
     url(r'^login/$', 'django.contrib.auth.views.login',
         {'template_name': 'login.html'}),
@@ -47,6 +49,4 @@ urlpatterns = patterns(
     url(r'^favorites/$', views.MyFavorites.as_view(), name='favorites'),
 
     url(r'^admin/', include(admin.site.urls)),
-)
-
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

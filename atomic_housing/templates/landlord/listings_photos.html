@@ -1,0 +1,29 @@
+{% extends '_layout_landlord.html' %}
+{% load utils %}
+
+
+{% block content %}
+
+  <h1>Listing photos</h1>
+
+  {% if listing.photos.exists %}
+
+    <ul>
+      {% for photo in listing.photos.all %}
+        <li>
+          <a href="{{ photo.name.url }}">{{ photo.name|filename }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    {% for f in formset %}
+      {{ f.as_p }}
+    {% endfor %}
+    <button type="submit">Save</button>
+  </form>
+
+{% endblock %}
