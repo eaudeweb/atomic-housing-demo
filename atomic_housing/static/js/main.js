@@ -13,29 +13,40 @@
 // 	$('.popout').removeClass('active');
 // });
 
-var openModal = function(elem) {
-	$(elem).addClass('active');
-	$('body').addClass('modal-open');
+var openModal = function (elem) {
+    $(elem).addClass('active');
+    $('body').addClass('modal-open');
 
-	$(elem).on('click', function () {
-		event.stopPropagation();
-	});
-	$('.modal-container').on('click', function () {
-		closeModal();
-	});
-	$(document).keyup(function(e) {
-	  if (e.keyCode == 27) { 
-	  	closeModal();
-	  }
-	});
+    $(elem).on('click', function () {
+        event.stopPropagation();
+    });
+    $('.modal-container').on('click', function () {
+        closeModal();
+    });
+    $(document).keyup(function (e) {
+        if (e.keyCode == 27) {
+            closeModal();
+        }
+    });
 }
 
-var closeModal = function() {
-	$('.modal.active').removeClass('active');
-	$('body').removeClass('modal-open');	
+var closeModal = function () {
+    $('.modal.active').removeClass('active');
+    $('body').removeClass('modal-open');
 }
 
 $("[data-modal]").on('click', function () {
-	var target = $(this).data('modal');
-	openModal(target);
+    var target = $(this).data('modal');
+    var listing = $(this).data('listing');
+    var url = '/landlord/listings/' + listing + '/photos';
+
+    $.ajax(
+        {
+            url: url,
+            success: function (html) {
+                $('#modalcontainer').html(html);
+                openModal(target);
+            }
+        }
+    )
 });

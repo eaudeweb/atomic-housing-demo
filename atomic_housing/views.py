@@ -58,7 +58,7 @@ class LandLordListingsEdit(UpdateView):
 
 class LandLordListingsPhotosEdit(View):
 
-    template_name = 'landlord/listings_photos.html'
+    template_name = 'landlord/listings_photos_upload.html'
     success_url = reverse_lazy('listings')
 
     def get(self, request, pk):
@@ -82,7 +82,7 @@ class LandLordListingsPhotosEdit(View):
         formset = ListingPhotoFormSet(request.POST, request.FILES)
         if formset.is_valid():
             formset.save(listing)
-            return redirect('listings_photos', pk=pk)
+            return redirect('listings')
         return render(request, self.template_name, {
             'listing': listing,
             'formset': formset

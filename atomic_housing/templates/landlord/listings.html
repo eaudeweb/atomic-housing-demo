@@ -15,19 +15,21 @@
 
         <div class="housing-type"> {{ listing.title }} </div>
 
-        
-        <div class="photo no-photo">
-          <div class="muted">No photo</div>
-          <a class="btn btn-success" data-modal=".modal-add-photo">Add photo</a>
-        </div>
-        <!-- <div class="photo img">
-          <img src="" alt="" />
-        </div> -->
+        {% if not listing.photos.count %}
+          <div class="photo no-photo">
+            <div class="muted">No photo</div>
+            <a class="btn btn-success" data-modal=".modal-add-photo" data-listing="{{ listing.id }}">Add photo</a>
+          </div>
+        {% else %}
+          <div class="photo img">
+            <img src="{{ listing.photos.first.name.url }}" alt="" />
+          </div>
+        {% endif %}
         <a class="housing-title" href="{{ url }}">
           {{ listing.address_city }},
           {{ listing.address_address }}
         </a>
-        
+
         <!-- Views -->
         <!-- Status -->
       </div>
@@ -38,7 +40,7 @@
 {% endblock %}
 
 {% block modal %}
-  <div class="modal modal-add-photo">
-    Hello
+  <div class="modal modal-add-photo" id="modalcontainer">
+    TODO
   </div>
 {% endblock %}
