@@ -103,6 +103,11 @@
 	box-shadow: 0 0 3px 0 rgba(black, .25);
 }
 
+%z-index-2 {
+	z-index: 100;
+	box-shadow: 0 0 4px 1px rgba(black, .25);
+}
+
 %z-index-button {
 	z-index: 100;
 	box-shadow: 0 2px 2px -1px rgba(black, .25);
@@ -195,5 +200,28 @@
 	}
 	&:active {
 		background: darken($color, 5%);
+	}
+}
+
+
+// popouts
+
+%popout-container {
+	position: relative;
+}
+
+%popout {
+	@extend %z-index-1;
+
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	padding: 8px;
+	border: 1px solid $color-hard;
+	background-color: #fff;
+
+	&.active {
+		display: block;
 	}
 }

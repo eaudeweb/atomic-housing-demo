@@ -18,7 +18,7 @@
         
         <div class="photo no-photo">
           <div class="muted">No photo</div>
-          <a class="btn btn-success" href="{% url 'listings_photos' pk=listing.pk %}">Add photo</a>
+          <a class="btn btn-success" data-modal=".modal-add-photo">Add photo</a>
         </div>
         <!-- <div class="photo img">
           <img src="" alt="" />
@@ -35,5 +35,10 @@
     {% endfor %}
   </ol>
 
+{% endblock %}
 
+{% block modal %}
+  <div class="modal modal-add-photo">
+    Hello
+  </div>
 {% endblock %}

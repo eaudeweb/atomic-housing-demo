@@ -333,6 +333,43 @@ label {
 	}
 }
 
+.popout {
+	@extend %popout;
+}
+
+.modal-open .modal-container {
+	display: block;
+	overflow: hidden;
+}
+.modal-container {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	padding: 72px 24px;
+	background: rgba(black, .75);
+}
+
+.modal {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	padding: $gutter;
+	border-radius: 2px;
+	background-color: #fff;
+	box-shadow: 0 0 5px 1px rgba(black, .5);
+
+	&.active {
+		display: block;
+	}
+}
+
+.modal-add-photo {
+	width: 40em;
+}
 
 // modules
 
@@ -376,17 +413,13 @@ label {
 
 .housing-listed {
 	@extend %button;
-	@extend %z-index-button;
+	// @extend %z-index-button;
 
 	display: block;
 	height: auto;
 	padding: 6px;
 	border: 1px solid $color-medium;
 	border-radius: 5px;
-
-	&:active {
-		@extend %z-index-0;
-	}
 
 	.housing-type {
 		@extend %uppercase;
@@ -396,6 +429,8 @@ label {
 		text-align: center;
 	}
 	.photo {
+		@extend %popout-container;
+
 		height: 120px;
 		margin: 6px -6px;
 		&.no-photo {
