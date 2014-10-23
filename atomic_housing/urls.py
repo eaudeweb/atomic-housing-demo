@@ -43,8 +43,11 @@ urlpatterns = patterns(
         name='register'),
     url(r'^register/customer/$', views.RegisterCustomer.as_view(),
         name='register_customer'),
-    url(r'^register/landlord/$', views.RegisterLandlord.as_view(),
+    url(r'^register/landlord/terms$', views.RegisterLandlordTerms.as_view(),
+        name='register_landlord_terms'),
+    url(r'^register/landlord$', views.RegisterLandlord.as_view(),
         name='register_landlord'),
+
 
     url(r'^search/$', views.SearchView.as_view(), name='search'),
     url(r'^detail/(?P<pk>\d+)/$', views.ListingDetails.as_view(),

@@ -30,6 +30,7 @@ class RegisterLandlordForm(ModelForm):
 
     class Meta:
         model = models.Landlord
+        exclude = ('user',)
 
 
 class ListingPhotoForm(ModelForm):

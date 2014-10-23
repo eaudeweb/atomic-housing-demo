@@ -135,6 +135,15 @@ class RegisterCustomer(FormView):
     form_class = forms.RegisterCustomerForm
 
 
+class RegisterLandlordTerms(TemplateView):
+    template_name = 'register/landlord_terms.html'
+
+    def post(self, request):
+        return redirect('register_landlord')
+
+
 class RegisterLandlord(FormView):
+    model = models.Landlord
     template_name = 'register/landlord.html'
     form_class = forms.RegisterLandlordForm
+    success_url = reverse_lazy('listings')
