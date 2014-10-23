@@ -1,41 +1,49 @@
+{% load staticfiles %}
 <!doctype html>
 <html>
 <head>
-  <title>{% block title %}Atomic Housing{% endblock %}</title>
+	<title>{% block title %}Atomic Housing{% endblock %}</title>
+	<link href='http://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{% static "css/normalize.css" %}" />
+	<link rel="stylesheet" href="{% static "css/main.css" %}" />
 </head>
 <body>
-<div class="container">
-  <div class="navbar">
-    <div class="logo">
-      Atomic Housing
-    </div>
 
-    <div class="user">
-      Welcome, John Doe!
-    </div>
-  </div>
+	<div class="topbar">
+		<div class="logo">
+			<div class="img">
+				<img src="{% static "img/ah-logo.png" %}" alt="Atomic Housing Logo">
+			</div>
+		</div>
 
-  <div class="sidebar">
-    <h2>Menu</h2>
-    {% block menu %}
-    <ul>
-      <li><a href="{% url 'hsadmin_home' %}">Dashboard</a></li>
-      <li><a href="{% url 'hsadmin_listing_list' %}">Listings</a></li>
-      <li><a href="{% url 'hsadmin_landlord_list' %}">Landlords</a></li>
-      <li><a href="{% url 'hsadmin_customer_list' %}">Customers</a></li>
-      <li><a href="{% url 'hsadmin_contract_list' %}">Contracts</a></li>
-      <li><a href="">Reports</a></li>
-      <li class="separator"></li>
-      <li><a href="">Settings</a></li>
-    </ul>
-    {% endblock %}
-  </div>
+		<div class="account">
+			Welcome, John Doe!
+		</div>
+	</div>
 
-  <div class="content">
-    {% block content %}
-      Content comes here.
-    {% endblock %}
-  </div>
-</div>
+	<div class="sidebar">
+		{% block menu %}
+		<h2 class="nav-title">Menu</h2>
+		<ul class="nav">
+			<li><a href="{% url 'hsadmin_home' %}">Dashboard</a></li>
+			<li><a href="{% url 'hsadmin_listing_list' %}">Listings</a></li>
+			<li><a href="{% url 'hsadmin_landlord_list' %}">Landlords</a></li>
+			<li><a href="{% url 'hsadmin_customer_list' %}">Customers</a></li>
+			<li><a href="{% url 'hsadmin_contract_list' %}">Contracts</a></li>
+		</ul>
+		<h2 class="nav-title">Admin</h2>
+		<ul class="nav">
+			<li><a href="" disabled>Reports</a></li>
+			<li><a href="" disabled>Settings</a></li>
+		</ul>
+		{% endblock %}
+	</div>
+
+	<div class="content">
+		{% block content %}
+			Content comes here.
+		{% endblock %}
+	</div>
+
 </body>
 </html>

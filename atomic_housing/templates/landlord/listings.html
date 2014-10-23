@@ -4,34 +4,36 @@
 
   <h1>My Listings</h1>
 
-  <a href="{% url 'listings_add' %}">Add Listing</a>
+  <p>  <a class="btn btn-primary" href="{% url 'listings_add' %}">Add Listing</a></p>
 
-  <table>
 
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Owner</th>
-        <th>Posted</th>
-        <th>Photos</th>
-      </tr>
-    </thead>
 
-    <tbody>
-      {% for listing in object_list %}
-        <tr>
-          <td>
-            {% url 'listings_edit' pk=listing.pk as url %}
-            <a href="{{ url }}">{{ listing.title }}</a>
-          </td>
-          <td>{{ listing.owner }}</td>
-          <td>{{ listing.posted }}</td>
-          <td>
-            <a href="{% url 'listings_photos' pk=listing.pk %}">photos</a>
-          </td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  <ol class="listing">
+    {% for listing in object_list %}
+    <li>
+      <div class="housing-listed">
+
+        <div class="housing-type"> {{ listing.title }} </div>
+
+        
+        <div class="photo no-photo">
+          <div class="muted">No photo</div>
+          <a class="btn btn-success" href="{% url 'listings_photos' pk=listing.pk %}">Add photo</a>
+        </div>
+        <!-- <div class="photo img">
+          <img src="" alt="" />
+        </div> -->
+        <a class="housing-title" href="{{ url }}">
+          {{ listing.address_city }},
+          {{ listing.address_address }}
+        </a>
+        
+        <!-- Views -->
+        <!-- Status -->
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+
 
 {% endblock %}

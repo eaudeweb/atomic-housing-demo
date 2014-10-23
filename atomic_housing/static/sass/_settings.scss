@@ -1,0 +1,68 @@
+// typography
+$font-body: 'Karla', sans-serif;
+$font-heading: $font-body;
+
+$font-size: 100%;
+$line-height: 1.4;
+$leading: 20px;
+$indent: 24px;
+$gutter: 24px;
+
+$larger: 120%;
+$large: 20px;
+$small: 13px;
+$smaller: 80%;
+
+// sizes
+$topbar-height: 60px;
+$sidebar-width: 240px;
+
+// colors
+$color-body: #444;
+$color-muted: gray;
+$color-anchor: #05B;
+$color-focus: #4283d6;
+$color-hard: #aaa;
+$color-medium: #ddd;
+$color-soft: #eee;
+
+$topbar-bg: #333;
+$sidebar-bg: $color-soft;
+
+// selections
+$headings: "
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6
+";
+$buttons: "
+	button,
+	input[type='submit'],
+	input[type='button'],
+	[role='button'],
+	.btn
+";
+$block-inputs: "
+	input[type='text'],
+	input[type='number'],
+	input[type='password'],
+	input[type='email'],
+	input[type='search'],
+	input[type='date'],
+	input[type='datetime'],
+	input[type='datetime-local'],
+	input[type='month'],
+	input[type='week'],
+	input[type='tel'],
+	input[type='time'],
+	input[type='url'],
+	select,
+	textarea
+";
+$inline-inputs: "
+	input[type='checkbox'],
+	input[type='radio']
+";

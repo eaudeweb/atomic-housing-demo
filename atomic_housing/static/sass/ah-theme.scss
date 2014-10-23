@@ -1,0 +1,426 @@
+@import "settings";
+@import "helpers";
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	font-family: $font-body;
+	font-size: $font-size;
+	line-height: $line-height;
+	color: $color-body;
+	text-rendering: optimizeLegibility;
+}
+
+.topbar {
+	height: $topbar-height;
+
+	@extend %brand-bg;
+	padding: 0 $leading;
+	color: #fff;
+}
+
+.content,
+.sidebar {
+	@extend %border-box;
+	position: absolute;
+	top: $topbar-height;
+	bottom: 0;
+	overflow: auto;
+}
+
+.content {
+	@extend %z-index-1;
+	left: $sidebar-width;
+	right: 0;
+
+	padding: $leading $indent;
+}
+
+.sidebar {
+	left: 0;
+	width: $sidebar-width;
+
+	padding: $leading;
+	background-color: $sidebar-bg;
+}
+
+.row {
+	@extend %row;
+}
+
+.col {
+	@extend %col;
+}
+
+// typography
+
+.muted {
+	color: $color-muted;
+}
+
+#{$headings} {
+	@extend %leading;
+	font-family: $font-heading;
+	line-height: 1.2;
+}
+
+a {
+	color: $color-anchor;
+	text-decoration: none;
+}
+
+.h1 { font-size: 2rem; }
+
+.h2 { font-size: 1.8rem; }
+
+.h3 { font-size: 1.6rem; }
+
+.h4 { font-size: 1.4rem; }
+
+.h5 { font-size: 1.2rem; }
+
+.h6 { font-size: 1rem; }
+
+p, .p {
+	@extend %leading;
+}
+
+.img {
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.table {
+	@extend %leading;
+
+	text-align: left;
+	td, th {
+		padding: 1px 5px;		
+	}
+}
+
+.table-simple {
+	border: 1px solid $color-medium;
+	thead {
+		background: $color-soft;
+	}
+	tbody tr {
+		border-top: 1px solid $color-soft;
+	}
+}
+
+// forms
+
+#{$block-inputs} {
+	@extend %input-box;
+	@extend %disabled;
+
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#{$buttons} {
+	@extend %button;
+	@extend %z-index-button;
+	@extend %uppercase;
+	@extend %disabled;
+
+	font-size: $smaller;
+	font-weight: bold;
+
+	&:hover {
+		@extend %z-index-hover;
+	}
+	&:active {
+		@extend %z-index-0;
+	}
+
+	&.btn-default {
+		@extend %input-border-hover;
+		color: $color-body;
+		background-color: #fff;
+	}
+	&.btn-primary {
+		@include button-var(#47a5da);
+		
+	}
+	&.btn-success {
+		@include button-var(#3dcb4b);
+	}
+}
+
+form {
+	max-width: 40em;
+}
+
+fieldset {
+	@extend %leading;
+
+	padding: 0;
+	border: 0;
+	border-top: 1px solid $color-medium;
+
+
+	legend {
+		@extend .h4;
+		@extend %leading;
+		// @extend %uppercase;
+		@extend .muted;
+
+		padding-right: 12px;
+		// text-align: center;
+		// font-size: $smaller;
+		// padding: 0 12px;
+	}
+}
+
+label {
+	&[for] {
+		cursor: pointer;
+	}
+}
+
+.input-group {
+	@extend %leading;
+
+	label {
+		width: 180px;
+		display: inline-block;
+	}
+	input,
+	select {
+		// display: block;
+		// width: 100%;
+	}
+}
+
+.input-append {
+	@extend %leading;
+
+	display: table;
+	width: 100%;
+	vertical-align: middle;
+
+	label,
+	input,
+	select {
+		display: table-cell;
+		border-radius: 0;
+	}
+
+	label {
+		@extend %clip;
+		@extend %button;
+		@extend %input-border-hover;
+
+		width: 96px;
+		border-right: 0;
+		font-size: $smaller;
+		background-color: $color-soft;
+	}
+
+	input,
+	select {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+	}
+
+	// label {
+	// 	@extend %clip;
+	// 	@extend %input-align;
+	// 	@extend .muted;
+
+	// 	position: relative;
+	// 	z-index: 2;
+	// 	display: block;
+	// 	width: 97px;
+	// 	margin-bottom: -30px;
+	// 	padding-left: 5px;
+	// 	padding-right: 5px;
+	// 	border-color: transparent;
+	// 	font-size: $smaller;
+	// 	// background-color: $color-soft;
+	// 	// &:after {
+	// 	// 	content: ":";
+	// 	// 	float: right;
+	// 	// }
+	// }
+	// input,
+	// select {
+	// 	width: 100%;
+	// 	padding-left: 96px;
+	// }
+}
+
+.input-inline {
+	ul {
+		@extend %no-ul;
+	}
+
+	li {
+		display: inline-block;
+	}
+}
+
+.input-accomodation {
+
+	ul {
+		@extend %row;
+		@extend %leading;
+	}
+	li {
+		@extend %col;
+		@include new-col("width", 3) { display: block; };
+	}
+	label {
+		@extend %button;
+		@extend %input-border-hover;
+		@extend %z-index-button;
+
+		&:hover {
+			@extend %z-index-hover;
+		}
+		&:active {
+			@extend %z-index-0;
+		}
+
+		display: block!important;
+		height: auto;
+		border-style: solid;
+		border-width: 1px;
+		padding: 5px;
+		text-align: center;
+	}
+	input {
+		display: block;
+		width: 30px;
+		margin-left: auto;
+		margin-right: auto;		
+	}
+}
+
+.box-input {
+	@extend %leading;
+	position: relative;
+	label {
+		display: block;
+		color: $color-muted;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 60px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding: 1px 2px;
+		margin: 3px;
+		border-right: 1px solid $color-medium;
+		
+	}
+	input,
+	select,
+	textarea {
+		display: block;
+		padding: 3px 9px;
+		padding-left: 72px;
+	}
+}
+
+
+// modules
+
+.nav-title {
+	@extend %uppercase;
+	@extend .muted;
+
+	margin-bottom: 0;
+	font-size: 15px;
+}
+
+.nav {
+	@extend %no-ul;
+	@extend %leading;
+	a {
+		@extend %no-a;
+		display: block;
+
+		&:hover {
+			@extend %brand-bg;
+		}
+	}
+}
+
+.listing {
+	@extend %no-ul;
+	@extend %row;
+
+	max-width: 60em;
+
+	counter-reset: li;
+
+	li {
+		@extend %leading;
+		@extend %col;
+		@include new-col("width", 4);
+
+		counter-increment: li;
+	}
+}
+
+.housing-listed {
+	@extend %button;
+	@extend %z-index-button;
+
+	display: block;
+	height: auto;
+	padding: 6px;
+	border: 1px solid $color-medium;
+	border-radius: 5px;
+
+	&:active {
+		@extend %z-index-0;
+	}
+
+	.housing-type {
+		@extend %uppercase;
+		@extend .muted;
+
+		font-size: $smaller;
+		text-align: center;
+	}
+	.photo {
+		height: 120px;
+		margin: 6px -6px;
+		&.no-photo {
+			text-align: center;
+			background-color: $color-soft;
+		}
+	}
+}
+.housing-title {
+	@extend .h4;
+
+	display: block;
+}
+
+
+
+.logo {
+	float: left;
+	.img {
+		float: left;
+		margin-left: -9px;
+	}
+}
+
+.account {
+	float: right;
+}
+

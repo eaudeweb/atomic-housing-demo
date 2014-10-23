@@ -126,8 +126,8 @@ class Listing(models.Model):
 
     @property
     def title(self):
-        return u"{rooms} rooms {type}".format(
-            rooms=self.rooms, type=self.get_accomodation_display()
+        return u"{type}, {rooms} rooms".format(
+            type=self.get_accomodation_display(), rooms=self.rooms
         )
 
     @property

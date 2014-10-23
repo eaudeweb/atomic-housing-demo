@@ -2,6 +2,7 @@ from django.forms import ModelForm, BaseFormSet
 from django.forms.models import BaseModelFormSet
 from atomic_housing import models
 from atomic_housing.middleware import get_current_request
+from django import forms
 
 
 class ListingForm(ModelForm):
@@ -10,13 +11,14 @@ class ListingForm(ModelForm):
         model = models.Listing
         exclude = ('owner', 'status', 'posted',)
 
+    accomodation = forms.ChoiceField(choices=models.ACCOMODATION_TYPES, widget=forms.RadioSelect)
+
     def save(self):
         listing = super(ListingForm, self).save(commit=False)
         request = get_current_request()
         listing.owner = request.user
         listing.save()
         return listing
-
 
 class RegisterCustomerForm(ModelForm):
 
