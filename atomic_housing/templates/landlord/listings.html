@@ -22,13 +22,13 @@
         </div>
         <div class="listing-description">
           <div class="listing-title">
-            <a href="{{ url }}" title="{{ listing.title }}">{{ listing.title }}</a>
+            <a href="{% url 'listings_edit' listing.pk %}" title="{{ listing.title }}">{{ listing.title }}</a>
           </div>
           <dl class="listing-stats">
             <dt>Status</dt>
             <dd><span class="badge {{ listing.get_status_display }}">{{ listing.get_status_display }}</span></dd>
             <dt>Views</dt>
-            <dd>12</dd>
+            <dd>{{ listing.pk|add:12 }}</dd>
           </dl>
           <div class="listing-type">{{ listing.accomodation_type }}</div>
           <div class="listing-published">{{ listing.updated|just_date }}</div>
