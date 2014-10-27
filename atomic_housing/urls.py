@@ -50,6 +50,8 @@ urlpatterns = patterns(
         name='register_landlord_terms'),
     url(r'^register/landlord$', views.RegisterLandlord.as_view(),
         name='register_landlord'),
+    url(r'^register/thankyou$', views.RegisterThankyou.as_view(),
+        name='register_thankyou'),
 
 
     url(r'^search/$', views.SearchView.as_view(), name='search'),

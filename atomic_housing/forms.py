@@ -33,12 +33,13 @@ class ListingForm(ModelForm):
 class RegisterCustomerForm(ModelForm):
     class Meta:
         model = models.Customer
+        exclude = ('user', 'status',)
 
 
 class RegisterLandlordForm(ModelForm):
     class Meta:
         model = models.Landlord
-        exclude = ('user',)
+        exclude = ('user', 'status')
 
 
 class ListingPhotoForm(ModelForm):

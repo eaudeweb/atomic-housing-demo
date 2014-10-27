@@ -164,6 +164,7 @@ class RegisterChoose(TemplateView):
 class RegisterCustomer(FormView):
     template_name = 'register/customer.html'
     form_class = forms.RegisterCustomerForm
+    success_url = reverse_lazy('register_thankyou')
 
 
 class RegisterLandlordTerms(TemplateView):
@@ -177,4 +178,8 @@ class RegisterLandlord(FormView):
     model = models.Landlord
     template_name = 'register/landlord.html'
     form_class = forms.RegisterLandlordForm
-    success_url = reverse_lazy('listings')
+    success_url = reverse_lazy('register_thankyou')
+
+
+class RegisterThankyou(TemplateView):
+    template_name = 'register/thankyou.html'
