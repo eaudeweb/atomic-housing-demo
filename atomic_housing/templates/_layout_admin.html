@@ -8,13 +8,15 @@
 	<link rel="stylesheet" href="{% static "css/normalize.css" %}" />
 	<link rel="stylesheet" href="{% static "css/main.css" %}" />
 </head>
-<body class="layout-admin">
+<body class="{% block layout %} layout-admin {% endblock %}">
 
 	<div class="topbar">
 		<div class="container">
-			<div class="logo">
-				<div class="img">
-					<img src="{% static "img/ah-logotype-white.png" %}" alt="Atomic Housing Logo">
+			<div class="row">
+				<div class="logo">
+					<div class="img">
+						<img src="{% static "img/ah-logotype-white.png" %}" alt="Atomic Housing Logo">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -22,8 +24,7 @@
 
 	<div class="container">
 		<div class="content">
-
-			<div class="sidebar">
+			<div class="aside">
 				<div class="account">
 					<div>Logged in as <br/>
 						<strong class="no-br">John Doe</strong>

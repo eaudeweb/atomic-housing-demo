@@ -266,8 +266,8 @@ p, .p {
 
 // page-title
 .page-title {
-	@extend %inset-default;
-	@extend %outset-default;
+	@extend %inset-page;
+	@extend %outset-page;
 	@extend %clearfix;
 	margin-bottom: 15px;
 	padding-top: 15px;
@@ -519,6 +519,9 @@ p, .p {
 	height: auto;
 	padding: 8px;
 	border-color: transparent;
+	&:before {
+		display: block;
+	}
 	&:hover {
 		@extend	%z-index-hover;
 		border-color: $color-medium;

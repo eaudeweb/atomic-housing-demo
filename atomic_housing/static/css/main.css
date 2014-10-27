@@ -1,4 +1,4 @@
-.topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .layout-admin .main, .input-accomodation li, .col, input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, .btn, .btn-fake, .input-append label, .input-accomodation label, .menu-item, .account-choice, .jump-to-map, .input-col label, .input-inline label, .search button {
+.topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .input-accomodation li, .col, input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, .btn, .btn-fake, .input-append label, .input-accomodation label, .menu-item, .account-choice, .jump-to-map, .input-col label, .input-inline label, .search button, .layout-admin .main {
   box-sizing: border-box; }
 
 .layout-user .content:before, .layout-admin .content:before, .input-accomodation ul:before, .row:before, .input-col:before, .filters label:before, .clearfix:before, .dl-inline:before, .search:before, .menu:before, .page-title:before, .listings-list:before, .layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .filters label:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after, .listings-list:after {
@@ -12,19 +12,19 @@
   top: 50%;
   transform: translateY(-50%); }
 
-.container, .topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .layout-admin .main, .input-accomodation li, .col, .page-title {
+.container, .topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .input-accomodation li, .col {
   padding-left: 12px;
   padding-right: 12px; }
 
-.layout-user .content, .layout-admin .content, .input-accomodation ul, .row, .page-title {
+.layout-user .content, .layout-admin .content, .input-accomodation ul, .row {
   margin-left: -12px;
   margin-right: -12px; }
 
-.page-separator, fieldset {
+.layout-admin .main, fieldset, .page-title {
   padding-left: 24px;
   padding-right: 24px; }
 
-.page-separator, fieldset {
+fieldset, .page-title {
   margin-left: -24px;
   margin-right: -24px; }
 
@@ -35,7 +35,7 @@
 .container {
   width: 1008px; }
 
-.topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .layout-admin .main, .input-accomodation li, .col {
+.topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .input-accomodation li, .col {
   float: left; }
 
 .col-1 {
@@ -384,11 +384,11 @@ input[type='text'], input[type='number'], input[type='password'], input[type='em
 .layout-admin {
   background-color: #eee; }
   .layout-admin .aside {
-    width: 25%; }
+    width: 20%;
+    padding-right: 24px; }
   .layout-admin .main {
-    width: 75%;
-    position: relative;
-    top: -60px;
+    width: 80%;
+    float: left;
     background-color: #fff; }
 
 .layout-passage .logo {
@@ -942,6 +942,8 @@ hr {
   height: auto;
   padding: 8px;
   border-color: transparent; }
+  .jump-to-map:before {
+    display: block; }
   .jump-to-map:hover {
     border-color: #ddd;
     background-color: #fff; }
