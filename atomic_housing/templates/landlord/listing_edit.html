@@ -8,11 +8,16 @@
 
     {{ form.non_field_errors }}
 
-		<div class="">
+    <div class="input-group input-inline input-accomodation">
+			{{ form.accomodation }}
+			{{ form.accomodation.errors }}
+		</div>
+
+		<!-- <div class="">
 	    <label for="id_accomodation">Accomodation</label>
 	    {{ form.accomodation }}
 	    {{ form.accomodation.errors }}
-		</div>		
+		</div>		 -->
 
 		<div class="box-input">
 	    <label for="id_address_city">City</label>

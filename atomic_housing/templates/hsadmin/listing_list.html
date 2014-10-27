@@ -1,30 +1,38 @@
 {% extends '_layout_admin.html' %}
 
-{% block content %}
-  <h1>Listings</h1>
+{% block page-title %}
+  <div class="page-title">
+    <h1>Listings</h1>
+    <div class="counter">{{ object_list|length }}</div>
+    <div class="actions">
+      Type
+      Years
+      Status
+    </div>
+  </div>
+{% endblock %}
 
-  <table>
+{% block content %}
+  <table class="table table-simple">
     <thead>
-    <tr>
-      <th>Landlord</th>
-      <th>Title</th>
-      <th>Address</th>
-      <th>Posted</th>
-      <th>Status</th>
-      <th>Actions</th>
-    </tr>
+      <tr>
+        <th>Accomodation</th>
+        <th>Listing</th>
+        <th>Status</th>
+        <th>Landlord</th>
+        <th>Posted</th>
+      </tr>
     </thead>
     <tbody>
-    {% for listing in object_list %}
+      {% for listing in object_list %}
       <tr>
-      <td>{{ listing.owner }}</td>
-      <td>{{ listing.title }}</td>
-      <td>{{ listing.address }}</td>
-      <td>{{ listing.posted }}</td>
-      <td>{{ listing.get_status_display }}</td>
+        <td>{{ listing.accomodation_type }}</td>
+        <td><a href="">{{ listing.title }}</a></td>
+        <td><span class="badge {{ listing.get_status_display }}">{{ listing.get_status_display }}</span></td>
+        <td><a href="">{{ listing.owner }}</a></td>
+        <td>{{ listing.posted }}</td>
       </tr>
-    {% endfor %}
+      {% endfor %}
     </tbody>
   </table>
-
 {% endblock %}

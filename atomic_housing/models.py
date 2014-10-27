@@ -126,15 +126,32 @@ class Listing(models.Model):
 
     @property
     def title(self):
-        return u"{type}, {rooms} rooms".format(
-            type=self.get_accomodation_display(), rooms=self.rooms
+        return u"{address} - {zip}".format(
+            address=self.address_address, zip=self.address_zipcode
         )
 
     @property
+    def accomodation_type(self):
+        return u"{}".format(self.get_accomodation_display())
+
+    @property
+    def lease_type(self):
+        return u"{}".format(self.get_lease_display())
+
+    @property
     def address(self):
-        return u"{} {} {}".format(
-            self.address_zipcode, self.address_address, self.address_city,
+        return u"{} - {}".format(
+            self.address_district, self.address_address
         )
+
+    @property
+    def address_full(self):
+        return u"{}, {} - {}, {}".format(
+            self.address_address, 
+            self.address_district, 
+            self.address_zipcode, 
+            self.address_city
+        )    
 
     def __unicode__(self):
         return u"{} in {}".format(self.title, self.address)

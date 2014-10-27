@@ -1,7 +1,8 @@
 *.pyc
 /env
 /env2
-/sass
-/.sass-cache
+sass/
+.sass-cache/
 *.sqlite3
 media/
+*.ai

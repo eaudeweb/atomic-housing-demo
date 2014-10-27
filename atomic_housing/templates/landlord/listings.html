@@ -1,46 +1,47 @@
 {% extends '_layout_landlord.html' %}
 
+{% block page-title %}
+  <div class="page-title">
+    <h1>My Listings</h1>
+    <div class="counter">{{ object_list|length }}</div>
+    <div class="actions">
+      <a class="btn primary" href="{% url 'listings_add' %}">Add Listing</a>
+    </div>
+  </div>
+{% endblock %}
+
 {% block content %}
-
-  <h1>My Listings</h1>
-
-  <p>  <a class="btn btn-primary" href="{% url 'listings_add' %}">Add Listing</a></p>
-
-
-
-  <ol class="listing">
+  <ol class="listings-list">
     {% for listing in object_list %}
     <li>
-      <div class="housing-listed">
-
-        <div class="housing-type"> {{ listing.title }} </div>
-
-        {% if not listing.photos.count %}
-          <div class="photo no-photo">
-            <div class="muted">No photo</div>
-            <a class="btn btn-success" data-modal=".modal-add-photo" data-listing="{{ listing.id }}">Add photo</a>
+      <div class="listing">
+        <div class="listing-photo no-photo">
+          <!-- <div class="muted">No photo</div>
+          <a class="btn btn-success" data-modal=".modal-add-photo">Add photo</a> -->
+        </div>
+        <div class="listing-description">
+          <div class="listing-title">
+            <a href="{{ url }}" title="{{ listing.title }}">{{ listing.title }}</a>
           </div>
-        {% else %}
-          <div class="photo img">
-            <img src="{{ listing.photos.first.name.url }}" alt="" />
-          </div>
-        {% endif %}
-        <a class="housing-title" href="{{ url }}">
-          {{ listing.address_city }},
-          {{ listing.address_address }}
-        </a>
-
-        <!-- Views -->
-        <!-- Status -->
+          <dl class="listing-stats">
+            <dt>Status</dt>
+            <dd><span class="badge {{ listing.get_status_display }}">{{ listing.get_status_display }}</span></dd>
+            <dt>Views</dt>
+            <dd>12</dd>
+          </dl>
+          <div class="listing-type">{{ listing.accomodation_type }}</div>
+          <div class="listing-published">{{ listing.updated }}</div>
+        </div>
       </div>
     </li>
     {% endfor %}
   </ol>
-
 {% endblock %}
 
 {% block modal %}
   <div class="modal modal-add-photo" id="modalcontainer">
-    TODO
+    <div class="modal-title">
+      <h2>Add photos</h2>
+    </div>
   </div>
 {% endblock %}

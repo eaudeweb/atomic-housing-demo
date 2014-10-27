@@ -1,27 +1,14 @@
-{% extends '_layout.html' %}
+{% extends '_layout_passage.html' %}
 
 
 {% block content %}
+	<h1 class="text-center h3">Who are you?</h1>
+	
+	<p class="text-center">
+		<a class="account-choice icon-customers" href="{% url 'register_customer' %}">Customer</a>
+		<a class="account-choice icon-landlords" href="{% url 'register_landlord_terms' %}">Landlord</a>
+	</p>
 
-  <p>Who are you:</p>
-
-  <ol>
-    <li>
-      <h2>IAEA Customer</h2>
-
-      <p>By clicking Continue, you confirm that you are an IAEA Staff
-        Member
-      </p>
-      <a href="{% url 'register_customer' %}">Continue</a>
-    </li>
-    <li>
-      <h2>Landlord</h2>
-
-      <p>Choose this if you are a Landlord in possesion of properties in
-        Vienna
-      </p>
-      <a href="{% url 'register_landlord_terms' %}">Continue</a>
-    </li>
-  </ol>
+	<hr class="hr-soft">
 
 {% endblock %}

@@ -4,6 +4,7 @@ $font-heading: $font-body;
 
 $font-size: 100%;
 $line-height: 1.4;
+
 $leading: 20px;
 $indent: 24px;
 $gutter: 24px;
@@ -25,6 +26,10 @@ $color-focus: #4283d6;
 $color-hard: #aaa;
 $color-medium: #ddd;
 $color-soft: #eee;
+$brand-primary: #396ccf;
+$brand-secondary: #47a5da;
+$brand-red: #a52a2a;
+$brand-yellow: #a52a2a;
 
 $topbar-bg: #333;
 $sidebar-bg: $color-soft;
@@ -37,14 +42,14 @@ $headings: "
 	h4,
 	h5,
 	h6
-";
+"!default;
 $buttons: "
 	button,
 	input[type='submit'],
 	input[type='button'],
 	[role='button'],
 	.btn
-";
+"!default;
 $block-inputs: "
 	input[type='text'],
 	input[type='number'],
@@ -61,8 +66,8 @@ $block-inputs: "
 	input[type='url'],
 	select,
 	textarea
-";
+"!default;
 $inline-inputs: "
 	input[type='checkbox'],
 	input[type='radio']
-";
+"!default;

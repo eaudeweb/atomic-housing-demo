@@ -1,4 +1,5 @@
 {% load staticfiles %}
+
 <!doctype html>
 <html>
 <head>
@@ -7,42 +8,58 @@
 	<link rel="stylesheet" href="{% static "css/normalize.css" %}" />
 	<link rel="stylesheet" href="{% static "css/main.css" %}" />
 </head>
-<body>
+<body class="layout-admin">
 
 	<div class="topbar">
-		<div class="logo">
-			<div class="img">
-				<img src="{% static "img/ah-logo.png" %}" alt="Housing Service Logo">
+		<div class="container">
+			<div class="logo">
+				<div class="img">
+					<img src="{% static "img/ah-logotype-white.png" %}" alt="Atomic Housing Logo">
+				</div>
 			</div>
 		</div>
+	</div>
 
-		<div class="account">
-			Welcome, John Doe!
+	<div class="container">
+		<div class="content">
+
+			<div class="sidebar">
+				<div class="account">
+					<div>Logged in as <br/>
+						<strong class="no-br">John Doe</strong>
+						<!-- caret -->
+						<!-- <a href="">Sign out</a> -->
+					</div>
+				</div>
+				<hr>
+				{% block menu %}
+				<h2 class="nav-title">Menu</h2>
+				<ul class="nav">
+					<li><a class="icon-overview" href="{% url 'hsadmin_home' %}">Overview</a></li>
+					<li><a class="icon-listings" href="{% url 'hsadmin_listing_list' %}">Listings</a></li>
+					<li><a class="icon-landlords" href="{% url 'hsadmin_landlord_list' %}">Landlords</a></li>
+					<li><a class="icon-customers" href="{% url 'hsadmin_customer_list' %}">Customers</a></li>
+					<li><a class="icon-contracts" href="{% url 'hsadmin_contract_list' %}">Contracts</a></li>
+				</ul>
+				<h2 class="nav-title">Admin</h2>
+				<ul class="nav">
+					<li><a class="icon-reports" href="" disabled>Reports</a></li>
+					<li><a class="icon-settings" href="" disabled>Settings</a></li>
+				</ul>
+				{% endblock %}
+				<hr>
+				<p class="small muted">&copy; IAEA</p>
+			</div>
+
+			<div class="main">
+				{% block page-title %}
+					Page title
+				{% endblock %}
+				{% block content %}
+					Content comes here.
+				{% endblock %}
+			</div>
 		</div>
-	</div>
-
-	<div class="sidebar">
-		{% block menu %}
-		<h2 class="nav-title">Menu</h2>
-		<ul class="nav">
-			<li><a href="{% url 'hsadmin_home' %}">Dashboard</a></li>
-			<li><a href="{% url 'hsadmin_listing_list' %}">Listings</a></li>
-			<li><a href="{% url 'hsadmin_landlord_list' %}">Landlords</a></li>
-			<li><a href="{% url 'hsadmin_customer_list' %}">Customers</a></li>
-			<li><a href="{% url 'hsadmin_contract_list' %}">Contracts</a></li>
-		</ul>
-		<h2 class="nav-title">Admin</h2>
-		<ul class="nav">
-			<li><a href="" disabled>Reports</a></li>
-			<li><a href="" disabled>Settings</a></li>
-		</ul>
-		{% endblock %}
-	</div>
-
-	<div class="content">
-		{% block content %}
-			Content comes here.
-		{% endblock %}
 	</div>
 
 	<div class="modal-container">

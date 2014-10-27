@@ -1,28 +1,96 @@
 {% extends '_layout_admin.html' %}
 
-{% block content %}
-  <h1>Dashboard</h1>
+{% block page-title %}
+  <div class="page-title">
+    <h1>Overview</h1>
+  </div>
+{% endblock %}
 
-  <h2>Site stats</h2>
+{% block content %}
+
+  <h3>Last week</h3>
+  <hr>
+
+  <table class="stats">
+    <tbody>
+      <tr class="icons">
+        <td><div class="icon-visitors"></div></td>
+        <td><div class="icon-listings"></div></td>
+        <td><div class="icon-customers"></div></td>
+        <td><div class="icon-landlords"></div></td>
+        <td><div class="icon-contracts"></div></td>
+      </tr>
+      <tr class="numbers">
+        <td>120</td>
+        <td>200</td>
+        <td>20</td>
+        <td>10</td>
+        <td>15</td>
+      </tr>
+      <tr class="labels">
+        <td>Site visitors</td>
+        <td>New listings</td>
+        <td>New customers</td>
+        <td>New landlords</td>
+        <td>Closed contracts</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h3>Listings</h3>
+
+  <table class="table table-simple">
+    <thead>
+      <tr>
+        <th>Accomodation</th>
+        <th><abbr class="badge new">N</abbr></th>
+        <th><abbr class="badge active">A</abbr></th>
+        <th><abbr class="badge passive">P</abbr></th>
+        <th><abbr class="">T</abbr></th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td>00</td>
+        <td>00</td>
+        <td>00</td>
+        <td>00</td>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <td>Single house</td>
+        <td>25</td>
+        <td>50</td>
+        <td>125</td>
+        <td>200</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="col col-6">
+      Listings
+    </div>
+    <div class="col col-6">
+      Users
+    </div>
+  </div>
+
+  table
+
+<hr class="page-separator">
+
+  <h2>Categories</h2>
   <dl>
-    <dt>Site Visitors</dt>
-    <dd>3</dd>
-    <dt>New Listings (last week)</dt>
-    <dd>100</dd>
-    <dt>New Registrations (last week)</dt>
-    <dd>5 Landlords, 10 Customers</dd>
     <dt>Listings</dt>
     <dd>100 Active, 50 Passive</dd>
     <dt>Landlords</dt>
     <dd>30 Active, 10 Passive</dd>
     <dt>Customers</dt>
     <dd>30 Active, 10 Passive</dd>
-    <dt>Contracts</dt>
-    <dd>200 Closed</dd>
-  </dl>
-
-  <h2>Categories</h2>
-  <dl>
     <dt>Apartament</dt>
     <dd>300</dd>
     <dt>Single House</dt>

@@ -1,11 +1,42 @@
-@import "settings";
-@import "helpers";
+@import 
+	"settings",
+	"helpers",
+	"layout",
+	"tables",
+	"buttons",
+	"inputs",
+	"icons";
+@import "shame";
 
+// layout
 html,
 body {
 	height: 100%;
+	overflow: auto;
+}
+.center-block {
+	@extend %center-block;
+}
+.container {
+	@extend %container;
+}
+.row {
+	@extend %row;
+}
+.col {
+	@extend %col;
+}
+.clearfix {
+	@extend %clearfix;
+}
+.pull-left {
+	float: left!important;
+}
+.pull-right {
+	float: right!important;
 }
 
+// typography
 body {
 	position: relative;
 	font-family: $font-body;
@@ -13,449 +44,521 @@ body {
 	line-height: $line-height;
 	color: $color-body;
 	text-rendering: optimizeLegibility;
+	// background-color: $sidebar-bg;
 }
-
-.topbar {
-	height: $topbar-height;
-
-	@extend %brand-bg;
-	padding: 0 $leading;
-	color: #fff;
+.text-left {
+	@extend %text-left;
 }
-
-.content,
-.sidebar {
-	@extend %border-box;
-	position: absolute;
-	top: $topbar-height;
-	bottom: 0;
-	overflow: auto;
+.text-center {
+	@extend %text-center;
 }
-
-.content {
-	@extend %z-index-1;
-	left: $sidebar-width;
-	right: 0;
-
-	padding: $leading $indent;
+.text-right {
+	@extend %text-right;
 }
-
-.sidebar {
-	left: 0;
-	width: $sidebar-width;
-
-	padding: $leading;
-	background-color: $sidebar-bg;
+.text-justifiy {
+	@extend %text-justifiy;
 }
-
-.row {
-	@extend %row;
+.small {
+	font-size: $smaller;
 }
-
-.col {
-	@extend %col;
+.large {
+	font-size: $larger;
 }
-
-// typography
-
 .muted {
 	color: $color-muted;
 }
-
+.quiet {
+	@extend .muted;
+	a {
+		color: darken($color-muted, 10%);
+		&:hover {
+			color: $color-body;
+		}
+	}
+}
+.no-br {
+	@extend %clip;
+}
+.no-leading {
+	@extend %no-leading;
+}
 #{$headings} {
 	@extend %leading;
 	font-family: $font-heading;
 	line-height: 1.2;
+	font-weight: normal;
 }
-
 a {
 	color: $color-anchor;
 	text-decoration: none;
 }
-
 .h1 { font-size: 2rem; }
-
 .h2 { font-size: 1.8rem; }
-
 .h3 { font-size: 1.6rem; }
-
 .h4 { font-size: 1.4rem; }
-
 .h5 { font-size: 1.2rem; }
-
 .h6 { font-size: 1rem; }
-
+hr {
+	margin-top: $leading;
+	margin-bottom: $leading;
+	height: 0;
+	border: 0;
+	border-bottom: 1px solid $color-medium;
+}
+.hr-soft {
+	@extend %center-block;
+	max-width: 5em;
+}
 p, .p {
 	@extend %leading;
 }
-
+.dl-inline {
+	@extend %leading;
+	@include media-object('dt', 120px, 'dd');
+	dt, dd {
+		margin-top: 3px;
+	}
+	dt {
+		@extend .muted;
+		@extend %clip;
+		clear: left;
+	}
+	dd {
+		font-weight: bold;
+	}	
+}
 .img {
 	img {
+		display: block;
 		max-width: 100%;
 		height: auto;
 	}
 }
 
-.table {
+// popouts
+[data-popout] {
+	@extend %popout-container;
+}
+[data-popout='hover']:hover {
+	.popout {
+		display: block;
+	}
+}
+.popout {
+	@extend %popout;
+}
+
+// modals
+.modal-open .modal-container {
+	display: block;
+	overflow: hidden;
+}
+.modal-container {
+	@extend %modal-container;
+}
+.modal {
+	@extend %modal;
+}
+.modal-title {
+	@extend %modal-title;
+	h2 {
+		@extend .muted;
+		margin-bottom: 0;
+	}
+}
+
+// topbar
+.topbar {
 	@extend %leading;
-
-	text-align: left;
-	td, th {
-		padding: 1px 5px;		
+	@extend %brand-bg;
+	padding: 15px;
+	.logo {
+		margin-top: -9px;
+		margin-bottom: -9px;
 	}
 }
 
-.table-simple {
-	border: 1px solid $color-medium;
-	thead {
-		background: $color-soft;
+// search
+.search {
+	@extend %clearfix;
+	input,
+	button {
+		position: relative;
+		float: left;
+		border: 0;
 	}
-	tbody tr {
-		border-top: 1px solid $color-soft;
+	input {
+		@include new-col('width', 10);
+		border-radius: 3px 0 0 3px;
+		box-shadow: none;
+		&:hover,
+		&:focus {
+			box-shadow: 0 0 3px 0 rgba(black, .5);
+			z-index: 5;
+		}
+	}
+	button {
+		@extend %input-align;
+		@include new-col('width', 2);
+		color: #fff;
+		border-radius: 0 3px 3px 0;
+		background-color: rgba(black, .25);
+		&:hover,
+		&:focus {
+			background-color: rgba(black, .4);
+		}
 	}
 }
 
-// forms
-
-#{$block-inputs} {
-	@extend %input-box;
-	@extend %disabled;
-
-	padding-left: 5px;
-	padding-right: 5px;
+// menu
+.menu {
+	@extend %clearfix;
+}
+.menu-item {
+	@extend %button;
+	@extend %z-index-0;
+	float: right;
+	display: block;
+	margin-left: 12px;
+	padding-left: 8px;
+	padding-right: 8px;
+	color: #fff;
+	&:hover {
+		@extend %z-index-hover;
+		@include button-var(#ffcc66);
+		color: $color-body;
+	}
+	&:active {
+		box-shadow: 0 2px 2px -1px rgba(black, .0);
+	}
 }
 
-#{$buttons} {
+// nav
+.nav-title {
+	@extend %uppercase;
+	@extend .muted;
+	margin-bottom: 6px;
+	font-size: 15px;
+}
+.nav {
+	@extend %no-ul;
+	@extend %leading;
+	li {
+		margin-top: 3px;
+	}
+	a {
+		@extend %no-a;
+		display: block;
+		height: 30px;
+		margin: 0 -6px;
+		padding: 0 6px;
+		border-radius: 2px;
+		line-height: 30px;
+		&:before {
+			float: right;
+		}
+		&:hover {
+			@extend %brand-bg;
+			color: white;
+		}
+	}
+}
+
+// page-title
+.page-title {
+	@extend %inset-default;
+	@extend %outset-default;
+	@extend %clearfix;
+	margin-bottom: 15px;
+	padding-top: 15px;
+	padding-bottom: 14px;
+	border-bottom: 1px solid $color-medium;
+	// background-color: $color-soft;
+	// box-shadow: 0 2px 5px -3px rgba(black, .4);
+	#{$headings} {
+		@extend .h2;
+		@extend .muted;
+		@extend %no-leading;
+		float: left;
+		line-height: 30px;
+	}
+	.actions {
+		float: right;
+	}
+	.counter {
+		display: inline-block;
+		float: left;
+		min-width: 20px;
+		margin: 3px 8px;
+		padding: 2px;
+		border-radius: 50%;
+		font-size: inherit;
+		line-height: 20px;
+		text-align: center;
+		color: #fff;
+		background: $color-anchor;
+		// box-shadow: inset 0 0px 2px 0px rgba(black, .25);
+	}
+}
+
+.layout-admin {
+	.page-title {
+		background-color: #fff;
+	}
+}
+
+// account choice
+.account-choice {
 	@extend %button;
 	@extend %z-index-button;
-	@extend %uppercase;
-	@extend %disabled;
-
-	font-size: $smaller;
+	@extend %input-border-hover;
+	width: 120px;
+	height: auto;
+	padding: 12px;
 	font-weight: bold;
-
+	color: $color-body;
+	background-color: #fff;
+	&:before {
+		@extend %center-block;
+	}
 	&:hover {
 		@extend %z-index-hover;
 	}
 	&:active {
 		@extend %z-index-0;
 	}
+}
 
-	&.btn-default {
-		@extend %input-border-hover;
-		color: $color-body;
-		background-color: #fff;
-	}
-	&.btn-primary {
-		@include button-var(#47a5da);
-		
-	}
-	&.btn-success {
-		@include button-var(#3dcb4b);
+// register landlord
+.register-landlord {
+	@extend %center-block;
+	width: 420px;
+	.input-col {
+		label {
+			@include new-col('width', 6); 
+		}
+		#{$inputs} {
+			@include new-col('width', 6);
+		}
+		.errorlist {
+			@include new-col('offset', 6);
+		}
 	}
 }
 
-form {
-	max-width: 40em;
-}
-
-fieldset {
+// listing - common
+.listing {
 	@extend %leading;
-
-	padding: 0;
-	border: 0;
-	border-top: 1px solid $color-medium;
-
-
-	legend {
-		@extend .h4;
-		@extend %leading;
-		// @extend %uppercase;
-		@extend .muted;
-
-		padding-right: 12px;
-		// text-align: center;
-		// font-size: $smaller;
-		// padding: 0 12px;
-	}
+	@extend %z-index-button;
+	overflow: hidden;
+	padding: 5px;
+	border: 1px solid $color-medium;
 }
-
-label {
-	&[for] {
-		cursor: pointer;
-	}
-}
-
-.input-group {
-	@extend %leading;
-
-	label {
-		width: 180px;
-		display: inline-block;
-	}
-	input,
-	select {
-		// display: block;
-		// width: 100%;
-	}
-}
-
-.input-append {
-	@extend %leading;
-
-	display: table;
-	width: 100%;
-	vertical-align: middle;
-
-	label,
-	input,
-	select {
-		display: table-cell;
-		border-radius: 0;
-	}
-
-	label {
-		@extend %clip;
-		@extend %button;
-		@extend %input-border-hover;
-
-		width: 96px;
-		border-right: 0;
-		font-size: $smaller;
+.listing-photo {
+	&.no-photo {
+		@extend %icon-no-photo;
+		&:before { opacity: .25; height: 90; margin-top: -15px; }
 		background-color: $color-soft;
 	}
-
-	input,
-	select {
-		position: relative;
-		z-index: 2;
-		width: 100%;
-	}
-
-	// label {
-	// 	@extend %clip;
-	// 	@extend %input-align;
-	// 	@extend .muted;
-
-	// 	position: relative;
-	// 	z-index: 2;
-	// 	display: block;
-	// 	width: 97px;
-	// 	margin-bottom: -30px;
-	// 	padding-left: 5px;
-	// 	padding-right: 5px;
-	// 	border-color: transparent;
-	// 	font-size: $smaller;
-	// 	// background-color: $color-soft;
-	// 	// &:after {
-	// 	// 	content: ":";
-	// 	// 	float: right;
-	// 	// }
-	// }
-	// input,
-	// select {
-	// 	width: 100%;
-	// 	padding-left: 96px;
-	// }
+}
+.listing-stats {
+	@extend .muted;
+}
+.listing-title {
+	@extend %clip;
+}
+.listing-published {
+	@extend .muted;
 }
 
-.input-inline {
-	ul {
-		@extend %no-ul;
+// listing - list
+.listings-list {
+	@extend %no-ul;
+	@include media-object('.listing-photo', 120px, '.listing-description');
+	.listing-photo {
+		height: 90px;
 	}
-
-	li {
-		display: inline-block;
+	.listing-description {
+		padding-left: 8px;
+	}
+	.listing-title {
+		@extend .h4;
+		clear: right;
+	}
+	.listing-stats {
+		@extend %dl-horizontal;
+		dt, dd {
+			width: 50%;
+		}
+		float: right;
+		margin: 0;
+		margin-left: 8px;
+		width: 120px;
 	}
 }
 
-.input-accomodation {
-
-	ul {
-		@extend %row;
-		@extend %leading;
+// tables
+.table-layout {
+	@extend %text-center;
+	table-layout: fixed;
+	td {
+		@include new-col('width', 1, 5);
 	}
-	li {
-		@extend %col;
-		@include new-col("width", 3) { display: block; };
+}
+
+.table-rent {
+	@extend %text-center;
+	@extend .td-vr;
+	table-layout: fixed;
+	td {
+		@include new-col('width', 1, 3);
 	}
-	label {
-		@extend %button;
-		@extend %input-border-hover;
-		@extend %z-index-button;
+}
 
-		&:hover {
-			@extend %z-index-hover;
+.table-stats {
+	@extend .table;
+	@extend .td-vr;
+	.icons {
+		div:before {
+			@extend %center-block;
 		}
-		&:active {
-			@extend %z-index-0;
-		}
-
-		display: block!important;
-		height: auto;
-		border-style: solid;
-		border-width: 1px;
-		padding: 5px;
+	}
+	.numbers {
+		font-size: $larger;
+		font-weight: bold;
+	}
+	.labels {
+		font-size: $smaller;
+	}
+	td {
+		@include new-col('width', 1, 5);
+		padding: 0 5px;
 		text-align: center;
 	}
-	input {
-		display: block;
-		width: 30px;
-		margin-left: auto;
-		margin-right: auto;		
+}
+
+// badges
+.badge {
+	@extend %badge;
+	&.primary {
+		color: #fff;
+		background-color: $brand-primary;
+	}
+	&.active {
+		color: #fff;
+		background-color: #3dcb4b;
+	}
+	&.passive {
+		@extend .muted;
+		background-color: #d6d6d6;
 	}
 }
 
-.box-input {
-	@extend %leading;
+.listing-gallery {
+	@extend %no-ul;
+}
+
+.section-photo {
 	position: relative;
-	label {
-		display: block;
-		color: $color-muted;
+	.photo-gallery {
+		@extend %no-ul;
+		float: right;
 		position: absolute;
 		top: 0;
-		left: 0;
-		width: 60px;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		padding: 1px 2px;
-		margin: 3px;
-		border-right: 1px solid $color-medium;
-		
-	}
-	input,
-	select,
-	textarea {
-		display: block;
-		padding: 3px 9px;
-		padding-left: 72px;
+		right: 100%;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-right: $gutter / 2;
+		li {
+			float: left;
+			width: 90px;
+			margin-bottom: $gutter / 2;
+			margin-left: $gutter / 2;
+			border-radius: 3px;
+			box-shadow: inset 0 0 2px 0 rgba(black, .25);
+			overflow: hidden;
+		}
 	}
 }
 
-.popout {
-	@extend %popout;
-}
-
-.modal-open .modal-container {
-	display: block;
-	overflow: hidden;
-}
-.modal-container {
-	display: none;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 1000;
-	padding: 72px 24px;
-	background: rgba(black, .75);
-}
-
-.modal {
-	display: none;
-	margin-left: auto;
-	margin-right: auto;
-	padding: $gutter;
-	border-radius: 2px;
-	background-color: #fff;
-	box-shadow: 0 0 5px 1px rgba(black, .5);
-
-	&.active {
-		display: block;
-	}
-}
-
-.modal-add-photo {
-	width: 40em;
-}
-
-// modules
-
-.nav-title {
-	@extend %uppercase;
-	@extend .muted;
-
-	margin-bottom: 0;
-	font-size: 15px;
-}
-
-.nav {
-	@extend %no-ul;
+// photo
+.listing-photo {
 	@extend %leading;
-	a {
-		@extend %no-a;
-		display: block;
-
-		&:hover {
-			@extend %brand-bg;
-		}
-	}
+	@extend %radius-medium;
+	overflow: hidden;
+	max-height: 420px;
 }
 
-.listing {
-	@extend %no-ul;
-	@extend %row;
-
-	max-width: 60em;
-
-	counter-reset: li;
-
-	li {
-		@extend %leading;
-		@extend %col;
-		@include new-col("width", 4);
-
-		counter-increment: li;
-	}
-}
-
-.housing-listed {
-	@extend %button;
-	// @extend %z-index-button;
-
-	display: block;
-	height: auto;
-	padding: 6px;
+.action-box,
+.listing-summary {
+	margin-bottom: $leading * 1.5;
 	border: 1px solid $color-medium;
-	border-radius: 5px;
-
-	.housing-type {
-		@extend %uppercase;
-		@extend .muted;
-
-		font-size: $smaller;
-		text-align: center;
-	}
-	.photo {
-		@extend %popout-container;
-
-		height: 120px;
-		margin: 6px -6px;
-		&.no-photo {
-			text-align: center;
-			background-color: $color-soft;
-		}
-	}
+	border-radius: 6px;
+	padding: $leading;
 }
-.housing-title {
-	@extend .h4;
-
-	display: block;
+.action-box {
+	@extend %text-center;
 }
 
-
-
-.logo {
-	float: left;
-	.img {
-		float: left;
-		margin-left: -9px;
-	}
+.section {
+	position: relative;
+	padding-top: $leading;
+	border-top: 1px solid $color-soft;
+}
+.section-title {
+	@extend %uppercase;
+	margin-bottom: $leading / 2;
+	font-size: $smaller;
 }
 
-.account {
+.jump-to-map {
+	@extend %button;
+	@extend %icon-map;
+	@extend %radius-small;
 	float: right;
+	height: auto;
+	padding: 8px;
+	border-color: transparent;
+	&:hover {
+		@extend	%z-index-hover;
+		border-color: $color-medium;
+		background-color: #fff;
+	}
+	&:active {
+		@extend %z-index-0;
+	}
 }
 
+.price {
+	font-size: $larger;
+	color: $brand-red;
+}
+
+// sections
+// .section {
+// 	@extend %row;
+// }
+// .section-title {
+// 	@extend %col;
+// 	@include new-col('width', 2);
+// 	h3 {
+// 		@extend .h5;
+// 		@extend .muted;
+// 		padding-top: $leading;
+// 		border-top: 1px solid $color-medium;
+// 	}
+// }
+// .section-body {
+// 	@extend %col;
+// 	@include new-col('width', 8);
+// 	padding-top: $leading;
+// 	border-top: 1px solid $color-medium;
+// }
+
+// map
+#map-canvas {
+	@extend %leading;
+	@extend %radius-medium;
+	overflow: hidden;
+	height: 300px;
+}

@@ -1,21 +1,42 @@
-.col, .input-accomodation li, .listing li, input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, button, input[type='submit'], input[type='button'], [role='button'], .btn, .input-append label, .input-accomodation label, .housing-listed, .content,
-.sidebar {
+.topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .layout-admin .main, .input-accomodation li, .col, input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, .btn, .btn-fake, .input-append label, .input-accomodation label, .menu-item, .account-choice, .jump-to-map, .input-col label, .input-inline label, .search button {
   box-sizing: border-box; }
 
-.row:before, .input-accomodation ul:before, .listing:before, .row:after, .input-accomodation ul:after, .listing:after {
+.layout-user .content:before, .layout-admin .content:before, .input-accomodation ul:before, .row:before, .input-col:before, .filters label:before, .clearfix:before, .dl-inline:before, .search:before, .menu:before, .page-title:before, .listings-list:before, .layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .filters label:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after, .listings-list:after {
   content: "";
   display: table; }
-.row:after, .input-accomodation ul:after, .listing:after {
+.layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .filters label:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after, .listings-list:after {
   clear: both; }
 
-.row, .input-accomodation ul, .listing {
+.vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.container, .topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .layout-admin .main, .input-accomodation li, .col, .page-title {
+  padding-left: 12px;
+  padding-right: 12px; }
+
+.layout-user .content, .layout-admin .content, .input-accomodation ul, .row, .page-title {
   margin-left: -12px;
   margin-right: -12px; }
 
-.col, .input-accomodation li, .listing li {
-  float: left;
-  padding-left: 12px;
-  padding-right: 12px; }
+.page-separator, fieldset {
+  padding-left: 24px;
+  padding-right: 24px; }
+
+.page-separator, fieldset {
+  margin-left: -24px;
+  margin-right: -24px; }
+
+.container, .modal, .layout-detail .main, .layout-passage .content, .input-accomodation li label:before, .input-accomodation input, .center-block, .hr-soft, .account-choice:before, .register-landlord, .table-stats .icons div:before {
+  margin-left: auto;
+  margin-right: auto; }
+
+.container {
+  width: 1008px; }
+
+.topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .layout-admin .main, .input-accomodation li, .col {
+  float: left; }
 
 .col-1 {
   width: 8.33333%; }
@@ -185,67 +206,98 @@
   position: relative;
   left: -100%; }
 
+.text-left {
+  text-align: left; }
+
+.text-center, .table-layout, .table-rent, .action-box {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.text-justifiy {
+  text-align: justifiy; }
+
 .topbar, .nav a:hover {
   background-color: #4088d4;
   background: linear-gradient(to right, #396ccf 0%, #47a5da 100%); }
 
-h1, h2, h3, h4, h5, h6, p, .p, .table, fieldset, fieldset legend, .input-group, .input-append, .input-accomodation ul, .box-input, .nav, .listing li {
+.table, .table-stats, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, .filters, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing, .listing-photo, #map-canvas {
   margin-top: auto;
   margin-bottom: 20px; }
 
-button, input[type='submit'], input[type='button'], [role='button'], .btn, .nav-title, .housing-listed .housing-type {
+.btn, .btn-fake, fieldset legend, .filter-name, .nav-title, .section-title {
   text-transform: uppercase;
   letter-spacing: .03em; }
 
-.input-append label {
+.input-inline label, .input-append label, .no-br, .dl-inline dt, .listing-title {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; }
+
+.listings-list .listing-stats dt {
+  float: left; }
+.listings-list .listing-stats dd {
+  float: right;
+  margin-left: 0; }
 
 .nav a {
   color: inherit;
   text-decoration: none; }
 
-.input-inline ul, .nav, .listing {
+.errorlist, .nav, .listings-list, .listing-gallery, .section-photo .photo-gallery {
   list-style: none;
   padding-left: 0; }
 
-.popout, .content {
+.errorlist, .no-leading, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6 {
+  margin-bottom: 0; }
+
+.badge {
+  display: inline-block;
+  padding: .2em .25em;
+  border-radius: 2px;
+  font-size: 80%;
+  line-height: 1; }
+
+.popout {
   z-index: 50;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25); }
 
-button, input[type='submit'], input[type='button'], [role='button'], .btn, .input-accomodation label {
+.layout-admin .main {
+  z-index: 100;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.25); }
+
+.btn, .account-choice, .listing {
   z-index: 100;
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.25); }
 
-button:hover, input[type='submit']:hover, input[type='button']:hover, [role='button']:hover, .btn:hover, .input-accomodation label:hover {
+.btn:hover, .btn-fake:hover, .input-accomodation label:hover, .menu-item:hover, .account-choice:hover, .jump-to-map:hover {
   z-index: 100;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.4); }
 
-input.disabled[type='text'], input.disabled[type='number'], input.disabled[type='password'], input.disabled[type='email'], input.disabled[type='search'], input.disabled[type='date'], input.disabled[type='datetime'], input.disabled[type='datetime-local'], input.disabled[type='month'], input.disabled[type='week'], input.disabled[type='tel'], input.disabled[type='time'], input.disabled[type='url'], select.disabled, textarea.disabled, button.disabled, input.disabled[type='submit'], input.disabled[type='button'], .disabled[role='button'], .disabled.btn, input.disabled[type='text']:hover, input.disabled[type='number']:hover, input.disabled[type='password']:hover, input.disabled[type='email']:hover, input.disabled[type='search']:hover, input.disabled[type='date']:hover, input.disabled[type='datetime']:hover, input.disabled[type='datetime-local']:hover, input.disabled[type='month']:hover, input.disabled[type='week']:hover, input.disabled[type='tel']:hover, input.disabled[type='time']:hover, input.disabled[type='url']:hover, select.disabled:hover, textarea.disabled:hover, button.disabled:hover, input.disabled[type='submit']:hover, input.disabled[type='button']:hover, .disabled[role='button']:hover, .disabled.btn:hover, input.disabled[type='text']:focus, input.disabled[type='number']:focus, input.disabled[type='password']:focus, input.disabled[type='email']:focus, input.disabled[type='search']:focus, input.disabled[type='date']:focus, input.disabled[type='datetime']:focus, input.disabled[type='datetime-local']:focus, input.disabled[type='month']:focus, input.disabled[type='week']:focus, input.disabled[type='tel']:focus, input.disabled[type='time']:focus, input.disabled[type='url']:focus, select.disabled:focus, textarea.disabled:focus, button.disabled:focus, input.disabled[type='submit']:focus, input.disabled[type='button']:focus, .disabled[role='button']:focus, .disabled.btn:focus, input.disabled[type='text']:active, input.disabled[type='number']:active, input.disabled[type='password']:active, input.disabled[type='email']:active, input.disabled[type='search']:active, input.disabled[type='date']:active, input.disabled[type='datetime']:active, input.disabled[type='datetime-local']:active, input.disabled[type='month']:active, input.disabled[type='week']:active, input.disabled[type='tel']:active, input.disabled[type='time']:active, input.disabled[type='url']:active, select.disabled:active, textarea.disabled:active, button.disabled:active, input.disabled[type='submit']:active, input.disabled[type='button']:active, .disabled[role='button']:active, .disabled.btn:active, input[disabled][type='text'], input[disabled][type='number'], input[disabled][type='password'], input[disabled][type='email'], input[disabled][type='search'], input[disabled][type='date'], input[disabled][type='datetime'], input[disabled][type='datetime-local'], input[disabled][type='month'], input[disabled][type='week'], input[disabled][type='tel'], input[disabled][type='time'], input[disabled][type='url'], select[disabled], textarea[disabled], button[disabled], input[disabled][type='submit'], input[disabled][type='button'], [disabled][role='button'], [disabled].btn, input[disabled][type='text']:hover, input[disabled][type='number']:hover, input[disabled][type='password']:hover, input[disabled][type='email']:hover, input[disabled][type='search']:hover, input[disabled][type='date']:hover, input[disabled][type='datetime']:hover, input[disabled][type='datetime-local']:hover, input[disabled][type='month']:hover, input[disabled][type='week']:hover, input[disabled][type='tel']:hover, input[disabled][type='time']:hover, input[disabled][type='url']:hover, select[disabled]:hover, textarea[disabled]:hover, button[disabled]:hover, input[disabled][type='submit']:hover, input[disabled][type='button']:hover, [disabled][role='button']:hover, [disabled].btn:hover, input[disabled][type='text']:focus, input[disabled][type='number']:focus, input[disabled][type='password']:focus, input[disabled][type='email']:focus, input[disabled][type='search']:focus, input[disabled][type='date']:focus, input[disabled][type='datetime']:focus, input[disabled][type='datetime-local']:focus, input[disabled][type='month']:focus, input[disabled][type='week']:focus, input[disabled][type='tel']:focus, input[disabled][type='time']:focus, input[disabled][type='url']:focus, select[disabled]:focus, textarea[disabled]:focus, button[disabled]:focus, input[disabled][type='submit']:focus, input[disabled][type='button']:focus, [disabled][role='button']:focus, [disabled].btn:focus, input[disabled][type='text']:active, input[disabled][type='number']:active, input[disabled][type='password']:active, input[disabled][type='email']:active, input[disabled][type='search']:active, input[disabled][type='date']:active, input[disabled][type='datetime']:active, input[disabled][type='datetime-local']:active, input[disabled][type='month']:active, input[disabled][type='week']:active, input[disabled][type='tel']:active, input[disabled][type='time']:active, input[disabled][type='url']:active, select[disabled]:active, textarea[disabled]:active, button[disabled]:active, input[disabled][type='submit']:active, input[disabled][type='button']:active, [disabled][role='button']:active, [disabled].btn:active, button:active, input[type='submit']:active, input[type='button']:active, [role='button']:active, .btn:active, .input-accomodation label:active {
+.disabled.btn, .disabled.btn-fake, input.disabled[type='text'], input.disabled[type='number'], input.disabled[type='password'], input.disabled[type='email'], input.disabled[type='search'], input.disabled[type='date'], input.disabled[type='datetime'], input.disabled[type='datetime-local'], input.disabled[type='month'], input.disabled[type='week'], input.disabled[type='tel'], input.disabled[type='time'], input.disabled[type='url'], select.disabled, textarea.disabled, .disabled.btn:hover, .disabled.btn-fake:hover, input.disabled[type='text']:hover, input.disabled[type='number']:hover, input.disabled[type='password']:hover, input.disabled[type='email']:hover, input.disabled[type='search']:hover, input.disabled[type='date']:hover, input.disabled[type='datetime']:hover, input.disabled[type='datetime-local']:hover, input.disabled[type='month']:hover, input.disabled[type='week']:hover, input.disabled[type='tel']:hover, input.disabled[type='time']:hover, input.disabled[type='url']:hover, select.disabled:hover, textarea.disabled:hover, .disabled.btn:focus, .disabled.btn-fake:focus, input.disabled[type='text']:focus, input.disabled[type='number']:focus, input.disabled[type='password']:focus, input.disabled[type='email']:focus, input.disabled[type='search']:focus, input.disabled[type='date']:focus, input.disabled[type='datetime']:focus, input.disabled[type='datetime-local']:focus, input.disabled[type='month']:focus, input.disabled[type='week']:focus, input.disabled[type='tel']:focus, input.disabled[type='time']:focus, input.disabled[type='url']:focus, select.disabled:focus, textarea.disabled:focus, .disabled.btn:active, .disabled.btn-fake:active, input.disabled[type='text']:active, input.disabled[type='number']:active, input.disabled[type='password']:active, input.disabled[type='email']:active, input.disabled[type='search']:active, input.disabled[type='date']:active, input.disabled[type='datetime']:active, input.disabled[type='datetime-local']:active, input.disabled[type='month']:active, input.disabled[type='week']:active, input.disabled[type='tel']:active, input.disabled[type='time']:active, input.disabled[type='url']:active, select.disabled:active, textarea.disabled:active, [disabled].btn, [disabled].btn-fake, input[disabled][type='text'], input[disabled][type='number'], input[disabled][type='password'], input[disabled][type='email'], input[disabled][type='search'], input[disabled][type='date'], input[disabled][type='datetime'], input[disabled][type='datetime-local'], input[disabled][type='month'], input[disabled][type='week'], input[disabled][type='tel'], input[disabled][type='time'], input[disabled][type='url'], select[disabled], textarea[disabled], [disabled].btn:hover, [disabled].btn-fake:hover, input[disabled][type='text']:hover, input[disabled][type='number']:hover, input[disabled][type='password']:hover, input[disabled][type='email']:hover, input[disabled][type='search']:hover, input[disabled][type='date']:hover, input[disabled][type='datetime']:hover, input[disabled][type='datetime-local']:hover, input[disabled][type='month']:hover, input[disabled][type='week']:hover, input[disabled][type='tel']:hover, input[disabled][type='time']:hover, input[disabled][type='url']:hover, select[disabled]:hover, textarea[disabled]:hover, [disabled].btn:focus, [disabled].btn-fake:focus, input[disabled][type='text']:focus, input[disabled][type='number']:focus, input[disabled][type='password']:focus, input[disabled][type='email']:focus, input[disabled][type='search']:focus, input[disabled][type='date']:focus, input[disabled][type='datetime']:focus, input[disabled][type='datetime-local']:focus, input[disabled][type='month']:focus, input[disabled][type='week']:focus, input[disabled][type='tel']:focus, input[disabled][type='time']:focus, input[disabled][type='url']:focus, select[disabled]:focus, textarea[disabled]:focus, [disabled].btn:active, [disabled].btn-fake:active, input[disabled][type='text']:active, input[disabled][type='number']:active, input[disabled][type='password']:active, input[disabled][type='email']:active, input[disabled][type='search']:active, input[disabled][type='date']:active, input[disabled][type='datetime']:active, input[disabled][type='datetime-local']:active, input[disabled][type='month']:active, input[disabled][type='week']:active, input[disabled][type='tel']:active, input[disabled][type='time']:active, input[disabled][type='url']:active, select[disabled]:active, textarea[disabled]:active, .btn:active, .btn-fake:active, .input-accomodation label:active, .menu-item, .account-choice:active, .jump-to-map:active {
   z-index: 1;
   box-shadow: none; }
 
-input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, button, input[type='submit'], input[type='button'], [role='button'], .btn, .input-append label, .input-accomodation label, .housing-listed {
+input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, .btn, .btn-fake, .input-append label, .input-accomodation label, .menu-item, .account-choice, .jump-to-map, .input-col label, .input-inline label, .search button {
   height: 30px;
   padding-top: 4px;
   padding-bottom: 4px;
-  border-width: 1px;
+  border: 1px solid transparent;
   line-height: 20px;
-  border-style: solid;
   vertical-align: middle; }
 
-input[type='text']:focus, input[type='number']:focus, input[type='password']:focus, input[type='email']:focus, input[type='search']:focus, input[type='date']:focus, input[type='datetime']:focus, input[type='datetime-local']:focus, input[type='month']:focus, input[type='week']:focus, input[type='tel']:focus, input[type='time']:focus, input[type='url']:focus, select:focus, textarea:focus, button:focus, input[type='submit']:focus, input[type='button']:focus, [role='button']:focus, .btn:focus, .input-append label:focus, .input-accomodation label:focus, .housing-listed:focus {
+input[type='text']:focus, input[type='number']:focus, input[type='password']:focus, input[type='email']:focus, input[type='search']:focus, input[type='date']:focus, input[type='datetime']:focus, input[type='datetime-local']:focus, input[type='month']:focus, input[type='week']:focus, input[type='tel']:focus, input[type='time']:focus, input[type='url']:focus, select:focus, textarea:focus, .btn:focus, .btn-fake:focus, .input-append label:focus, .input-accomodation label:focus, .menu-item:focus, .account-choice:focus, .jump-to-map:focus {
   outline: none;
   border-color: #4283d6 !important;
   box-shadow: 0 0 2px 1px rgba(66, 131, 214, 0.5); }
 
-input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, button.btn-default, input[type='submit'].btn-default, input[type='button'].btn-default, [role='button'].btn-default, .btn.btn-default, .input-append label, .input-accomodation label {
+input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, .btn.default, .input-append label, .input-accomodation label, .account-choice {
   border-color: #ddd; }
-  input[type='text']:hover, input[type='number']:hover, input[type='password']:hover, input[type='email']:hover, input[type='search']:hover, input[type='date']:hover, input[type='datetime']:hover, input[type='datetime-local']:hover, input[type='month']:hover, input[type='week']:hover, input[type='tel']:hover, input[type='time']:hover, input[type='url']:hover, select:hover, textarea:hover, button.btn-default:hover, input[type='submit'].btn-default:hover, input[type='button'].btn-default:hover, [role='button'].btn-default:hover, .btn.btn-default:hover, .input-append label:hover, .input-accomodation label:hover {
+  input[type='text']:hover, input[type='number']:hover, input[type='password']:hover, input[type='email']:hover, input[type='search']:hover, input[type='date']:hover, input[type='datetime']:hover, input[type='datetime-local']:hover, input[type='month']:hover, input[type='week']:hover, input[type='tel']:hover, input[type='time']:hover, input[type='url']:hover, select:hover, textarea:hover, .btn.default:hover, .input-append label:hover, .input-accomodation label:hover, .account-choice:hover {
     border-color: #c4c4c4; }
 
-input.disabled[type='text'], input.disabled[type='number'], input.disabled[type='password'], input.disabled[type='email'], input.disabled[type='search'], input.disabled[type='date'], input.disabled[type='datetime'], input.disabled[type='datetime-local'], input.disabled[type='month'], input.disabled[type='week'], input.disabled[type='tel'], input.disabled[type='time'], input.disabled[type='url'], select.disabled, textarea.disabled, button.disabled, input.disabled[type='submit'], input.disabled[type='button'], .disabled[role='button'], .disabled.btn, input.disabled[type='text']:hover, input.disabled[type='number']:hover, input.disabled[type='password']:hover, input.disabled[type='email']:hover, input.disabled[type='search']:hover, input.disabled[type='date']:hover, input.disabled[type='datetime']:hover, input.disabled[type='datetime-local']:hover, input.disabled[type='month']:hover, input.disabled[type='week']:hover, input.disabled[type='tel']:hover, input.disabled[type='time']:hover, input.disabled[type='url']:hover, select.disabled:hover, textarea.disabled:hover, button.disabled:hover, input.disabled[type='submit']:hover, input.disabled[type='button']:hover, .disabled[role='button']:hover, .disabled.btn:hover, input.disabled[type='text']:focus, input.disabled[type='number']:focus, input.disabled[type='password']:focus, input.disabled[type='email']:focus, input.disabled[type='search']:focus, input.disabled[type='date']:focus, input.disabled[type='datetime']:focus, input.disabled[type='datetime-local']:focus, input.disabled[type='month']:focus, input.disabled[type='week']:focus, input.disabled[type='tel']:focus, input.disabled[type='time']:focus, input.disabled[type='url']:focus, select.disabled:focus, textarea.disabled:focus, button.disabled:focus, input.disabled[type='submit']:focus, input.disabled[type='button']:focus, .disabled[role='button']:focus, .disabled.btn:focus, input.disabled[type='text']:active, input.disabled[type='number']:active, input.disabled[type='password']:active, input.disabled[type='email']:active, input.disabled[type='search']:active, input.disabled[type='date']:active, input.disabled[type='datetime']:active, input.disabled[type='datetime-local']:active, input.disabled[type='month']:active, input.disabled[type='week']:active, input.disabled[type='tel']:active, input.disabled[type='time']:active, input.disabled[type='url']:active, select.disabled:active, textarea.disabled:active, button.disabled:active, input.disabled[type='submit']:active, input.disabled[type='button']:active, .disabled[role='button']:active, .disabled.btn:active, input[disabled][type='text'], input[disabled][type='number'], input[disabled][type='password'], input[disabled][type='email'], input[disabled][type='search'], input[disabled][type='date'], input[disabled][type='datetime'], input[disabled][type='datetime-local'], input[disabled][type='month'], input[disabled][type='week'], input[disabled][type='tel'], input[disabled][type='time'], input[disabled][type='url'], select[disabled], textarea[disabled], button[disabled], input[disabled][type='submit'], input[disabled][type='button'], [disabled][role='button'], [disabled].btn, input[disabled][type='text']:hover, input[disabled][type='number']:hover, input[disabled][type='password']:hover, input[disabled][type='email']:hover, input[disabled][type='search']:hover, input[disabled][type='date']:hover, input[disabled][type='datetime']:hover, input[disabled][type='datetime-local']:hover, input[disabled][type='month']:hover, input[disabled][type='week']:hover, input[disabled][type='tel']:hover, input[disabled][type='time']:hover, input[disabled][type='url']:hover, select[disabled]:hover, textarea[disabled]:hover, button[disabled]:hover, input[disabled][type='submit']:hover, input[disabled][type='button']:hover, [disabled][role='button']:hover, [disabled].btn:hover, input[disabled][type='text']:focus, input[disabled][type='number']:focus, input[disabled][type='password']:focus, input[disabled][type='email']:focus, input[disabled][type='search']:focus, input[disabled][type='date']:focus, input[disabled][type='datetime']:focus, input[disabled][type='datetime-local']:focus, input[disabled][type='month']:focus, input[disabled][type='week']:focus, input[disabled][type='tel']:focus, input[disabled][type='time']:focus, input[disabled][type='url']:focus, select[disabled]:focus, textarea[disabled]:focus, button[disabled]:focus, input[disabled][type='submit']:focus, input[disabled][type='button']:focus, [disabled][role='button']:focus, [disabled].btn:focus, input[disabled][type='text']:active, input[disabled][type='number']:active, input[disabled][type='password']:active, input[disabled][type='email']:active, input[disabled][type='search']:active, input[disabled][type='date']:active, input[disabled][type='datetime']:active, input[disabled][type='datetime-local']:active, input[disabled][type='month']:active, input[disabled][type='week']:active, input[disabled][type='tel']:active, input[disabled][type='time']:active, input[disabled][type='url']:active, select[disabled]:active, textarea[disabled]:active, button[disabled]:active, input[disabled][type='submit']:active, input[disabled][type='button']:active, [disabled][role='button']:active, [disabled].btn:active {
+.disabled.btn, .disabled.btn-fake, input.disabled[type='text'], input.disabled[type='number'], input.disabled[type='password'], input.disabled[type='email'], input.disabled[type='search'], input.disabled[type='date'], input.disabled[type='datetime'], input.disabled[type='datetime-local'], input.disabled[type='month'], input.disabled[type='week'], input.disabled[type='tel'], input.disabled[type='time'], input.disabled[type='url'], select.disabled, textarea.disabled, .disabled.btn:hover, .disabled.btn-fake:hover, input.disabled[type='text']:hover, input.disabled[type='number']:hover, input.disabled[type='password']:hover, input.disabled[type='email']:hover, input.disabled[type='search']:hover, input.disabled[type='date']:hover, input.disabled[type='datetime']:hover, input.disabled[type='datetime-local']:hover, input.disabled[type='month']:hover, input.disabled[type='week']:hover, input.disabled[type='tel']:hover, input.disabled[type='time']:hover, input.disabled[type='url']:hover, select.disabled:hover, textarea.disabled:hover, .disabled.btn:focus, .disabled.btn-fake:focus, input.disabled[type='text']:focus, input.disabled[type='number']:focus, input.disabled[type='password']:focus, input.disabled[type='email']:focus, input.disabled[type='search']:focus, input.disabled[type='date']:focus, input.disabled[type='datetime']:focus, input.disabled[type='datetime-local']:focus, input.disabled[type='month']:focus, input.disabled[type='week']:focus, input.disabled[type='tel']:focus, input.disabled[type='time']:focus, input.disabled[type='url']:focus, select.disabled:focus, textarea.disabled:focus, .disabled.btn:active, .disabled.btn-fake:active, input.disabled[type='text']:active, input.disabled[type='number']:active, input.disabled[type='password']:active, input.disabled[type='email']:active, input.disabled[type='search']:active, input.disabled[type='date']:active, input.disabled[type='datetime']:active, input.disabled[type='datetime-local']:active, input.disabled[type='month']:active, input.disabled[type='week']:active, input.disabled[type='tel']:active, input.disabled[type='time']:active, input.disabled[type='url']:active, select.disabled:active, textarea.disabled:active, [disabled].btn, [disabled].btn-fake, input[disabled][type='text'], input[disabled][type='number'], input[disabled][type='password'], input[disabled][type='email'], input[disabled][type='search'], input[disabled][type='date'], input[disabled][type='datetime'], input[disabled][type='datetime-local'], input[disabled][type='month'], input[disabled][type='week'], input[disabled][type='tel'], input[disabled][type='time'], input[disabled][type='url'], select[disabled], textarea[disabled], [disabled].btn:hover, [disabled].btn-fake:hover, input[disabled][type='text']:hover, input[disabled][type='number']:hover, input[disabled][type='password']:hover, input[disabled][type='email']:hover, input[disabled][type='search']:hover, input[disabled][type='date']:hover, input[disabled][type='datetime']:hover, input[disabled][type='datetime-local']:hover, input[disabled][type='month']:hover, input[disabled][type='week']:hover, input[disabled][type='tel']:hover, input[disabled][type='time']:hover, input[disabled][type='url']:hover, select[disabled]:hover, textarea[disabled]:hover, [disabled].btn:focus, [disabled].btn-fake:focus, input[disabled][type='text']:focus, input[disabled][type='number']:focus, input[disabled][type='password']:focus, input[disabled][type='email']:focus, input[disabled][type='search']:focus, input[disabled][type='date']:focus, input[disabled][type='datetime']:focus, input[disabled][type='datetime-local']:focus, input[disabled][type='month']:focus, input[disabled][type='week']:focus, input[disabled][type='tel']:focus, input[disabled][type='time']:focus, input[disabled][type='url']:focus, select[disabled]:focus, textarea[disabled]:focus, [disabled].btn:active, [disabled].btn-fake:active, input[disabled][type='text']:active, input[disabled][type='number']:active, input[disabled][type='password']:active, input[disabled][type='email']:active, input[disabled][type='search']:active, input[disabled][type='date']:active, input[disabled][type='datetime']:active, input[disabled][type='datetime-local']:active, input[disabled][type='month']:active, input[disabled][type='week']:active, input[disabled][type='tel']:active, input[disabled][type='time']:active, input[disabled][type='url']:active, select[disabled]:active, textarea[disabled]:active {
   cursor: default;
   border-color: transparent;
   color: gray;
@@ -254,15 +306,24 @@ input.disabled[type='text'], input.disabled[type='number'], input.disabled[type=
 input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea {
   box-shadow: inset 0 2px 2px -2px rgba(0, 0, 0, 0.25); }
 
-button, input[type='submit'], input[type='button'], [role='button'], .btn, .input-append label, .input-accomodation label, .housing-listed {
+.btn, .btn-fake, .input-append label, .input-accomodation label, .menu-item, .account-choice, .jump-to-map {
   display: inline-block;
   position: relative;
   padding-left: 8px;
   padding-right: 8px;
   border-radius: 2px;
+  text-align: center;
   transition: all 120ms ease-out; }
+  .btn:hover, .btn-fake:hover, .input-append label:hover, .input-accomodation label:hover, .menu-item:hover, .account-choice:hover, .jump-to-map:hover {
+    cursor: pointer; }
 
-.housing-listed .photo {
+.jump-to-map {
+  border-radius: 3px; }
+
+.listing-photo, #map-canvas {
+  border-radius: 6px; }
+
+[data-popout] {
   position: relative; }
 
 .popout {
@@ -275,132 +336,246 @@ button, input[type='submit'], input[type='button'], [role='button'], .btn, .inpu
   background-color: #fff; }
   .active.popout {
     display: block; }
+  .right.popout {
+    right: 0;
+    left: auto; }
 
-html,
-body {
-  height: 100%; }
-
-body {
-  position: relative;
-  font-family: "Karla", sans-serif;
-  font-size: 100%;
-  line-height: 1.4;
-  color: #444;
-  text-rendering: optimizeLegibility; }
-
-.topbar {
-  height: 60px;
-  padding: 0 20px;
-  color: #fff; }
-
-.content,
-.sidebar {
-  position: absolute;
-  top: 60px;
-  bottom: 0;
-  overflow: auto; }
-
-.content {
-  left: 240px;
+.modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
   right: 0;
-  padding: 20px 24px; }
-
-.sidebar {
+  bottom: 0;
   left: 0;
-  width: 240px;
-  padding: 20px;
+  z-index: 1000;
+  padding: 72px 24px;
+  background: rgba(0, 0, 0, 0.75); }
+
+.modal {
+  display: none;
+  padding: 24px;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5); }
+  .active.modal {
+    display: block; }
+
+.modal-title {
+  margin: -24px -24px 24px;
+  padding: 12px 24px;
+  background-color: #eee;
+  border-bottom: 1px solid #ddd; }
+
+.topbar .logo {
+  width: 20%; }
+.topbar .search {
+  width: 40%; }
+.topbar .menu {
+  width: 40%; }
+
+.layout-user .aside {
+  width: 25%; }
+.layout-user .main {
+  width: 75%; }
+
+.layout-detail .main {
+  width: 60%; }
+
+.layout-admin {
   background-color: #eee; }
+  .layout-admin .aside {
+    width: 25%; }
+  .layout-admin .main {
+    width: 75%;
+    position: relative;
+    top: -60px;
+    background-color: #fff; }
 
-.muted, fieldset legend, .nav-title, .housing-listed .housing-type {
-  color: gray; }
+.layout-passage .logo {
+  margin-top: 5em;
+  text-align: center; }
+  .layout-passage .logo .img {
+    display: inline-block; }
+.layout-passage .content {
+  max-width: 40em; }
+  .layout-passage .content h1 {
+    color: #396ccf; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Karla", sans-serif;
-  line-height: 1.2; }
-
-a {
-  color: #05B;
-  text-decoration: none; }
-
-.h1 {
-  font-size: 2rem; }
-
-.h2 {
-  font-size: 1.8rem; }
-
-.h3 {
-  font-size: 1.6rem; }
-
-.h4, fieldset legend, .housing-title {
-  font-size: 1.4rem; }
-
-.h5 {
-  font-size: 1.2rem; }
-
-.h6 {
-  font-size: 1rem; }
-
-.img img {
-  max-width: 100%;
-  height: auto; }
-
-.table {
-  text-align: left; }
-  .table td, .table th {
-    padding: 1px 5px; }
+.table, .table-stats {
+  width: 100%; }
 
 .table-simple {
-  border: 1px solid #ddd; }
-  .table-simple thead {
-    background: #eee; }
+  text-align: left; }
+  .table-simple th {
+    font-weight: normal; }
+  .table-simple td, .table-simple th {
+    padding: 5px 8px; }
   .table-simple tbody tr {
     border-top: 1px solid #eee; }
+
+.td-vr td, .table-rent td, .table-stats td {
+  border-right: 1px solid #ddd; }
+  .td-vr td:last-child, .table-rent td:last-child, .table-stats td:last-child {
+    border-right: 0; }
+
+.btn {
+  font-size: 80%;
+  font-weight: bold; }
+  .btn.default {
+    color: #444;
+    background-color: #fff; }
+  .btn.primary {
+    border-color: #396ccf;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    background-color: #396ccf; }
+    .btn.primary:hover {
+      background: #4e7bd4; }
+    .btn.primary:active {
+      background: #2f60c0; }
+  .btn.success {
+    border-color: #3dcb4b;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    background-color: #3dcb4b; }
+    .btn.success:hover {
+      background: #51d05e; }
+    .btn.success:active {
+      background: #32bc40; }
+
+.btn-fake {
+  border-color: transparent;
+  font-size: 80%;
+  font-weight: bold;
+  color: inherit; }
+  .btn-fake:hover {
+    border-color: #ddd;
+    background-color: #fff; }
 
 input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea {
   padding-left: 5px;
   padding-right: 5px; }
 
-button, input[type='submit'], input[type='button'], [role='button'], .btn {
-  font-size: 80%;
-  font-weight: bold; }
-  button.btn-default, input[type='submit'].btn-default, input[type='button'].btn-default, [role='button'].btn-default, .btn.btn-default {
-    color: #444;
-    background-color: #fff; }
-  button.btn-primary, input[type='submit'].btn-primary, input[type='button'].btn-primary, [role='button'].btn-primary, .btn.btn-primary {
-    border-color: #47a5da;
-    color: #fff;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-    background-color: #47a5da; }
-    button.btn-primary:hover, input[type='submit'].btn-primary:hover, input[type='button'].btn-primary:hover, [role='button'].btn-primary:hover, .btn.btn-primary:hover {
-      background: #5cafde; }
-    button.btn-primary:active, input[type='submit'].btn-primary:active, input[type='button'].btn-primary:active, [role='button'].btn-primary:active, .btn.btn-primary:active {
-      background: #329bd6; }
-  button.btn-success, input[type='submit'].btn-success, input[type='button'].btn-success, [role='button'].btn-success, .btn.btn-success {
-    border-color: #3dcb4b;
-    color: #fff;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-    background-color: #3dcb4b; }
-    button.btn-success:hover, input[type='submit'].btn-success:hover, input[type='button'].btn-success:hover, [role='button'].btn-success:hover, .btn.btn-success:hover {
-      background: #51d05e; }
-    button.btn-success:active, input[type='submit'].btn-success:active, input[type='button'].btn-success:active, [role='button'].btn-success:active, .btn.btn-success:active {
-      background: #32bc40; }
-
-form {
-  max-width: 40em; }
-
-fieldset {
-  padding: 0;
-  border: 0;
-  border-top: 1px solid #ddd; }
-  fieldset legend {
-    padding-right: 12px; }
-
 label[for] {
   cursor: pointer; }
 
-.input-group label {
-  width: 180px;
-  display: inline-block; }
+.input-block input, .input-block select, .input-block textarea {
+  display: block;
+  width: 100%; }
+
+.input-col label,
+.input-col input, .input-col select, .input-col textarea {
+  float: left;
+  min-width: 25%; }
+
+.input-inline label {
+  display: inline-block;
+  min-width: 120px; }
+
+.errorlist {
+  clear: both;
+  color: red; }
+
+.input-accomodation li:nth-child(1) label:before, .input-accomodation li:nth-child(2) label:before, .input-accomodation li:nth-child(3) label:before, .input-accomodation li:nth-child(4) label:before, .listing-photo.no-photo:before, .icon-reports:before, .icon-settings:before, .icon-listings:before, .icon-landlords:before, .icon-customers:before, .icon-contracts:before, .icon-overview:before, .icon-visitors:before, .icon-rooms:before, .icon-bedrooms:before, .icon-size:before, .icon-bathrooms:before, .icon-toilets:before, .icon-map:before, .jump-to-map:before {
+  content: "";
+  display: inline-block;
+  overflow: hidden;
+  background-image: url("../img/ah-icons.png"); }
+
+.input-accomodation li:nth-child(1) label:before {
+  width: 90px;
+  height: 90px;
+  background-position: 0px 0px; }
+
+.input-accomodation li:nth-child(2) label:before {
+  width: 90px;
+  height: 90px;
+  background-position: -90px 0px; }
+
+.input-accomodation li:nth-child(3) label:before {
+  width: 90px;
+  height: 90px;
+  background-position: -180px 0px; }
+
+.input-accomodation li:nth-child(4) label:before {
+  width: 90px;
+  height: 90px;
+  background-position: -270px 0px; }
+
+.listing-photo.no-photo:before {
+  width: 90px;
+  height: 90px;
+  background-position: -360px 0px; }
+
+.icon-reports:before {
+  width: 30px;
+  height: 30px;
+  background-position: 0px -90px; }
+
+.icon-settings:before {
+  width: 30px;
+  height: 30px;
+  background-position: -30px -90px; }
+
+.icon-listings:before {
+  width: 30px;
+  height: 30px;
+  background-position: -60px -90px; }
+
+.icon-landlords:before {
+  width: 30px;
+  height: 30px;
+  background-position: -90px -90px; }
+
+.icon-customers:before {
+  width: 30px;
+  height: 30px;
+  background-position: -120px -90px; }
+
+.icon-contracts:before {
+  width: 30px;
+  height: 30px;
+  background-position: -150px -90px; }
+
+.icon-overview:before {
+  width: 30px;
+  height: 30px;
+  background-position: -180px -90px; }
+
+.icon-visitors:before {
+  width: 30px;
+  height: 30px;
+  background-position: -240px -90px; }
+
+.icon-rooms:before {
+  width: 30px;
+  height: 30px;
+  background-position: -270px -90px; }
+
+.icon-bedrooms:before {
+  width: 30px;
+  height: 30px;
+  background-position: -300px -90px; }
+
+.icon-size:before {
+  width: 30px;
+  height: 30px;
+  background-position: -330px -90px; }
+
+.icon-bathrooms:before {
+  width: 30px;
+  height: 30px;
+  background-position: -360px -90px; }
+
+.icon-toilets:before {
+  width: 30px;
+  height: 30px;
+  background-position: -390px -90px; }
+
+.icon-map:before, .jump-to-map:before {
+  width: 30px;
+  height: 30px;
+  background-position: -420px -90px; }
 
 .input-append {
   display: table;
@@ -422,14 +597,11 @@ label[for] {
     z-index: 2;
     width: 100%; }
 
-.input-inline li {
-  display: inline-block; }
-
 .input-accomodation li {
-  width: 25%;
-  display: block; }
+  width: 25%; }
 .input-accomodation label {
   display: block !important;
+  width: 100%;
   height: auto;
   border-style: solid;
   border-width: 1px;
@@ -437,101 +609,349 @@ label[for] {
   text-align: center; }
 .input-accomodation input {
   display: block;
-  width: 30px;
-  margin-left: auto;
-  margin-right: auto; }
+  width: 30px; }
 
-.box-input {
-  position: relative; }
-  .box-input label {
+.contracts {
+  width: 100%; }
+
+fieldset {
+  border: 0;
+  border-top: 1px solid #ddd; }
+  fieldset legend {
+    padding-right: 12px;
+    text-align: center;
+    font-size: 80%;
+    padding: 0 12px; }
+
+.filters {
+  max-width: 180px; }
+  .filters label {
     display: block;
-    color: gray;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    padding: 1px 2px;
-    margin: 3px;
-    border-right: 1px solid #ddd; }
-  .box-input input,
-  .box-input select,
-  .box-input textarea {
-    display: block;
-    padding: 3px 9px;
-    padding-left: 72px; }
+    overflow: hidden; }
+  .filters input {
+    vertical-align: baseline; }
+
+.filter-name {
+  margin-bottom: 10px; }
+
+html,
+body {
+  height: 100%;
+  overflow: auto; }
+
+.pull-left {
+  float: left !important; }
+
+.pull-right {
+  float: right !important; }
+
+body {
+  position: relative;
+  font-family: "Karla", sans-serif;
+  font-size: 100%;
+  line-height: 1.4;
+  color: #444;
+  text-rendering: optimizeLegibility; }
+
+.small, .errorlist {
+  font-size: 80%; }
+
+.large {
+  font-size: 120%; }
+
+.muted, .table-simple th, fieldset legend, .filter-name, .quiet, .dl-inline dt, .modal-title h2, .nav-title, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6, .listing-stats, .listing-published, .badge.passive {
+  color: gray; }
+
+.quiet a {
+  color: #676767; }
+  .quiet a:hover {
+    color: #444; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Karla", sans-serif;
+  line-height: 1.2;
+  font-weight: normal; }
+
+a {
+  color: #05B;
+  text-decoration: none; }
+
+.h1 {
+  font-size: 2rem; }
+
+.h2, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6 {
+  font-size: 1.8rem; }
+
+.h3 {
+  font-size: 1.6rem; }
+
+.h4, .listings-list .listing-title {
+  font-size: 1.4rem; }
+
+.h5 {
+  font-size: 1.2rem; }
+
+.h6, .filter-name {
+  font-size: 1rem; }
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 0;
+  border: 0;
+  border-bottom: 1px solid #ddd; }
+
+.hr-soft {
+  max-width: 5em; }
+
+.dl-inline dt {
+  float: left;
+  width: 120px; }
+.dl-inline dd {
+  margin-left: 120px; }
+.dl-inline dt, .dl-inline dd {
+  margin-top: 3px; }
+.dl-inline dt {
+  clear: left; }
+.dl-inline dd {
+  font-weight: bold; }
+
+.img img {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
+[data-popout='hover']:hover .popout {
+  display: block; }
 
 .modal-open .modal-container {
   display: block;
   overflow: hidden; }
 
-.modal-container {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  padding: 72px 24px;
-  background: rgba(0, 0, 0, 0.75); }
+.modal-title h2 {
+  margin-bottom: 0; }
 
-.modal {
-  display: none;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 24px;
-  border-radius: 2px;
-  background-color: #fff;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5); }
-  .modal.active {
-    display: block; }
+.topbar {
+  padding: 15px; }
+  .topbar .logo {
+    margin-top: -9px;
+    margin-bottom: -9px; }
 
-.modal-add-photo {
-  width: 40em; }
+.search input,
+.search button {
+  position: relative;
+  float: left;
+  border: 0; }
+.search input {
+  width: 83.33333%;
+  border-radius: 3px 0 0 3px;
+  box-shadow: none; }
+  .search input:hover, .search input:focus {
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+    z-index: 5; }
+.search button {
+  width: 16.66667%;
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(0, 0, 0, 0.25); }
+  .search button:hover, .search button:focus {
+    background-color: rgba(0, 0, 0, 0.4); }
+
+.menu-item {
+  float: right;
+  display: block;
+  margin-left: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: #fff; }
+  .menu-item:hover {
+    border-color: #ffcc66;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    background-color: #ffcc66;
+    color: #444; }
+    .menu-item:hover:hover {
+      background: #ffd480; }
+    .menu-item:hover:active {
+      background: #ffc34d; }
+  .menu-item:active {
+    box-shadow: 0 2px 2px -1px transparent; }
 
 .nav-title {
-  margin-bottom: 0;
+  margin-bottom: 6px;
   font-size: 15px; }
 
+.nav li {
+  margin-top: 3px; }
 .nav a {
-  display: block; }
+  display: block;
+  height: 30px;
+  margin: 0 -6px;
+  padding: 0 6px;
+  border-radius: 2px;
+  line-height: 30px; }
+  .nav a:before {
+    float: right; }
+  .nav a:hover {
+    color: white; }
+
+.page-title {
+  margin-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #ddd; }
+  .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6 {
+    float: left;
+    line-height: 30px; }
+  .page-title .actions {
+    float: right; }
+  .page-title .counter {
+    display: inline-block;
+    float: left;
+    min-width: 20px;
+    margin: 3px 8px;
+    padding: 2px;
+    border-radius: 50%;
+    font-size: inherit;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    background: #05B; }
+
+.layout-admin .page-title {
+  background-color: #fff; }
+
+.account-choice {
+  width: 120px;
+  height: auto;
+  padding: 12px;
+  font-weight: bold;
+  color: #444;
+  background-color: #fff; }
+
+.register-landlord {
+  width: 420px; }
+  .register-landlord .input-col label {
+    width: 50%; }
+  .register-landlord .input-col input, .register-landlord .input-col select, .register-landlord .input-col textarea {
+    width: 50%; }
+  .register-landlord .input-col .errorlist {
+    margin-left: 50%; }
 
 .listing {
-  max-width: 60em;
-  counter-reset: li; }
-  .listing li {
-    width: 33.33333%;
-    counter-increment: li; }
+  overflow: hidden;
+  padding: 5px;
+  border: 1px solid #ddd; }
 
-.housing-listed {
-  display: block;
-  height: auto;
-  padding: 6px;
+.listing-photo.no-photo {
+  background-color: #eee; }
+  .listing-photo.no-photo:before {
+    opacity: .25;
+    height: 90;
+    margin-top: -15px; }
+
+.listings-list .listing-photo {
+  float: left;
+  width: 120px; }
+.listings-list .listing-description {
+  margin-left: 120px; }
+.listings-list .listing-photo {
+  height: 90px; }
+.listings-list .listing-description {
+  padding-left: 8px; }
+.listings-list .listing-title {
+  clear: right; }
+.listings-list .listing-stats {
+  float: right;
+  margin: 0;
+  margin-left: 8px;
+  width: 120px; }
+  .listings-list .listing-stats dt, .listings-list .listing-stats dd {
+    width: 50%; }
+
+.table-layout {
+  table-layout: fixed; }
+  .table-layout td {
+    width: 20%; }
+
+.table-rent {
+  table-layout: fixed; }
+  .table-rent td {
+    width: 33.33333%; }
+
+.table-stats .numbers {
+  font-size: 120%;
+  font-weight: bold; }
+.table-stats .labels {
+  font-size: 80%; }
+.table-stats td {
+  width: 20%;
+  padding: 0 5px;
+  text-align: center; }
+
+.badge.primary {
+  color: #fff;
+  background-color: #396ccf; }
+.badge.active {
+  color: #fff;
+  background-color: #3dcb4b; }
+.badge.passive {
+  background-color: #d6d6d6; }
+
+.section-photo {
+  position: relative; }
+  .section-photo .photo-gallery {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 12px; }
+    .section-photo .photo-gallery li {
+      float: left;
+      width: 90px;
+      margin-bottom: 12px;
+      margin-left: 12px;
+      border-radius: 3px;
+      box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.25);
+      overflow: hidden; }
+
+.listing-photo {
+  overflow: hidden;
+  max-height: 420px; }
+
+.action-box,
+.listing-summary {
+  margin-bottom: 30px;
   border: 1px solid #ddd;
-  border-radius: 5px; }
-  .housing-listed .housing-type {
-    font-size: 80%;
-    text-align: center; }
-  .housing-listed .photo {
-    height: 120px;
-    margin: 6px -6px; }
-    .housing-listed .photo.no-photo {
-      text-align: center;
-      background-color: #eee; }
+  border-radius: 6px;
+  padding: 20px; }
 
-.housing-title {
-  display: block; }
+.section {
+  position: relative;
+  padding-top: 20px;
+  border-top: 1px solid #eee; }
 
-.logo {
-  float: left; }
-  .logo .img {
-    float: left;
-    margin-left: -9px; }
+.section-title {
+  margin-bottom: 10px;
+  font-size: 80%; }
 
-.account {
-  float: right; }
+.jump-to-map {
+  float: right;
+  height: auto;
+  padding: 8px;
+  border-color: transparent; }
+  .jump-to-map:hover {
+    border-color: #ddd;
+    background-color: #fff; }
+
+.price {
+  font-size: 120%;
+  color: #a52a2a; }
+
+#map-canvas {
+  overflow: hidden;
+  height: 300px; }
 
 /*# sourceMappingURL=main.css.map */

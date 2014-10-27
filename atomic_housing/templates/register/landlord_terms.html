@@ -1,24 +1,27 @@
-{% extends '_layout.html' %}
+{% extends '_layout_passage.html' %}
 
 
 {% block content %}
-  <h1>Landlord Registration</h1>
-
-  <p>Please agree with the Terms and Conditions bellow:</p>
+<div class="terms">
+  <h1 class="text-center h3 no-leading">Terms and Conditions</h1>
+  <p class="text-center muted">Please agree with the Terms and Conditions bellow.</p>
+  
+  <hr class="hr-soft">
 
   <div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non diam suscipit, sollicitudin magna at, egestas est. Curabitur ex velit, tempus ac est eu, laoreet rhoncus nisi. Sed varius ipsum ipsum, eget elementum sapien imperdiet sed. Proin viverra urna urna. Integer id nisi vitae nulla mollis elementum. Cras tincidunt elit at consequat sodales. Integer quis ultrices turpis, eu aliquam lectus. In porttitor magna in imperdiet viverra. In massa enim, viverra at justo sit amet, aliquet semper purus. Donec tincidunt at magna id tincidunt. Maecenas imperdiet leo quis felis malesuada, vel convallis nisl accumsan. Proin hendrerit, orci at rhoncus elementum, magna leo finibus eros, vel interdum est lectus id erat. Proin est mi, ultrices nec tincidunt non, posuere nec ante.
-    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non diam suscipit, sollicitudin magna at, egestas est. Curabitur ex velit, tempus ac est eu, laoreet rhoncus nisi. Sed varius ipsum ipsum, eget elementum sapien imperdiet sed. Proin viverra urna urna. Integer id nisi vitae nulla mollis elementum. Cras tincidunt elit at consequat sodales. Integer quis ultrices turpis, eu aliquam lectus. In porttitor magna in imperdiet viverra. In massa enim, viverra at justo sit amet, aliquet semper purus. Donec tincidunt at magna id tincidunt. Maecenas imperdiet leo quis felis malesuada, vel convallis nisl accumsan. Proin hendrerit, orci at rhoncus elementum, magna leo finibus eros, vel interdum est lectus id erat. Proin est mi, ultrices nec tincidunt non, posuere nec ante.</p>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non diam suscipit, sollicitudin magna at, egestas est. Curabitur ex velit, tempus ac est eu, laoreet rhoncus nisi. Sed varius ipsum ipsum, eget elementum sapien imperdiet sed. Proin viverra urna urna. Integer id nisi vitae nulla mollis elementum. Cras tincidunt elit at consequat sodales. Integer quis ultrices turpis, eu aliquam lectus. In porttitor magna in imperdiet viverra. In massa enim, viverra at justo sit amet, aliquet semper purus. Donec tincidunt at magna id tincidunt. Maecenas imperdiet leo quis felis malesuada, vel convallis nisl accumsan. Proin hendrerit, orci at rhoncus elementum, magna leo finibus eros, vel interdum est lectus id erat. Proin est mi, ultrices nec tincidunt non, posuere nec ante.
-      </p>
-
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non diam suscipit, sollicitudin magna at, egestas est. Curabitur ex velit, tempus ac est eu, laoreet rhoncus nisi. Sed varius ipsum ipsum, eget elementum sapien imperdiet sed. Proin viverra urna urna. Integer id nisi vitae nulla mollis elementum. Cras tincidunt elit at consequat sodales. Integer quis ultrices turpis, eu aliquam lectus. In porttitor magna in imperdiet viverra. In massa enim, viverra at justo sit amet, aliquet semper purus. Donec tincidunt at magna id tincidunt. Maecenas imperdiet leo quis felis malesuada, vel convallis nisl accumsan. Proin hendrerit, orci at rhoncus elementum, magna leo finibus eros, vel interdum est lectus id erat. Proin est mi, ultrices nec tincidunt non, posuere nec ante.</p>
   </div>
-  <form method="POST">
+
+  <form class="text-center" method="POST">
     {% csrf_token %}
-    <label><input type="checkbox">I agree to the terms of condition</label>
-    <br>
-    <button type="submit">Agree</button>
+    <!-- <label><input type="checkbox">I agree to the terms of condition</label> -->
+    <!-- <br> -->
+    <button class="btn primary col-3" type="submit">I agree</button>
+    <a class="btn default col-3" href="{{ url }}">I disagree</a>
   </form>
 
+  <hr class="hr-soft">
+</div>
 {% endblock %}

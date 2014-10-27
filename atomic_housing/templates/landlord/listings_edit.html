@@ -1,15 +1,22 @@
 {% extends '_layout_landlord.html' %}
 
+{% block page-title %}
+	<div class="page-title">
+		<h1>
+			{% if object %}
+				Edit listing
+			{% else %}
+				Add a new listing
+			{% endif %}
+		</h1>
+		<div class="actions">
+			<a href="" class="btn-fake">Cancel</a>
+		</div>
+	</div>
+{% endblock %}
+
 
 {% block content %}
-	<h1>
-		{% if object %}
-			Edit listing
-		{% else %}
-			Add a new listing
-		{% endif %}
-	</h1>
-	
   <form method="POST">
     {% csrf_token %}
 
@@ -22,77 +29,47 @@
 			<legend>Address</legend>
 
 			<div class="row">
-				<div class="col col-8">
-					<div class="input-group">
-						<label for="id_address_address">Address</label>
+					<label for="id_address_address" class="col col-3">Address</label>
+					<div class="input-group col col-6">
 						{{ form.address_address }}
 						{{ form.address_address.errors }}
 					</div>
-				</div>
+			</div>
+			<div class="row">
+				<div class="col col-6 offset-3">
+					<div class="row">
+						
+							<div class="col col-6">
+								<div class="input-group">
+									<label for="id_address_zipcode">Zip code</label>
+									{{ form.address_zipcode }}
+									{{ form.address_zipcode.errors }}
+								</div>
+							</div>
+							<div class="col col-6">
+								<div class="input-group">
+									<label for="id_address_district">District</label>
+									{{ form.address_district }}
+									{{ form.address_district.errors }}
+								</div>
+							</div>
 
-				<div class="col col-4">
-					<div class="input-group">
-						<label for="id_address_zipcode">Zip code</label>
-						{{ form.address_zipcode }}
-						{{ form.address_zipcode.errors }}
 					</div>
 				</div>
 			</div>
 
-			<div class="row">
+<!-- 			<div class="row">
 				<div class="col col-6">
 					<div class="input-group">
 						<label for="id_address_city">City</label>
 						{{ form.address_city }}
 						{{ form.address_city.errors }}
 					</div>
-				</div>
+				</div> -->
 
-				<div class="col col-6">
-					<div class="input-group">
-						<label for="id_address_district">District</label>
-						{{ form.address_district }}
-						{{ form.address_district.errors }}
-					</div>
-				</div>
-			</div>
+			<!-- </div> -->
 			
 		</fieldset>
-
-		<fieldset>
-			<legend>Accomodation</legend>
-
-			<div class="row">
-				<div class="col col-6">
-					<div class="input-group">
-						<label for="id_year">Building Year</label>
-						{{ form.year }}
-						{{ form.year.errors }}
-					</div>
-
-					<div class="input-group">
-						<label for="id_size">Size</label>
-						{{ form.size }}
-						{{ form.size.errors }}
-					</div>
-				</div>
-				<div class="col col-6">
-					<div class="input-group">
-						<label for="id_floor">Floor</label>
-						{{ form.floor }}
-						{{ form.floor.errors }}
-					</div>
-
-					<div class="input-group">
-						<label for="id_elevator">Elevator</label>
-						{{ form.elevator }}
-						{{ form.elevator.errors }}
-					</div>
-				</div>
-			</div>
-		</fieldset>
-
-		
 
 		<fieldset>
 			<legend>Layout</legend>
@@ -161,7 +138,40 @@
 				{{ form.parking.errors }}
 			</div>
 
-		</fieldset>		
+		</fieldset>
+
+		<fieldset>
+			<legend>Accomodation</legend>
+
+			<div class="row">
+				<div class="col col-6">
+					<div class="input-group">
+						<label for="id_year">Year</label>
+						{{ form.year }}
+						{{ form.year.errors }}
+					</div>
+
+					<div class="input-group">
+						<label for="id_size">Size</label>
+						{{ form.size }}
+						{{ form.size.errors }}
+					</div>
+				</div>
+				<div class="col col-6">
+					<div class="input-group">
+						<label for="id_floor">Floor</label>
+						{{ form.floor }}
+						{{ form.floor.errors }}
+					</div>
+
+					<div class="input-group">
+						<label for="id_elevator">Elevator</label>
+						{{ form.elevator }}
+						{{ form.elevator.errors }}
+					</div>
+				</div>
+			</div>
+		</fieldset>
 
 		<fieldset>
 			<legend>Costs</legend>

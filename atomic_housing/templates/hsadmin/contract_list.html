@@ -1,30 +1,60 @@
 {% extends '_layout_admin.html' %}
 
+{% block page-title %}
+	<div class="page-title">
+		<h1>Contracts</h1>
+		<div class="badge counter">{{ object_list|length }}</div>
+	</div>
+{% endblock %}
+
 {% block content %}
-  <h1>Contracts</h1>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Landlord</th>
-      <th>Listing</th>
-      <th>Customer</th>
-      <th>Signed</th>
-      <th>Status</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for contract in object_list %}
-      <tr>
-      <td>{{ contract.listing.owner }}</td>
-      <td>{{ contract.listing.title }}</td>
-      <td>{{ contract.customer }}</td>
-      <td>{{ contract.awarded }}</td>
-      <td>{{ contract.get_status_display }}</td>
-      </tr>
-    {% endfor %}
-    </tbody>
-  </table>
+	<table class="contracts">
+		<thead>
+		<tr>
+			<th>Contract</th>
+			<th>Status</th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for contract in object_list %}
+			<tr>
+				<td class="text-center">
+					<a href="">{{ contract.listing.title }}</a>
+					<div class="row">
+						<div class="col col-6 text-right">{{ contract.listing.owner }}</div>
+						<div class="col col-6 text-left">{{ contract.customer }}</div>
+					</div>
+					{{ contract.awarded }}
+				</td>
+				<td>{{ contract.get_status_display }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
 
+
+	<!-- <table>
+		<thead>
+		<tr>
+			<th>Landlord</th>
+			<th>Listing</th>
+			<th>Customer</th>
+			<th>Signed</th>
+			<th>Status</th>
+			<th>Actions</th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for contract in object_list %}
+			<tr>
+			<td>{{ contract.listing.owner }}</td>
+			<td>{{ contract.listing.title }}</td>
+			<td>{{ contract.customer }}</td>
+			<td>{{ contract.awarded }}</td>
+			<td>{{ contract.get_status_display }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table> -->
 {% endblock %}

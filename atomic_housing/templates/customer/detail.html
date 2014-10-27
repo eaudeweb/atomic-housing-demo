@@ -1,47 +1,154 @@
 {% extends '_layout.html' %}
 
+{% load staticfiles %}
+
+{% block layout %}layout-detail{% endblock %}
+
 {% block content %}
-  <h1>{{ object.title }}</h1>
-  <p>Rent: {{ object.rent }} EURO, Deposit {{ object.deposit }} EURO</p>
-  <p>{{ object.address }}</p>
 
-  <dl>
-    <dt>District</dt>
-    <dd>{{ object.address_district }}</dd>
-    <dt>Accomodation</dt>
-    <dd>{{ object.get_accomodation_display }}</dd>
-    <dt>Building Year</dt>
-    <dd>{{ object.year }}</dd>
-    <dt>Size</dt>
-    <dd>{{ object.size }} sq meters</dd>
-    <dt>Outdoor</dt>
-    <dd>{{ object.get_outdoor_display }}</dd>
-    <dt>Outdoor Size</dt>
-    <dd>{{ object.outdoor_size }} sq meters</dd>
-    <dt>Rooms</dt>
-    <dd>{{ object.rooms }}</dd>
-    <dt>Bathooms</dt>
-    <dd>{{ object.bathrooms }}</dd>
-    <dt>Toilets</dt>
-    <dd>{{ object.toilets }}</dd>
-    <dt>Bedrooms</dt>
-    <dd>{{ object.bedrooms }}</dd>
-    <dt>Floor</dt>
-    <dd>{{ object.floor }}</dd>
-    <dt>Elevator</dt>
-    <dd>{{ ojbect.elevator }}</dd>
-    <dt>Parking</dt>
-    <dd>{{ ojbect.parking }}</dd>
-    <dt>Furnished</dt>
-    <dd>{{ ojbect.furnished }}</dd>
-    <dt>Heating</dt>
-    <dd>{{ ojbect.heating }}</dd>
-    <dt>Heating emission</dt>
-    <dd>{{ ojbect.heating_emission }}</dd>
-    <dt>Lease</dt>
-    <dd>{{ ojbect.get_lease_display }}</dd>
-  </dl>
+<!-- <div class="listing-photo">
+	<div class="listing-gallery">
+	</div>
+	<ul class="listing-gallery">
+		<li><div class="img"><img src="{% static "img/photo.jpg" %}" alt=""></div></li>
+		<li><div class="img"><img src="{% static "img/photo.jpg" %}" alt=""></div></li>
+		<li><div class="img"><img src="{% static "img/photo.jpg" %}" alt=""></div></li>
+	</ul>
+</div> -->
 
-  <a href="#">Add to Favorites</a>
-  <a href="{% url 'search' %}">Back to Search</a>
+<div class="main">
+
+	
+	<div class="listing-photo">
+		<div class="img">
+			<img src="{% static "img/photo.jpg" %}" alt="">
+		</div>
+	</div>
+
+	<div class="listing-summary">
+		<a class="jump-to-map" href="#map-canvas" title="Jump to map"></a>
+		<h1 class="h3 no-leading">
+			{{ object.accomodation_type }}, {{ object.rooms }} rooms
+		</h1>
+		<p>{{ object.address_full }}</p>
+
+		<hr>
+
+		<table class="table table-rent">
+			<tbody>
+				<tr>
+					<td>{{ object.lease_type }}</td>
+					<td><span class="price">1200 EURO</span></td>
+					<td>{{ object.deposit }} EURO</td>
+				</tr>
+				<tr>
+					<td>Lease</td>
+					<td>Rent a month</td>
+					<td>Deposit</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+
+		<div class="text-center">
+			<a class="btn primary" href="">Contact landlord</a>
+			<a class="btn default" href="">Add to Favorites</a>
+		</div>
+	</div>
+
+	<div class="section">
+		<h3 class="section-title">Layout</h3>
+		<table class="table table-layout">
+			<tfoot>
+				<tr class="labels">
+					<td>{{ object.size }} m<sup>2</sup></td>
+					<td>{{ object.rooms }} rooms</td>
+					<td>{{ object.bedrooms }} bedrooms</td>
+					<td>{{ object.bathrooms }} bathrooms</td>
+					<td>{{ object.toilets }} toilets</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr class="icons">
+					<td><span class="icon-size"></span></td>
+					<td><span class="icon-rooms"></span></td>
+					<td><span class="icon-bedrooms"></span></td>
+					<td><span class="icon-bathrooms"></span></td>
+					<td><span class="icon-toilets"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="section">
+		<h3 class="section-title">Description</h3>
+		<!-- <p>{{ object.description }}</p> -->
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, vel corporis dignissimos! Velit, dolorum ab ducimus tempore debitis consequatur beatae tempora suscipit, impedit nobis facilis! Voluptate voluptas ea odio repudiandae.</p>
+	</div>
+	
+	<div class="section">
+		<h3 class="section-title">Ammenities</h3>
+		<dl class="dl-inline">
+			<dt>Furnished</dt>
+			<dd>{{ object.furnished }}</dd>
+			<dt>Parking</dt>
+			<dd>{{ object.parking }}</dd>
+			<dt>Heating</dt>
+			<dd>
+				{{ object.get_heating_display }}
+				{% if object.heating %}
+					{{ object.heating_emission }}
+				{% endif %}
+			</dd>
+			<dt>Outdoor</dt>
+			<dd>
+				{{ object.outdoor_size }}
+				{% if object.outdoor_size %}
+					{{ object.get_outdoor_display }}
+				{% endif %}
+			</dd>
+		</dl>
+	</div>
+
+	<div class="section">
+		<h3 class="section-title">Building</h3>
+		<dl class="dl-inline">
+			<dt>Year</dt>
+			<dd>{{ object.year }}</dd>
+			<dt>Floor</dt>
+			<dd>{{ object.floor }}</dd>
+			<dt>Elevator</dt>
+			<dd>{{ object.elevator }}</dd>
+		</dl>
+	</div>
+
+	<div class="section">
+		<h3 class="section-title">Map location</h3>
+		<div id="map-canvas" data-address="Maior Gheorghe Șonțu 8, ap. 3 - 011448 Bucharest"></div>
+	</div>
+
+	<div class="action-box">
+		<a class="btn primary" href="">Contact landlord</a>
+		<a class="btn default" href="">Add to Favorites</a>
+	</div>
+
+</div>
+
+<!-- <div class="box-rent">
+	<h1 class="h4">Apartment</h1>
+	<dl class="rent-info">
+		<dt>Rent</dt>
+		<dd>{{ object.rent }}</dd>
+		<dt>Deposit</dt>
+		<dd>{{ object.deposit }}</dd>
+		<dt>Lease</dt>
+		<dd>{{ object.lease_type }}</dd>
+	</dl>
+	
+</div> -->
+<!--
+
+
+</div>	 -->
 {% endblock %}

@@ -1,9 +1,13 @@
 {% extends '_layout_admin.html' %}
 
-{% block content %}
-  <h1>Landlords</h1>
+{% block page-title %}
+  <div class="page-title">
+    <h1>Landlords</h1>
+  </div>
+{% endblock %}
 
-  <table>
+{% block content %}
+  <table class="table table-simple">
     <thead>
     <tr>
       <th>Name</th>
@@ -17,15 +21,22 @@
     <tbody>
     {% for landlord in object_list %}
       <tr>
-        <td>{{ landlord.first_name }} {{ landlord.last_name }}</td>
+        <td><strong>{{ landlord.first_name }} {{ landlord.last_name }}</strong></td>
         <td>{{ landlord.address }}</td>
-        <td>{{ landlord.phone }}</td>
-        <td>{{ landlord.email }}</td>
-        <td>{{ landlord.get_status_display }}</td>
+        <td>
+          <a href="tel:{{ landlord.phone }}">{{ landlord.phone }}</a>
+        </td>
+        <td>
+          <a href="mailto:{{ landlord.email }}">{{ landlord.email }}</a>
+        </td>
+        <td>
+          <span class="badge {{ landlord.get_status_display }}">
+            {{ landlord.get_status_display }}
+          </span>
+        </td>
         <td></td>
       </tr>
     {% endfor %}
     </tbody>
   </table>
-
 {% endblock %}

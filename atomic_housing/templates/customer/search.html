@@ -1,31 +1,101 @@
 {% extends '_layout.html' %}
 
 {% block content %}
-  <form method="get" action="">
-    <input type="text" name="query"/>
-    <select name="accomodation">
-      <option>Apartment</option>
-      <option>Single House</option>
-    </select>
-    Order by:
-    <select name="order_by">
-      <option>Price (ascending)</option>
-      <option>Price (descending)</option>
-      <option>Date added</option>
-      <option>Size</option>
-    </select>
-    <button type="submit">Search!</button>
-  </form>
 
-  <div>
-    {% for listing in object_list %}
-      {% include 'customer/_house.html' %}
-    {% empty %}
-      <p>No results</p>
-    {% endfor %}
-  </div>
+	<div class="aside">
+		<div class="filters">
+			<h4 class="filter-name">Accomodation</h4>
+			<label for="">
+				<input type="checkbox"> Apartment
+			</label>
+			<label for="">
+				<input type="checkbox"> Single house
+			</label>
+			<label for="">
+				<input type="checkbox"> Duplex
+			</label>
+			<label for="">
+				<input type="checkbox"> Other
+			</label>
 
-  {% if user.is_authenticated %}
-  <a href="{% url 'favorites' %}">My Favorites</a>
-  {% endif %}
+			<hr>
+
+			<h4 class="filter-name">Lease</h4>
+			<label for="">
+				<input type="checkbox"> Short term
+			</label>
+			<label for="">
+				<input type="checkbox"> 3 year contract
+			</label>
+			<label for="">
+				<input type="checkbox"> 5 year contract
+			</label>
+			<label for="">
+				<input type="checkbox"> Unlimited
+			</label>
+
+			<hr>
+
+			<h4 class="filter-name">Rooms</h4>
+			<label for="">
+				<input type="checkbox"> 1 room 
+			</label>
+			<label for="">
+				<input type="checkbox"> 2 rooms 
+			</label>
+			<label for="">
+				<input type="checkbox"> 3 rooms 
+			</label>
+			<label for="">
+				<input type="checkbox"> 4+ rooms 
+			</label>
+
+			<hr>
+
+			<h4 class="filter-name">Ammenities</h4>
+			<label for="">
+				<input type="checkbox"> Furnished
+			</label>
+			<label for="">
+				<input type="checkbox"> Parking
+			</label>
+		</div>
+
+		<!-- <div class="filter-map">
+			Map here  
+		</div> -->
+	</div>
+
+	<div class="main">
+		<div class="clearfix">
+			<h1 class="pull-left h5 muted">
+				00 results for <strong>Bla bla bla</strong>
+			</h1>
+			
+			<form class="pull-right" method="get" action="">
+				<select name="order_by">
+					<option>Lowest prices</option>
+					<option>Highest prices</option>
+					<option>Publish date</option>
+				</select>
+			</form>
+			
+		</div>
+
+
+
+
+		{% if object_list|length %}
+		<ul class="listings-list">
+			{% for listing in object_list %}
+			<li>
+				{% include 'customer/_house.html' %}
+			</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<p>No results</p>
+		{% endif %}
+	</div>
+
 {% endblock %}
