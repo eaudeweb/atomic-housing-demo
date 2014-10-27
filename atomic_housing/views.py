@@ -139,6 +139,10 @@ class ListingDetails(DetailView):
     template_name = 'customer/detail.html'
     model = models.Listing
 
+    def get_context_data(self, **kwargs):
+        context = super(ListingDetails, self).get_context_data(**kwargs)
+        context.update({'form': forms.SearchForm(self.request.GET)})
+        return context
 
 class MyFavorites(ListView):
     template_name = 'customer/favorites.html'
