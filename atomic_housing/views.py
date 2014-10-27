@@ -124,7 +124,7 @@ class SearchMixin(object):
         return context
 
 
-class SearchView(ListView, SearchMixin):
+class SearchView(SearchMixin, ListView):
     template_name = 'customer/search.html'
     model = models.Listing
 
@@ -135,12 +135,12 @@ class SearchView(ListView, SearchMixin):
         return qs
 
 
-class ListingDetails(DetailView, SearchMixin):
+class ListingDetails(SearchMixin, DetailView):
     template_name = 'customer/detail.html'
     model = models.Listing
 
 
-class MyFavorites(ListView, SearchMixin):
+class MyFavorites(SearchMixin, ListView):
     template_name = 'customer/favorites.html'
     model = models.Listing
 
