@@ -1,4 +1,5 @@
 {% extends '_layout_landlord.html' %}
+{% load utils %}
 
 {% block page-title %}
   <div class="page-title">
@@ -30,7 +31,7 @@
             <dd>12</dd>
           </dl>
           <div class="listing-type">{{ listing.accomodation_type }}</div>
-          <div class="listing-published">{{ listing.updated }}</div>
+          <div class="listing-published">{{ listing.updated|just_date }}</div>
         </div>
       </div>
     </li>

@@ -1,4 +1,5 @@
 {% extends '_layout_admin.html' %}
+{% load utils %}
 
 {% block page-title %}
   <div class="page-title">
@@ -30,7 +31,7 @@
         <td><a href="">{{ listing.title }}</a></td>
         <td><span class="badge {{ listing.get_status_display }}">{{ listing.get_status_display }}</span></td>
         <td><a href="">{{ listing.owner }}</a></td>
-        <td>{{ listing.posted }}</td>
+        <td>{{ listing.posted|just_date }}</td>
       </tr>
       {% endfor %}
     </tbody>
