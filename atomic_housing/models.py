@@ -29,7 +29,9 @@ LEASE_TYPES = (
 )
 
 HEATING_TYPES = (
-    (0, 'no heating'),
+    (0, 'Gas Central Heating'),
+    (1, 'House Central Heating'),
+    (2, 'City/Alternate Central Heating'),
 )
 
 (ACCOUNT_NEW,
