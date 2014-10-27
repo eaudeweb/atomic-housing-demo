@@ -422,6 +422,7 @@ p, .p {
 .table-overview {
 	@extend .table;
 	@extend .td-vr;
+	table-layout: fixed;
 	.icons {
 		div:before {
 			@extend %center-block;
@@ -442,8 +443,10 @@ p, .p {
 }
 
 .table-stats {
-	td {
-		@include new-col('width', 1, 3);
+	table-layout: fixed;
+	th, td {
+		// @include new-col('width', 1, 3);
+		padding: 3px 6px;
 	}
 	.bars {
 		&:hover {

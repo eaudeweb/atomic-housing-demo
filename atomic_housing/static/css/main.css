@@ -206,7 +206,7 @@ fieldset, .hr-page, .page-title {
   position: relative;
   left: -100%; }
 
-.text-left {
+.table, .table-overview, .text-left {
   text-align: left; }
 
 .text-center, .table-layout, .table-rent, .action-box {
@@ -403,6 +403,8 @@ input[type='text'], input[type='number'], input[type='password'], input[type='em
 
 .table, .table-overview {
   width: 100%; }
+  .table th, .table-overview th {
+    font-weight: normal; }
 
 .table-simple {
   text-align: left; }
@@ -894,32 +896,36 @@ hr {
   .table-rent td {
     width: 33.33333%; }
 
-.table-overview .numbers {
-  font-size: 120%;
-  font-weight: bold; }
-.table-overview .labels {
-  font-size: 80%; }
-.table-overview td {
-  width: 20%;
-  padding: 0 5px;
-  text-align: center; }
+.table-overview {
+  table-layout: fixed; }
+  .table-overview .numbers {
+    font-size: 120%;
+    font-weight: bold; }
+  .table-overview .labels {
+    font-size: 80%; }
+  .table-overview td {
+    width: 20%;
+    padding: 0 5px;
+    text-align: center; }
 
-.table-stats td {
-  width: 33.33333%; }
-.table-stats .bars:hover {
-  cursor: help; }
-.table-stats .bars .popout {
-  padding: 3px;
-  top: auto;
-  left: 50%;
-  bottom: 100%;
-  width: 80px;
-  margin-bottom: 5px;
-  margin-left: -40px;
-  text-align: center;
-  font-size: 13px;
-  border-color: #47a5da;
-  box-shadow: 0 0 2px 0 rgba(71, 165, 218, 0.5); }
+.table-stats {
+  table-layout: fixed; }
+  .table-stats th, .table-stats td {
+    padding: 3px 6px; }
+  .table-stats .bars:hover {
+    cursor: help; }
+  .table-stats .bars .popout {
+    padding: 3px;
+    top: auto;
+    left: 50%;
+    bottom: 100%;
+    width: 80px;
+    margin-bottom: 5px;
+    margin-left: -40px;
+    text-align: center;
+    font-size: 13px;
+    border-color: #47a5da;
+    box-shadow: 0 0 2px 0 rgba(71, 165, 218, 0.5); }
 
 .badge.primary {
   color: #fff;

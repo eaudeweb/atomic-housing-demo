@@ -9,7 +9,7 @@
 {% block content %}
 
   <h3>Last week</h3>
-  <hr>
+  <!-- <hr> -->
 
   <table class="table-overview">
     <tbody>
@@ -37,17 +37,16 @@
     </tbody>
   </table>
 
-
-  <h3>Listings</h3>
+  <hr class="hr-page">
 
   <table class="table table-stats">
-    <tfoot>
+    <thead>
       <tr>
-        <th class="col-3">Total</th>
+        <th class="col-3 h4">Listings</th>
         <th class="col-6"></th>
-        <th class="col-3">400</th>
+        <th class="col-3 muted">400</th>
       </tr>
-    </tfoot>
+    </thead>
     <tbody>
       <tr>
         <td>Apartment</td>
@@ -119,19 +118,52 @@
     </tbody>
   </table>
 
-<hr class="page-separator">
+  <hr class="hr-page">
 
-  <h2>Categories</h2>
-  <dl>
-    <dt>Listings</dt>
-    <dd>100 Active, 50 Passive</dd>
-    <dt>Landlords</dt>
-    <dd>30 Active, 10 Passive</dd>
-    <dt>Customers</dt>
-    <dd>30 Active, 10 Passive</dd>
-    <dt>Apartament</dt>
-    <dd>300</dd>
-    <dt>Single House</dt>
-    <dd>30</dd>
-  </dl>
+  <table class="table table-stats">
+    <thead>
+      <tr>
+        <th class="col-3 h4">Users</th>
+        <th class="col-6"></th>
+        <th class="col-3 muted">1824</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Customers</td>
+        <td>
+          <div class="bars">
+            <div style="width: 20%;" class="bar new" data-popout="hover">
+              <div class="popout">14 New</div>
+            </div>
+            <div style="width: 46.66%;" class="bar active" data-popout="hover">
+              <div class="popout">40 Active</div>
+            </div>
+            <div style="width: 33.33%;" class="bar passive" data-popout="hover">
+              <div class="popout">26 Passive</div>
+            </div>
+          </div>
+        </td>
+        <td>1264</td>
+      </tr>
+      <tr>
+        <td>Landlords</td>
+        <td>
+          <div class="bars">
+            <div style="width: 10%;" class="bar new" data-popout="hover">
+              <div class="popout">14 New</div>
+            </div>
+            <div style="width: 66.66%;" class="bar active" data-popout="hover">
+              <div class="popout">40 Active</div>
+            </div>
+            <div style="width: 23.33%;" class="bar passive" data-popout="hover">
+              <div class="popout">26 Passive</div>
+            </div>
+          </div>
+        </td>
+        <td>560</td>
+      </tr>
+    </tbody>
+  </table>
+
 {% endblock %}
