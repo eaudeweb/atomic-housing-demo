@@ -1,4 +1,4 @@
-.topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .input-accomodation li, .col, input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, .btn, .btn-fake, .input-append label, .input-accomodation label, .menu-item, .account-choice, .jump-to-map, .input-col label, .input-inline label, .search button, .popout, .layout-admin .main {
+.topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .input-accomodation li, .col, input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, .btn, .btn-fake, .input-append label, .input-accomodation label, .menu-item, .account-choice, .jump-to-map, .input-col label, .input-inline label, .search button, .popout, body, .layout-admin .main {
   box-sizing: border-box; }
 
 .layout-user .content:before, .layout-admin .content:before, .input-accomodation ul:before, .row:before, .input-col:before, .filters label:before, .clearfix:before, .dl-inline:before, .search:before, .menu:before, .page-title:before, .listings-list:before, .layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .filters label:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after, .listings-list:after {
@@ -209,7 +209,7 @@ fieldset, .hr-page, .page-title {
 .table, .table-overview, .text-left {
   text-align: left; }
 
-.text-center, .table-layout, .table-rent, .action-box {
+.text-center, .table-layout, .table-rent, .action-box, .copyright {
   text-align: center; }
 
 .text-right {
@@ -222,7 +222,7 @@ fieldset, .hr-page, .page-title {
   background-color: #4088d4;
   background: linear-gradient(to right, #396ccf 0%, #47a5da 100%); }
 
-.table, .table-overview, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, .filters, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing, .listing-photo, #map-canvas {
+.content, .table, .table-overview, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, .filters, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing, .listing-photo, #map-canvas {
   margin-top: auto;
   margin-bottom: 20px; }
 
@@ -249,7 +249,7 @@ fieldset, .hr-page, .page-title {
   list-style: none;
   padding-left: 0; }
 
-.errorlist, .no-leading, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6 {
+.errorlist, .no-leading, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6, .copyright {
   margin-bottom: 0; }
 
 .badge {
@@ -366,12 +366,27 @@ input[type='text'], input[type='number'], input[type='password'], input[type='em
   background-color: #eee;
   border-bottom: 1px solid #ddd; }
 
+html {
+  height: 100%; }
+
+body {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 30px; }
+
 .topbar .logo {
   width: 20%; }
 .topbar .search {
   width: 40%; }
 .topbar .menu {
   width: 40%; }
+
+.bottombar {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  margin-top: -30px;
+  line-height: 30px; }
 
 .layout-user .aside {
   width: 25%; }
@@ -651,11 +666,6 @@ fieldset {
   .bar.passive {
     background-color: #d6d6d6; }
 
-html,
-body {
-  height: 100%;
-  overflow: auto; }
-
 .pull-left {
   float: left !important; }
 
@@ -670,18 +680,18 @@ body {
   color: #444;
   text-rendering: optimizeLegibility; }
 
-.small, .errorlist {
+.small, .errorlist, .copyright {
   font-size: 80%; }
 
 .large {
   font-size: 120%; }
 
-.muted, .table-simple th, fieldset legend, .filter-name, .quiet, .dl-inline dt, .modal-title h2, .nav-title, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6, .listing-stats, .listing-published, .badge.passive {
+.muted, .table-simple th, fieldset legend, .filter-name, .quiet, .copyright, .dl-inline dt, .modal-title h2, .nav-title, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6, .listing-stats, .listing-published, .badge.passive {
   color: gray; }
 
-.quiet a {
+.quiet a, .copyright a {
   color: #676767; }
-  .quiet a:hover {
+  .quiet a:hover, .copyright a:hover {
     color: #444; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -723,9 +733,9 @@ hr {
 
 .dl-inline dt {
   float: left;
-  width: 120px; }
+  width: 160px; }
 .dl-inline dd {
-  margin-left: 120px; }
+  margin-left: 160px; }
 .dl-inline dt, .dl-inline dd {
   margin-top: 3px; }
 .dl-inline dt {

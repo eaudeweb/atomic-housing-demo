@@ -9,11 +9,6 @@
 @import "shame";
 
 // layout
-html,
-body {
-	height: 100%;
-	overflow: auto;
-}
 .center-block {
 	@extend %center-block;
 }
@@ -118,7 +113,7 @@ p, .p {
 }
 .dl-inline {
 	@extend %leading;
-	@include media-object('dt', 120px, 'dd');
+	@include media-object('dt', 160px, 'dd');
 	dt, dd {
 		margin-top: 3px;
 	}
@@ -602,4 +597,12 @@ p, .p {
 	@extend %radius-medium;
 	overflow: hidden;
 	height: 300px;
+}
+
+// copyright
+.copyright {
+	@extend .quiet;
+	@extend .small;
+	@extend %no-leading;
+	@extend %text-center;
 }
