@@ -36,28 +36,34 @@ HEATING_TYPES = (
 
 (ACCOUNT_NEW,
  ACCOUNT_ACTIVE,
- ACCOUNT_PASSIVE) = range(3)
+ ACCOUNT_PASSIVE,
+ ACCOUNT_TERMINATED) = range(4)
 ACCOUNT_STATUSES = (
     (ACCOUNT_NEW, 'new'),
     (ACCOUNT_ACTIVE, 'active'),
     (ACCOUNT_PASSIVE, 'passive'),
+    (ACCOUNT_TERMINATED, 'terminated'),
 )
 
 (LISTING_NEW,
  LISTING_ACTIVE,
  LISTING_PASSIVE,
- LISTING_OCCUPIED) = range(4)
+ LISTING_OCCUPIED,
+ LISTING_INACTIVE) = range(5)
 LISTING_STATUSES = (
     (LISTING_NEW, 'new'),
     (LISTING_ACTIVE, 'active'),
     (LISTING_PASSIVE, 'passive'),
     (LISTING_OCCUPIED, 'occupied'),
+    (LISTING_INACTIVE, 'inactive'),
 )
 
 (CONTRACT_NEW,
- CONTRACT_EXPIRED) = range(2)
+ CONTRACT_ACTIVE,
+ CONTRACT_EXPIRED) = range(3)
 CONTRACT_STATUSES = (
     (CONTRACT_NEW, 'new'),
+    (CONTRACT_ACTIVE, 'active'),
     (CONTRACT_EXPIRED, 'expired')
 )
 
@@ -124,6 +130,8 @@ class Listing(models.Model):
     heating_emission = models.FloatField(blank=True, default=None, null=True)
     lease = models.IntegerField(choices=LEASE_TYPES)
     rent = models.IntegerField()
+    rent_vat = models.BooleanField(default=False)
+    rent_maintenance = models.IntegerField(default=0)
     deposit = models.IntegerField()
 
     @property
