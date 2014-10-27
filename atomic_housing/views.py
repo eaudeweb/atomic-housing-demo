@@ -76,7 +76,6 @@ class LandLordListingsEdit(UpdateView):
 
 
 class LandLordListingsPhotosEdit(View):
-
     template_name = 'landlord/listings_photos_upload.html'
     success_url = reverse_lazy('listings')
 
@@ -109,7 +108,6 @@ class LandLordListingsPhotosEdit(View):
 
 
 class LandLordListingsPhotoDelete(DeleteView):
-
     model = models.ListingPhoto
     pk_url_kwarg = 'photo_pk'
     template_name = 'landlord/listings_photos_confirm_delete.html'
@@ -119,14 +117,16 @@ class LandLordListingsPhotoDelete(DeleteView):
 
 
 # Customer Views
-class SearchView(ListView):
-    template_name = 'customer/search.html'
-    model = models.Listing
-
+class SearchMixin(object):
     def get_context_data(self, **kwargs):
-        context = super(SearchView, self).get_context_data(**kwargs)
+        context = super(SearchMixin, self).get_context_data(**kwargs)
         context.update({'form': forms.SearchForm(self.request.GET)})
         return context
+
+
+class SearchView(ListView, SearchMixin):
+    template_name = 'customer/search.html'
+    model = models.Listing
 
     def get_queryset(self):
         qs = super(SearchView, self).get_queryset()
@@ -135,16 +135,12 @@ class SearchView(ListView):
         return qs
 
 
-class ListingDetails(DetailView):
+class ListingDetails(DetailView, SearchMixin):
     template_name = 'customer/detail.html'
     model = models.Listing
 
-    def get_context_data(self, **kwargs):
-        context = super(ListingDetails, self).get_context_data(**kwargs)
-        context.update({'form': forms.SearchForm(self.request.GET)})
-        return context
 
-class MyFavorites(ListView):
+class MyFavorites(ListView, SearchMixin):
     template_name = 'customer/favorites.html'
     model = models.Listing
 
