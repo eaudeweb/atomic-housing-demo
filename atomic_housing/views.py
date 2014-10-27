@@ -50,6 +50,11 @@ class HSAdminCustomers(ListView):
     model = models.Customer
 
 
+class HSAdminCustomerDetail(DetailView):
+    template_name = 'hsadmin/customer_detail.html'
+    model = models.Customer
+
+
 class HSAdminContracts(ListView):
     template_name = 'hsadmin/contract_list.html'
     model = models.Contract

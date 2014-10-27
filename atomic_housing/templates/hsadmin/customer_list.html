@@ -37,6 +37,9 @@
         <td>
           {{ customer.contract_set.count }}
         </td>
+        <td>
+          <a href="{% url 'hsadmin_customer_detail' customer.pk %}">Details</a>
+        </td>
       </tr>
     {% endfor %}
     </tbody>

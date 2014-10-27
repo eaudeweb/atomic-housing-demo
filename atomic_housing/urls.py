@@ -15,6 +15,8 @@ urlpatterns = patterns(
         name='hsadmin_landlord_list'),
     url(r'^hsadmin/customer/list', views.HSAdminCustomers.as_view(),
         name='hsadmin_customer_list'),
+    url(r'^hsadmin/customer/(?P<pk>.*)/detail', views.HSAdminCustomerDetail.as_view(),
+        name='hsadmin_customer_detail'),
     url(r'^hsadmin/listing/list', views.HSAdminListings.as_view(),
         name='hsadmin_listing_list'),
     url(r'^hsadmin/contract/list', views.HSAdminContracts.as_view(),
