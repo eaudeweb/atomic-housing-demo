@@ -3,12 +3,31 @@ from django.forms import formset_factory
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import TemplateView, ListView, CreateView, FormView
 from django.views.generic import UpdateView, DetailView, DeleteView, View
+from django.contrib.auth import login
 
 from atomic_housing import models, forms
 
 
 class Homepage(TemplateView):
     template_name = 'homepage.html'
+
+    def post(self, request):
+        who = request.POST.get('login')
+        if who == 'customer':
+            user = models.Customer.objects.first().user
+            next = 'search'
+        elif who == 'landlord':
+            user = models.Landlord.objects.first().user
+            next = 'listings'
+        elif who == 'hsadmin':
+            user = models.User.objects.first()
+            next = 'hsadmin_home'
+        else:
+            return self.get(request)
+
+        user.backend = 'django.contrib.auth.backends.ModelBackend'
+        login(request, user)
+        return redirect(next)
 
 
 # HS Admin Views

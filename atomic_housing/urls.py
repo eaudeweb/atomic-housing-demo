@@ -4,10 +4,11 @@ from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from atomic_housing import views
 from django.conf.urls.static import static
+from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = patterns(
     '',
-    url(r'^$', views.Homepage.as_view(), name='homepage'),
+    url(r'^$', csrf_exempt(views.Homepage.as_view()), name='homepage'),
 
     url(r'^hsadmin/$', views.HSAdminHome.as_view(), name='hsadmin_home'),
     url(r'^hsadmin/landlord/list', views.HSAdminLandlords.as_view(),
