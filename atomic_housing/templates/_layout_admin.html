@@ -15,7 +15,7 @@
 			<div class="row">
 				<div class="logo">
 					<div class="img">
-						<img src="{% static "img/ah-logotype-white.png" %}" alt="Atomic Housing Logo">
+						<img src="{% static "img/ah-logotype-white.png" %}" alt="Housing Service Logo">
 					</div>
 				</div>
 			</div>
@@ -27,7 +27,9 @@
 			<div class="aside">
 				<div class="account">
 					<div>Logged in as <br/>
-						<strong class="no-br">John Doe</strong>
+						<strong class="no-br">
+              {{ user.first_name }} {{ user.last_name }} ({{ user.username }})
+            </strong>
 						<!-- caret -->
 						<!-- <a href="">Sign out</a> -->
 					</div>
@@ -62,7 +64,9 @@
 	</div>
 
 	<div class="bottombar">
-		<p class="copyright">&copy; IAEA</p>
+		<p class="copyright">&copy; <a href="http://www.iaea.org">IAEA</a>
+    | <a href="/">Demo</a>
+    </p>
 	</div>
 
 	<div class="modal-container">
