@@ -11,7 +11,7 @@
   <h3>Last week</h3>
   <hr>
 
-  <table class="stats">
+  <table class="table-overview">
     <tbody>
       <tr class="icons">
         <td><div class="icon-visitors"></div></td>
@@ -40,46 +40,84 @@
 
   <h3>Listings</h3>
 
-  <table class="table table-simple">
-    <thead>
-      <tr>
-        <th>Accomodation</th>
-        <th><abbr class="badge new">N</abbr></th>
-        <th><abbr class="badge active">A</abbr></th>
-        <th><abbr class="badge passive">P</abbr></th>
-        <th><abbr class="">T</abbr></th>
-      </tr>
-    </thead>
+  <table class="table table-stats">
     <tfoot>
       <tr>
-        <td>Total</td>
-        <td>00</td>
-        <td>00</td>
-        <td>00</td>
-        <td>00</td>
+        <th class="col-3">Total</th>
+        <th class="col-6"></th>
+        <th class="col-3">400</th>
       </tr>
     </tfoot>
     <tbody>
       <tr>
+        <td>Apartment</td>
+        <td>
+          <div class="bars">
+            <div style="width: 25%;" class="bar new" data-popout="hover">
+              <div class="popout">64 New</div>
+            </div>
+            <div style="width: 75%;" class="bar active" data-popout="hover">
+              <div class="popout">192 Active</div>
+            </div>
+            <div style="width: 0" class="bar passive">
+            </div>
+          </div>
+        </td>
+        <td>256</td>
+      </tr>
+      <tr>
         <td>Single house</td>
-        <td>25</td>
-        <td>50</td>
-        <td>125</td>
+        <td>
+          <div class="bars">
+            <div style="width: 10%;" class="bar new" data-popout="hover">
+              <div class="popout">20 New</div>
+            </div>
+            <div style="width: 70%;" class="bar active" data-popout="hover">
+              <div class="popout">140 Active</div>
+            </div>
+            <div style="width: 20%;" class="bar passive" data-popout="hover">
+              <div class="popout">40 Passive</div>
+            </div>
+          </div>
+        </td>
         <td>200</td>
+      </tr>
+      <tr>
+        <td>Duplex</td>
+        <td>
+          <div class="bars">
+            <div style="width: 5%;" class="bar new" data-popout="hover">
+              <div class="popout">5 New</div>
+            </div>
+            <div style="width: 50%;" class="bar active" data-popout="hover">
+              <div class="popout">50 Active</div>
+            </div>
+            <div style="width: 45%;" class="bar passive" data-popout="hover">
+              <div class="popout">45 Passive</div>
+            </div>
+          </div>
+        </td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>Other</td>
+        <td>
+          <div class="bars">
+            <div style="width: 20%;" class="bar new" data-popout="hover">
+              <div class="popout">14 New</div>
+            </div>
+            <div style="width: 50%;" class="bar active" data-popout="hover">
+              <div class="popout">40 Active</div>
+            </div>
+            <div style="width: 30%;" class="bar passive" data-popout="hover">
+              <div class="popout">26 Passive</div>
+            </div>
+          </div>
+        </td>
+        <td>80</td>
       </tr>
     </tbody>
   </table>
-
-  <div class="row">
-    <div class="col col-6">
-      Listings
-    </div>
-    <div class="col col-6">
-      Users
-    </div>
-  </div>
-
-  table
 
 <hr class="page-separator">
 

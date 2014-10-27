@@ -310,6 +310,7 @@
 }
 
 %popout {
+	@extend %border-box;
 	@extend %z-index-1;
 	display: none;
 	position: absolute;

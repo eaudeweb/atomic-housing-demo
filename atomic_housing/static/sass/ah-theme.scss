@@ -109,6 +109,10 @@ hr {
 	@extend %center-block;
 	max-width: 5em;
 }
+.hr-page {
+	@extend %inset-page;
+	@extend %outset-page;
+}
 p, .p {
 	@extend %leading;
 }
@@ -415,7 +419,7 @@ p, .p {
 	}
 }
 
-.table-stats {
+.table-overview {
 	@extend .table;
 	@extend .td-vr;
 	.icons {
@@ -434,6 +438,34 @@ p, .p {
 		@include new-col('width', 1, 5);
 		padding: 0 5px;
 		text-align: center;
+	}
+}
+
+.table-stats {
+	td {
+		@include new-col('width', 1, 3);
+	}
+	.bars {
+		&:hover {
+			cursor: help;
+		}
+		.bar {
+			@extend %popout-container;
+		}
+		.popout {
+			@extend %radius-small;
+			padding: 3px;
+			top: auto;
+			left: 50%;
+			bottom: 100%;
+			width: 80px;
+			margin-bottom: 5px;
+			margin-left: -40px;
+			text-align: center;
+			font-size: $small;
+			border-color: $brand-secondary;
+			box-shadow: 0 0 2px 0 rgba($brand-secondary, .5);;
+		}
 	}
 }
 

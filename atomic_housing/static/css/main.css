@@ -1,4 +1,4 @@
-.topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .input-accomodation li, .col, input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, .btn, .btn-fake, .input-append label, .input-accomodation label, .menu-item, .account-choice, .jump-to-map, .input-col label, .input-inline label, .search button, .layout-admin .main {
+.topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .input-accomodation li, .col, input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, .btn, .btn-fake, .input-append label, .input-accomodation label, .menu-item, .account-choice, .jump-to-map, .input-col label, .input-inline label, .search button, .popout, .layout-admin .main {
   box-sizing: border-box; }
 
 .layout-user .content:before, .layout-admin .content:before, .input-accomodation ul:before, .row:before, .input-col:before, .filters label:before, .clearfix:before, .dl-inline:before, .search:before, .menu:before, .page-title:before, .listings-list:before, .layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .filters label:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after, .listings-list:after {
@@ -20,15 +20,15 @@
   margin-left: -12px;
   margin-right: -12px; }
 
-.layout-admin .main, fieldset, .page-title {
+.layout-admin .main, fieldset, .hr-page, .page-title {
   padding-left: 24px;
   padding-right: 24px; }
 
-fieldset, .page-title {
+fieldset, .hr-page, .page-title {
   margin-left: -24px;
   margin-right: -24px; }
 
-.container, .modal, .layout-detail .main, .layout-passage .content, .input-accomodation li label:before, .input-accomodation input, .center-block, .hr-soft, .account-choice:before, .register-landlord, .table-stats .icons div:before {
+.container, .modal, .layout-detail .main, .layout-passage .content, .input-accomodation li label:before, .input-accomodation input, .center-block, .hr-soft, .account-choice:before, .register-landlord, .table-overview .icons div:before {
   margin-left: auto;
   margin-right: auto; }
 
@@ -222,7 +222,7 @@ fieldset, .page-title {
   background-color: #4088d4;
   background: linear-gradient(to right, #396ccf 0%, #47a5da 100%); }
 
-.table, .table-stats, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, .filters, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing, .listing-photo, #map-canvas {
+.table, .table-overview, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, .filters, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing, .listing-photo, #map-canvas {
   margin-top: auto;
   margin-bottom: 20px; }
 
@@ -317,13 +317,13 @@ input[type='text'], input[type='number'], input[type='password'], input[type='em
   .btn:hover, .btn-fake:hover, .input-append label:hover, .input-accomodation label:hover, .menu-item:hover, .account-choice:hover, .jump-to-map:hover {
     cursor: pointer; }
 
-.jump-to-map {
+.table-stats .bars .popout, .jump-to-map {
   border-radius: 3px; }
 
 .listing-photo, #map-canvas {
   border-radius: 6px; }
 
-[data-popout] {
+[data-popout], .table-stats .bars .bar {
   position: relative; }
 
 .popout {
@@ -401,7 +401,7 @@ input[type='text'], input[type='number'], input[type='password'], input[type='em
   .layout-passage .content h1 {
     color: #396ccf; }
 
-.table, .table-stats {
+.table, .table-overview {
   width: 100%; }
 
 .table-simple {
@@ -413,9 +413,9 @@ input[type='text'], input[type='number'], input[type='password'], input[type='em
   .table-simple tbody tr {
     border-top: 1px solid #eee; }
 
-.td-vr td, .table-rent td, .table-stats td {
+.td-vr td, .table-rent td, .table-overview td {
   border-right: 1px solid #ddd; }
-  .td-vr td:last-child, .table-rent td:last-child, .table-stats td:last-child {
+  .td-vr td:last-child, .table-rent td:last-child, .table-overview td:last-child {
     border-right: 0; }
 
 .btn {
@@ -633,6 +633,21 @@ fieldset {
 
 .filter-name {
   margin-bottom: 10px; }
+
+.bars {
+  height: 6px;
+  background-color: #eee;
+  box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 0.4); }
+
+.bar {
+  float: left;
+  height: 100%; }
+  .bar.new {
+    background-color: #ffcc66; }
+  .bar.active {
+    background-color: #3dcb4b; }
+  .bar.passive {
+    background-color: #d6d6d6; }
 
 html,
 body {
@@ -879,15 +894,32 @@ hr {
   .table-rent td {
     width: 33.33333%; }
 
-.table-stats .numbers {
+.table-overview .numbers {
   font-size: 120%;
   font-weight: bold; }
-.table-stats .labels {
+.table-overview .labels {
   font-size: 80%; }
-.table-stats td {
+.table-overview td {
   width: 20%;
   padding: 0 5px;
   text-align: center; }
+
+.table-stats td {
+  width: 33.33333%; }
+.table-stats .bars:hover {
+  cursor: help; }
+.table-stats .bars .popout {
+  padding: 3px;
+  top: auto;
+  left: 50%;
+  bottom: 100%;
+  width: 80px;
+  margin-bottom: 5px;
+  margin-left: -40px;
+  text-align: center;
+  font-size: 13px;
+  border-color: #47a5da;
+  box-shadow: 0 0 2px 0 rgba(71, 165, 218, 0.5); }
 
 .badge.primary {
   color: #fff;
