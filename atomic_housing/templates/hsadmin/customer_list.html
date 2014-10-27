@@ -34,7 +34,9 @@
             {{ customer.get_status_display }}
           </span>
         </td>
-        <td><!-- Contracts --></td>
+        <td>
+          {{ customer.contract_set.count }}
+        </td>
       </tr>
     {% endfor %}
     </tbody>
