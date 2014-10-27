@@ -1,17 +1,26 @@
-from django.forms import ModelForm, BaseFormSet
+from django.forms import ModelForm, BaseFormSet, Form, ChoiceField, CharField
 from django.forms.models import BaseModelFormSet
 from atomic_housing import models
 from atomic_housing.middleware import get_current_request
 from django import forms
 
 
-class ListingForm(ModelForm):
+SORTBY_CHOICES = (
+    ('rent', 'Price (ascending)'),
+    ('-rent', 'Price (descending)'),
+    ('updated', 'Date Posted'),
+    ('size', 'Size (ascending)'),
+    ('-size', 'Size (descending)'),
+)
 
+
+class ListingForm(ModelForm):
     class Meta:
         model = models.Listing
         exclude = ('owner', 'status', 'posted',)
 
-    accomodation = forms.ChoiceField(choices=models.ACCOMODATION_TYPES, widget=forms.RadioSelect)
+    accomodation = forms.ChoiceField(choices=models.ACCOMODATION_TYPES,
+                                     widget=forms.RadioSelect)
 
     def save(self):
         listing = super(ListingForm, self).save(commit=False)
@@ -20,21 +29,19 @@ class ListingForm(ModelForm):
         listing.save()
         return listing
 
-class RegisterCustomerForm(ModelForm):
 
+class RegisterCustomerForm(ModelForm):
     class Meta:
         model = models.Customer
 
 
 class RegisterLandlordForm(ModelForm):
-
     class Meta:
         model = models.Landlord
         exclude = ('user',)
 
 
 class ListingPhotoForm(ModelForm):
-
     class Meta:
         model = models.ListingPhoto
         exclude = ('listing',)
@@ -46,9 +53,13 @@ class ListingPhotoForm(ModelForm):
 
 
 class BaseListingPhotoFormset(BaseFormSet):
-
     def save(self, listing):
         for form in self.forms:
             if not form.cleaned_data:
                 continue
             form.save(listing=listing)
+
+
+class SearchForm(Form):
+    search = CharField()
+    sortby = ChoiceField(choices=SORTBY_CHOICES)

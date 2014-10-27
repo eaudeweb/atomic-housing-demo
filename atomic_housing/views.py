@@ -123,9 +123,16 @@ class SearchView(ListView):
     template_name = 'customer/search.html'
     model = models.Listing
 
+    def get_context_data(self, **kwargs):
+        context = super(SearchView, self).get_context_data(**kwargs)
+        context.update({'form': forms.SearchForm(self.request.GET)})
+        return context
+
     def get_queryset(self):
-        print self.request
-        return super(SearchView, self).get_queryset()
+        qs = super(SearchView, self).get_queryset()
+        if self.request.GET.get('sortby'):
+            qs = qs.order_by(self.request.GET['sortby'])
+        return qs
 
 
 class ListingDetails(DetailView):

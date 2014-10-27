@@ -8,8 +8,9 @@
 	<link rel="stylesheet" href="{% static "css/normalize.css" %}" />
 	<link rel="stylesheet" href="{% static "css/main.css" %}" />
 </head>
-<body class="{% block layout %} layout-user {% endblock %}">
 
+<body class="{% block layout %} layout-user {% endblock %}">
+<form method="get" action="">
 	<div class="topbar">
 		<div class="container">
 			<div class="row">
@@ -19,7 +20,7 @@
 					</div>
 				</div>
 				<div class="search">
-					<input type="search">
+					{{ form.search }}
 					<button type="submit">Search</button>
 				</div>
 				<div class="menu">
@@ -29,9 +30,9 @@
 				  {% else %}
 					<a class="menu-item" href="{% url 'register' %}">Sign in</a>
 				  {% endif %}
-					<div class="menu-item">
-						Menu
-					</div>
+{#					<div class="menu-item">#}
+{#						Menu#}
+{#					</div>#}
 				</div>
 			</div>
 		</div>
@@ -43,6 +44,7 @@
 		{% endblock %}
 		</div>
 	</div>
+  </form>
 
 	<div class="bottombar">
     <p class="copyright">&copy; <a href="http://www.iaea.org">IAEA</a>
