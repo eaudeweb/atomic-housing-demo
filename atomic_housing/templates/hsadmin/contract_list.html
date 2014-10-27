@@ -1,4 +1,5 @@
 {% extends '_layout_admin.html' %}
+{% load utils %}
 
 {% block page-title %}
 	<div class="page-title">
@@ -23,14 +24,14 @@
 		{% for contract in object_list %}
 			<tr>
 				<td><a href="">{{ contract.listing.title }}</a></td>
-				<td><a href="">{{ contract.listing.owner }}</a></td>
+				<td><a href="">{{ contract.listing.landlord }}</a></td>
 				<td><a href="">{{ contract.customer }}</a></td>
 				<td>
 					<span class="badge {{ contract.get_status_display }}">
 						{{ contract.get_status_display }}
 					</span>
 				</td>
-				<td>{{ contract.awarded }}</td>
+				<td>{{ contract.awarded|just_date }}</td>
 			</tr>
 		{% endfor %}
 		</tbody>

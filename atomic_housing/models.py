@@ -161,7 +161,11 @@ class Listing(models.Model):
             self.address_district, 
             self.address_zipcode, 
             self.address_city
-        )    
+        )
+
+    @property
+    def landlord(self):
+        return self.owner.landlord
 
     def __unicode__(self):
         return u"{} in {}".format(self.title, self.address)
