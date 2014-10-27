@@ -167,6 +167,12 @@ class Listing(models.Model):
     def landlord(self):
         return self.owner.landlord
 
+    @property
+    def cover_photo(self):
+        if self.photos.count():
+            return self.photos.all()[0]
+        return None
+
     def __unicode__(self):
         return u"{} in {}".format(self.title, self.address)
 

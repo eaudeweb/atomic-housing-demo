@@ -16,9 +16,13 @@
     {% for listing in object_list %}
     <li>
       <div class="listing">
-        <div class="listing-photo no-photo">
+        <div class="listing-photo {% if not listing.cover_photo %}no-photo{% endif %}">
           <!-- <div class="muted">No photo</div>
           <a class="btn btn-success" data-modal=".modal-add-photo">Add photo</a> -->
+          {% if listing.cover_photo %}
+          <img src="{{ listing.cover_photo.name.url }}" width="100"/>
+          {% endif %}
+          <a href="{% url 'listings_photos' listing.pk %}">Photos</a>
         </div>
         <div class="listing-description">
           <div class="listing-title">
