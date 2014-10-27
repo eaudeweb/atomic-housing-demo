@@ -15,7 +15,7 @@
       <th>Phone</th>
       <th>Email</th>
       <th>Status</th>
-      <th>Actions</th>
+      <th>Listings</th>
     </tr>
     </thead>
     <tbody>
@@ -34,7 +34,7 @@
             {{ landlord.get_status_display }}
           </span>
         </td>
-        <td></td>
+        <td>{{ landlord.user.listing_set.count }}</td>
       </tr>
     {% endfor %}
     </tbody>
