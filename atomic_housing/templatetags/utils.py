@@ -15,3 +15,10 @@ def just_date(value):
     if not value:
         return ''
     return value.date()
+
+
+@register.filter
+def yesno(value):
+    if value is None:
+        return 'N/A'
+    return 'Yes' if value else 'No'

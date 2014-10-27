@@ -1,5 +1,5 @@
 {% extends '_layout.html' %}
-
+{% load utils %}
 {% load staticfiles %}
 
 {% block layout %}layout-detail{% endblock %}
@@ -38,7 +38,7 @@
 			<tbody>
 				<tr>
 					<td>{{ object.lease_type }}</td>
-					<td><span class="price">1200 EURO</span></td>
+					<td><span class="price">{{ object.rent }} EURO</span></td>
 					<td>{{ object.deposit }} EURO</td>
 				</tr>
 				<tr>
@@ -83,27 +83,26 @@
 
 	<div class="section">
 		<h3 class="section-title">Description</h3>
-		<!-- <p>{{ object.description }}</p> -->
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, vel corporis dignissimos! Velit, dolorum ab ducimus tempore debitis consequatur beatae tempora suscipit, impedit nobis facilis! Voluptate voluptas ea odio repudiandae.</p>
+		<p>{{ object.description|linebreaks }}</p>
 	</div>
 	
 	<div class="section">
 		<h3 class="section-title">Ammenities</h3>
 		<dl class="dl-inline">
 			<dt>Furnished</dt>
-			<dd>{{ object.furnished }}</dd>
+			<dd>{{ object.furnished|yesno }}</dd>
 			<dt>Parking</dt>
-			<dd>{{ object.parking }}</dd>
+			<dd>{{ object.parking|default:"N/A" }}</dd>
 			<dt>Heating</dt>
 			<dd>
-				{{ object.get_heating_display }}
+				{{ object.get_heating_display|default:"N/A" }}
 				{% if object.heating %}
 					{{ object.heating_emission }}
 				{% endif %}
 			</dd>
 			<dt>Outdoor</dt>
 			<dd>
-				{{ object.outdoor_size }}
+				{{ object.outdoor_size|default:"N/A" }}
 				{% if object.outdoor_size %}
 					{{ object.get_outdoor_display }}
 				{% endif %}
@@ -119,7 +118,7 @@
 			<dt>Floor</dt>
 			<dd>{{ object.floor }}</dd>
 			<dt>Elevator</dt>
-			<dd>{{ object.elevator }}</dd>
+			<dd>{{ object.elevator|yesno }}</dd>
 		</dl>
 	</div>
 
