@@ -9,52 +9,31 @@
 
 {% block content %}
 
-	<table class="contracts">
+	<table class="table table-simple">
 		<thead>
-		<tr>
-			<th>Contract</th>
-			<th>Status</th>
-		</tr>
+			<tr>
+				<th>Contract</th>
+				<th>Landlord</th>
+				<th>Customer</th>
+				<th>Status</th>
+				<th>Awarded</th>
+			</tr>
 		</thead>
 		<tbody>
 		{% for contract in object_list %}
 			<tr>
-				<td class="text-center">
-					<a href="">{{ contract.listing.title }}</a>
-					<div class="row">
-						<div class="col col-6 text-right">{{ contract.listing.owner }}</div>
-						<div class="col col-6 text-left">{{ contract.customer }}</div>
-					</div>
-					{{ contract.awarded }}
+				<td><a href="">{{ contract.listing.title }}</a></td>
+				<td><a href="">{{ contract.listing.owner }}</a></td>
+				<td><a href="">{{ contract.customer }}</a></td>
+				<td>
+					<span class="badge {{ contract.get_status_display }}">
+						{{ contract.get_status_display }}
+					</span>
 				</td>
-				<td>{{ contract.get_status_display }}</td>
+				<td>{{ contract.awarded }}</td>
 			</tr>
 		{% endfor %}
 		</tbody>
 	</table>
-
-
-	<!-- <table>
-		<thead>
-		<tr>
-			<th>Landlord</th>
-			<th>Listing</th>
-			<th>Customer</th>
-			<th>Signed</th>
-			<th>Status</th>
-			<th>Actions</th>
-		</tr>
-		</thead>
-		<tbody>
-		{% for contract in object_list %}
-			<tr>
-			<td>{{ contract.listing.owner }}</td>
-			<td>{{ contract.listing.title }}</td>
-			<td>{{ contract.customer }}</td>
-			<td>{{ contract.awarded }}</td>
-			<td>{{ contract.get_status_display }}</td>
-			</tr>
-		{% endfor %}
-		</tbody>
-	</table> -->
+	
 {% endblock %}

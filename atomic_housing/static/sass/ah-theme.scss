@@ -487,6 +487,9 @@ p, .p {
 		@extend .muted;
 		background-color: #d6d6d6;
 	}
+	&.new {
+		background-color: $brand-yellow;
+	}
 }
 
 .listing-gallery {

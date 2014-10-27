@@ -935,6 +935,8 @@ hr {
   background-color: #3dcb4b; }
 .badge.passive {
   background-color: #d6d6d6; }
+.badge.new {
+  background-color: #ffcc66; }
 
 .section-photo {
   position: relative; }
