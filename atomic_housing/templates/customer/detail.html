@@ -40,8 +40,8 @@
 			<tbody>
 				<tr>
 					<td>{{ object.lease_type }}</td>
-					<td><span class="price">{{ object.rent }} €</span></td>
-					<td>{{ object.deposit }} €</td>
+					<td><span class="price">{{ object.rent }}€</span></td>
+					<td>{{ object.deposit }}€</td>
 				</tr>
 				<tr>
 					<td>Lease</td>
@@ -87,6 +87,25 @@
 		<h3 class="section-title">Description</h3>
 		<p>{{ object.description|linebreaks }}</p>
 	</div>
+
+	<div class="section">
+		<h3 class="section-title">Prices</h3>
+		<dl class="dl-inline">
+			<dt>Rent</dt>
+			<dd>
+				{{ object.rent }}€/month
+				{% if object.rent_vat %}
+					VAT included
+				{% endif %}
+			</dd>
+			<dt>VAT</dt>
+			<dd>{{ object.rent_vat|yesno }}</dd>
+			<dt>Maintenance</dt>
+			<dd>{{ object.rent_maintenance }}€/month</dd>
+			<dt>Deposit</dt>
+			<dd>{{ object.deposit }}€</dd>
+		</dl>
+	</div>	
 
 	<div class="section">
 		<h3 class="section-title">Ammenities</h3>
