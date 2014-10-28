@@ -253,7 +253,7 @@ fieldset, .hr-page, .page-title {
   display: inline-block;
   padding: .2em .25em;
   border-radius: 2px;
-  font-size: 80%;
+  font-size: 90%;
   line-height: 1; }
 
 .popout {
@@ -433,7 +433,7 @@ body {
     border-right: 0; }
 
 .btn {
-  font-size: 80%;
+  font-size: 90%;
   font-weight: bold; }
   .btn.default {
     color: #444;
@@ -459,7 +459,7 @@ body {
 
 .btn-fake {
   border-color: transparent;
-  font-size: 80%;
+  font-size: 90%;
   font-weight: bold;
   color: inherit; }
   .btn-fake:hover {
@@ -603,7 +603,7 @@ label[for] {
   .input-append label {
     width: 96px;
     border-right: 0;
-    font-size: 80%;
+    font-size: 90%;
     background-color: #eee; }
   .input-append input,
   .input-append select {
@@ -634,7 +634,7 @@ fieldset {
   fieldset legend {
     padding-right: 12px;
     text-align: center;
-    font-size: 80%;
+    font-size: 90%;
     padding: 0 12px; }
 
 .section-photo {
@@ -670,8 +670,9 @@ body {
   color: #444;
   text-rendering: optimizeLegibility; }
 
-.small, .errorlist, .copyright {
-  font-size: 80%; }
+.small, .errorlist, .copyright,
+small {
+  font-size: 90%; }
 
 .large {
   font-size: 120%; }
@@ -888,7 +889,7 @@ hr {
     font-size: 120%;
     font-weight: bold; }
   .table-overview .labels {
-    font-size: 80%; }
+    font-size: 90%; }
   .table-overview td {
     width: 20%;
     padding: 0 5px;
@@ -1012,7 +1013,7 @@ hr {
 
 .section-title {
   margin-bottom: 10px;
-  font-size: 80%; }
+  font-size: 90%; }
 
 .filters {
   font-size: 14px; }

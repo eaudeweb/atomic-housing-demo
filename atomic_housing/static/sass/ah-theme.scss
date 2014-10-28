@@ -53,7 +53,8 @@ body {
 .text-justifiy {
 	@extend %text-justifiy;
 }
-.small {
+.small,
+small {
 	font-size: $smaller;
 }
 .large {

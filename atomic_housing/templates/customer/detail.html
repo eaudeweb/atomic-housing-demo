@@ -33,14 +33,20 @@
 		<a class="jump-to-map" href="#location" title="Jump to map"></a>
 		<h1 class="h3 no-leading">{{ object.title }}</h1>
 		<p>{{ object.address }}</p>
-
+		<div class="clearfix">
+			<small class="muted pull-left">Published: {{ object.updated|just_date }}</small>
+			<small class="pull-right">
+				Available: 
+				<span class="availability">{{ object.availability|default:'Now' }}</span>
+			</small>
+		</div>
 		<hr>
 
 		<table class="table table-rent">
 			<tbody>
 				<tr>
 					<td>{{ object.lease_type }}</td>
-					<td><span class="price">{{ object.rent }}€</span></td>
+					<td><a href="#prices" class="price">{{ object.rent }}€</a></td>
 					<td>{{ object.deposit }}€</td>
 				</tr>
 				<tr>
@@ -88,7 +94,7 @@
 		<p>{{ object.description|linebreaks }}</p>
 	</div>
 
-	<div class="section">
+	<div class="section" id="prices">
 		<h3 class="section-title">Prices</h3>
 		<dl class="dl-inline">
 			<dt>Rent</dt>
