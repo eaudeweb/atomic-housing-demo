@@ -18,10 +18,14 @@
 
 <div class="main">
 
-	
+
 	<div class="listing-photo">
 		<div class="img">
-			<img src="{% static "img/photo.jpg" %}" alt="">
+      {% if object.cover_photo %}
+			  <img src="{{ object.cover_photo.name.url }}" alt="">
+      {% else %}
+			  <img src="{% static "img/photo.jpg" %}" alt="">
+      {% endif %}
 		</div>
 	</div>
 
@@ -83,7 +87,7 @@
 		<h3 class="section-title">Description</h3>
 		<p>{{ object.description|linebreaks }}</p>
 	</div>
-	
+
 	<div class="section">
 		<h3 class="section-title">Ammenities</h3>
 		<dl class="dl-inline">

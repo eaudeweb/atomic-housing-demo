@@ -2,7 +2,13 @@
 
 <div class="listing">
 	<div class="listing-thumbnail">
-		<div class="img no-photo"><img src="" alt=""></div>
+    {% if listing.cover_photo %}
+    <div class="img">
+      <img src="{{ listing.cover_photo.name.url }}" class=""/>
+    </div>
+    {% else %}
+    <div class="img no-photo"></div>
+    {% endif %}
 	</div>
 	<div class="listing-body">
 		<div class="listing-stats">
