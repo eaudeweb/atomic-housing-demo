@@ -135,6 +135,8 @@ class SearchView(SearchMixin, ListView):
 
     def get_queryset(self):
         qs = super(SearchView, self).get_queryset()
+        qs = qs.filter(
+            status__in=(models.LISTING_ACTIVE, models.LISTING_OCCUPIED))
         if self.request.GET.get('sortby'):
             qs = qs.order_by(self.request.GET['sortby'])
         return qs
