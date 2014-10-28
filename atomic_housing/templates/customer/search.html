@@ -71,9 +71,11 @@
 
 	<div class="main">
 		<div class="clearfix">
+      {% if form.search.data %}
 			<h1 class="pull-left h5 muted">
 				{{ object_list|length }} results for <strong>{{ form.search.data }}</strong>
 			</h1>
+      {% endif %}
 			
 			<div class="pull-right" method="get" action="">
         Sort by:
