@@ -25,7 +25,9 @@
     <tbody>
     {% for customer in object_list %}
       <tr>
-        <td><strong>{{ customer.first_name }} {{ customer.last_name }}</strong></td>
+        <td>
+          <strong><a href="{% url 'hsadmin_customer_detail' customer.pk %}">{{ customer.first_name }} {{ customer.last_name }}</a></strong>
+        </td>
         <td>{{ customer.nationality }}</td>
         <td>
           <a href="tel:{{ customer.phone }}">{{ customer.phone }}</a>
@@ -40,9 +42,6 @@
         </td>
         <td>
           {{ customer.contract_set.count }}
-        </td>
-        <td>
-          <a href="{% url 'hsadmin_customer_detail' customer.pk %}">Details</a>
         </td>
       </tr>
     {% endfor %}

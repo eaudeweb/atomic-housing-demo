@@ -5,54 +5,33 @@
     <h1>Customer Details</h1>
 
     <div class="actions">
-      <a href="{% url 'hsadmin_customer_list' %}" class="btn-fake">Cancel</a>
+      <a href="{% url 'hsadmin_customer_list' %}" class="btn-fake">Back</a>
     </div>
   </div>
 {% endblock %}
 
 {% block content %}
-  <table class="table table-simple">
-    <tr>
-      <th>First Name:</th>
-      <td>{{ object.first_name }}</td>
-    </tr>
-    <tr>
-      <th>Last Name:</th>
-      <td>{{ object.last_name }}</td>
-    </tr>
-
-    <tr>
-      <th>Status:</th>
-      <td>
-        <span class="td-badge {{ object.get_status_display }}">
-            {{ object.get_status_display }}
-        </span>
-      </td>
-    </tr>
-    <tr>
-
-      <th>Nationality:</th>
-      <td>{{ object.get_nationality_display }}</td>
-    </tr>
-    <tr>
-
-      <th>Address:</th>
-      <td>{{ object.address }}</td>
-    </tr>
-    <tr>
-      <th>Phone:</th>
-      <td>{{ object.phone }}</td>
-    </tr>
-    <tr>
-      <th>Email:</th>
-      <td>{{ object.email }}</td>
-    </tr>
-  </table>
-
-  <div>
+  <dl class="dl-inline">
+    <dt>Name</dt>
+    <dd>{{ object.first_name }} {{ object.last_name }}</dd>
+    <dt>Status</dt>
+    <dd>
+      <span class="badge {{ object.get_status_display }}">{{ object.get_status_display }}</span>
+    </dd>
+    <dt>Nationality</dt>
+    <dd>{{ object.get_nationality_display }}</dd>
+    <dt>Address</dt>
+    <dd>{{ object.address }}</dd>
+    <dt>Phone</dt>
+    <dd><a href="tel:{{ object.phone }}">{{ object.phone }}</a></dd>
+    <dt>Email</dt>
+    <dd><a href="mailto:{{ object.email }}">{{ object.email }}</a></dd>
+  </dl>
+  <hr class="hr-page">
+  <p>
+    <a class="btn default">Reset Password</a>
     <a class="btn default">Change Status</a>
     <a class="btn default">Edit</a>
     <a class="btn default">Delete</a>
-  </div>
-  <br/>
+  </p>
 {% endblock %}
