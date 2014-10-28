@@ -83,9 +83,9 @@ class HSReport(TemplateView):
         context = super(HSReport, self).get_context_data(**kwargs) or {}
         qs = list(models.Listing.objects.all())
         shuffle(qs)
-        context['viewed'] = qs[:10]
+        context['viewed'] = qs[:10].sort(key=lambda o:o.id)
         shuffle(qs)
-        context['favorited'] = qs[:10]
+        context['favorited'] = qs[:10].sort(key=lambda o:o.id)
         return context
 
 
