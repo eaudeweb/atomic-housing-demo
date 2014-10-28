@@ -136,8 +136,10 @@ class Listing(models.Model):
 
     @property
     def title(self):
-        return u"{address} - {zip}".format(
-            address=self.address_address, zip=self.address_zipcode
+        return u"{accomodation}, {rooms} {no_rooms}".format(
+            accomodation=self.get_accomodation_display(),
+            rooms=self.rooms,
+            no_rooms= 'rooms' if (self.rooms > 1) else 'room'
         )
 
     @property
@@ -150,12 +152,6 @@ class Listing(models.Model):
 
     @property
     def address(self):
-        return u"{} - {}".format(
-            self.address_district, self.address_address
-        )
-
-    @property
-    def address_full(self):
         return u"{}, {} - {}, {}".format(
             self.address_address, 
             self.address_district, 
