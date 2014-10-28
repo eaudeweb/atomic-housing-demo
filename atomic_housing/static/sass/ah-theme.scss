@@ -134,6 +134,7 @@ p, .p {
 	@extend %dl-horizontal;
 }
 .img {
+	display: block;
 	img {
 		display: block;
 		max-width: 100%;
@@ -365,6 +366,53 @@ p, .p {
 		.errorlist {
 			@include new-col('offset', 6);
 		}
+	}
+}
+
+.input-accomodation {
+	@extend .input-block;
+	ul {
+		@extend %no-ul;
+		@extend %clearfix;
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+	li {
+		@extend %border-box;
+		@include new-col("width", 1, 4);
+		float: left;
+		padding-left: 5px;
+		padding-right: 5px;
+		& label:before { @extend %center-block; }
+		&:nth-child(1) label { @extend %icon-apartment; }
+		&:nth-child(2) label { @extend %icon-house; }
+		&:nth-child(3) label { @extend %icon-duplex; }
+		&:nth-child(4) label { @extend %icon-other; }
+	}
+	label {
+		@extend %border-box;
+		@extend %button;
+		@extend %input-border-hover;
+		border-color: transparent;
+
+		&:hover {
+			@extend %z-index-hover;
+		}
+		&:active {
+			@extend %z-index-0;
+		}
+		display: block!important;
+		width: 100%;
+		height: auto;
+		border-style: solid;
+		border-width: 1px;
+		padding: 5px;
+		text-align: center;
+	}
+	input {
+		@extend %center-block;
+		display: block;
+		width: 30px;
 	}
 }
 
@@ -703,6 +751,20 @@ p, .p {
 	@extend %radius-medium;
 	overflow: hidden;
 	height: 300px;
+}
+
+// map form
+.map-form {
+	max-width: 180px;
+	margin-bottom: $leading / 2;
+	text-align: center;
+	.img {
+		@extend %radius-medium;
+		overflow: hidden;
+	}
+	a:hover {
+		cursor: pointer;
+	}
 }
 
 // copyright

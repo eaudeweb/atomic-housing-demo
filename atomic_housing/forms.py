@@ -26,6 +26,9 @@ class ListingForm(ModelForm):
     accomodation = forms.ChoiceField(choices=models.ACCOMODATION_TYPES,
                                      widget=forms.RadioSelect)
 
+    parking = forms.ChoiceField(choices=models.PARKING_TYPES,
+                                widget=forms.RadioSelect)
+
     def save(self):
         listing = super(ListingForm, self).save(commit=False)
         request = get_current_request()

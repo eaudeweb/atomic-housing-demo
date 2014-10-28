@@ -1,5 +1,7 @@
 {% extends '_layout_landlord.html' %}
 
+{% load staticfiles %}
+
 {% block page-title %}
 	<div class="page-title">
 		<h1>
@@ -17,190 +19,262 @@
 
 
 {% block content %}
-  <form method="POST">
+  <form method="POST" class="form-listing">
     {% csrf_token %}
 
-		<div class="input-group input-inline input-accomodation">
-			{{ form.accomodation }}
-			{{ form.accomodation.errors }}
-		</div>
 
-		<fieldset>
-			<legend>Address</legend>
-
-			<div class="row">
-					<label for="id_address_address" class="col col-3">Address</label>
-					<div class="input-group col col-6">
-						{{ form.address_address }}
-						{{ form.address_address.errors }}
-					</div>
+		<fieldset class="fieldset">
+			<legend>Accomodation</legend>
+			<div class="fieldset-body">
+				<div class="input-accomodation">
+					{{ form.accomodation }}
+					{{ form.accomodation.errors }}
+				</div>
 			</div>
-			<div class="row">
-				<div class="col col-6 offset-3">
-					<div class="row">
+		</fieldset>
 
-							<div class="col col-6">
-								<div class="input-group">
-									<label for="id_address_zipcode">Zip code</label>
-									{{ form.address_zipcode }}
-									{{ form.address_zipcode.errors }}
-								</div>
-							</div>
-							<div class="col col-6">
-								<div class="input-group">
-									<label for="id_address_district">District</label>
-									{{ form.address_district }}
-									{{ form.address_district.errors }}
-								</div>
-							</div>
+		
 
+
+		</fieldset>
+
+		<!-- address -->
+		<fieldset class="fieldset">
+			<legend>Address</legend>
+			<div class="fieldset-help">
+				<div class="map-form">
+					<a class="img" data-modal=".modal-map" data-onopen='.map-full'>
+						<img src="{% static "img/map-thumbnail.jpg" %}" alt="">
+					</a>
+					<p class="text-center">Use map to find address</p>
+				</div>
+			</div>
+			<div class="fieldset-body">
+				<div class="input-block">
+					<label for="id_address_address">Address</label>
+					{{ form.address_address }}
+					{{ form.address_address.errors }}
+				</div>
+				
+				<div class="row">
+					<div class="col col-6">
+						<div class="input-block">
+							<label for="id_address_district">District</label>
+							{{ form.address_district }}
+							{{ form.address_district.errors }}
+						</div>
+					</div>
+					<div class="col col-6">
+						<div class="input-block">
+							<label for="id_address_zipcode">Zip code</label>
+							{{ form.address_zipcode }}
+							{{ form.address_zipcode.errors }}
+						</div>
 					</div>
 				</div>
 			</div>
 		</fieldset>
 
-    <fieldset>
-      <legend>Description</legend>
-
-      <div class="input-group">
-				<label id="id_description">Description</label>
-				{{ form.description }}
-				{{ form.description.errors }}
-			</div>
-    </fieldset>
-
-		<fieldset>
+		<fieldset class="fieldset">
 			<legend>Layout</legend>
 
-			<div class="input-group">
-				<label id="id_rooms">Rooms</label>
-				{{ form.rooms }}
-				{{ form.rooms.errors }}
+			<div class="fieldset-body">
+				<ul class="input-layout">
+					<li>
+						<label for="id_size">
+							<span class="icon-size"></span>
+							<div>Size (m<sup>2</sup>)</div>
+							{{ form.size }}
+							{{ form.size.errors }}
+						</label>
+					</li>
+					<li>
+						<label id="id_rooms">
+							<span class="icon-rooms"></span>
+							<div>Rooms</div>
+							{{ form.rooms }}
+							{{ form.rooms.errors }}
+						</label>
+					</li>
+					<li>
+						<label for="id_bedrooms">
+							<span class="icon-bedrooms"></span>
+							<div>Bedrooms</div>
+							{{ form.bedrooms }}
+							{{ form.bedrooms.errors }}
+						</label>
+					</li>
+					<li>
+						<label for="id_bathrooms">
+							<span class="icon-bathrooms"></span>
+							<div>Bathrooms</div>
+							{{ form.bathrooms }}
+							{{ form.bathrooms.errors }}
+						</label>
+					</li>
+					<li>
+						<label for="id_toilets">
+							<span class="icon-toilets"></span>
+							<div>Toilets</div>
+							{{ form.toilets }}
+							{{ form.toilets.errors }}
+						</label>
+					</li>
+				</ul>
 			</div>
-
-			<div class="input-group">
-				<label for="id_bedrooms">Bedrooms</label>
-				{{ form.bedrooms }}
-				{{ form.bedrooms.errors }}
-			</div>
-
-			<div class="input-group">
-				<label for="id_bathrooms">Bathrooms</label>
-				{{ form.bathrooms }}
-				{{ form.bathrooms.errors }}
-			</div>
-
-			<div class="input-group">
-				<label for="id_toilets">Toilets</label>
-				{{ form.toilets }}
-				{{ form.toilets.errors }}
-			</div>
-
 		</fieldset>
 
-		<fieldset>
+		<fieldset class="fieldset">
+			<legend>Description</legend>
+			<div class="fieldset-help">
+				<p>The neighbourhood and everything else</p>
+				<p>Also say if you allow pets, allow smoking, etc.</p>
+			</div>
+			<div class="fieldset-body">
+				<div class="input-block">
+					<!-- <label id="id_description">Description</label> -->
+					{{ form.description }}
+					{{ form.description.errors }}
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset class="fieldset">
 			<legend>Amenities</legend>
-
-			<div class="input-group">
-				<label for="id_outdoor">Outdoor</label>
-				{{ form.outdoor }}
-				{{ form.outdoor.errors }}
-			</div>
-
-			<div class="input-group">
-				<label for="id_outdoor_size">Outdoor size</label>
-				{{ form.outdoor_size }}
-				{{ form.outdoor_size.errors }}
-			</div>
-
-			<div class="input-group">
-				<label for="id_heating">Heating</label>
-				{{ form.heating }}
-				{{ form.heating.errors }}
-			</div>
-
-			<div class="input-group">
-				<label for="id_heating_emission">Heating emission</label>
-				{{ form.heating_emission }}
-				{{ form.heating_emission.errors }}
-			</div>
-
-			<div class="input-group">
-				<label for="id_furnished">Furnished</label>
-				{{ form.furnished }}
-
-			</div>
-			<div class="input-group">
-				<label for="id_parking">Parking</label>
-				{{ form.parking }}
-				{{ form.parking.errors }}
-			</div>
-
-		</fieldset>
-
-		<fieldset>
-			<legend>Accomodation</legend>
-
-			<div class="row">
-				<div class="col col-6">
-					<div class="input-group">
-						<label for="id_year">Year</label>
-						{{ form.year }}
-						{{ form.year.errors }}
+			<div class="fieldset-body">
+				<div class="p">
+					{{ form.furnished }}
+					<label for="id_furnished">Furnished</label>
+				</div>
+				<div class="row">
+					<div class="col col-6">
+						<div class="input-block">
+							<label for="id_outdoor">Outdoor</label>
+							{{ form.outdoor }}
+							{{ form.outdoor.errors }}
+						</div>			
 					</div>
-
-					<div class="input-group">
-						<label for="id_size">Size</label>
-						{{ form.size }}
-						{{ form.size.errors }}
+					<div class="col col-6">
+						<div class="input-block">
+							<label for="id_outdoor_size">Outdoor size (m<sup>2</sup>)</label>
+							{{ form.outdoor_size }}
+							{{ form.outdoor_size.errors }}
+						</div>
 					</div>
 				</div>
-				<div class="col col-6">
-					<div class="input-group">
-						<label for="id_floor">Floor</label>
-						{{ form.floor }}
-						{{ form.floor.errors }}
+				<div class="row">
+					<div class="col col-6">
+						<div class="input-block">
+							<label for="id_heating">Heating</label>
+							{{ form.heating }}
+							{{ form.heating.errors }}
+						</div>
 					</div>
+					<div class="col col-6">
+						<div class="input-block">
+							<label for="id_heating_emission">Heating emission (KW/m<sup>2</sup>)</label>
+							{{ form.heating_emission }}
+							{{ form.heating_emission.errors }}
+						</div>
+					</div>
+				</div>
+				<div class="select-multiple-inline">
+					Parking
+					{{ form.parking }}
+					{{ form.parking.errors }}
+				</div>
+				
+			</div>
+		</fieldset>
 
-					<div class="input-group">
-						<label for="id_elevator">Elevator</label>
-						{{ form.elevator }}
+		<fieldset class="fieldset">
+			<legend>Building</legend>
+			<div class="fieldset-body">
+				<div class="row">
+					<div class="col col-6">
+						<div class="input-block">
+							<label for="id_year">Construction year</label>
+							{{ form.year }}
+							{{ form.year.errors }}
+						</div>
+					</div>
+					<div class="col col-6">
+						<div class="input-block">
+							<label for="id_floor">Floor</label>
+							{{ form.floor }}
+							{{ form.floor.errors }}
+						</div>		
+						<label for="id_elevator">{{ form.elevator }} Elevator</label>
 						{{ form.elevator.errors }}
 					</div>
 				</div>
+
+				
 			</div>
 		</fieldset>
 
-		<fieldset>
-			<legend>Costs</legend>
+		<fieldset class="fieldset">
+			<legend>Pricing</legend>
 
-			<div class="row">
-				<div class="col col-4 input-group">
-					<label for="id_rent">Rent</label>
-					{{ form.rent }}
-					{{ form.rent.errors }}
+			<div class="fieldset-body">
+
+				<div class="row">
+					<div class="col col-6">
+						<div class="input-block">
+							<label for="id_rent">Rent (€/month)</label>
+							{{ form.rent }}
+							{{ form.rent.errors }}
+						</div>
+					</div>
+					<div class="col col-6">
+						<label class="no-label" for="id_rent_vat">{{ form.rent_vat }} VAT included</label>
+					</div>
 				</div>
-
-				<div class="col col-4 input-group">
-					<label for="id_deposit">Deposit</label>
-					{{ form.deposit }}
-					{{ form.deposit.errors }}
+				<div class="row">
+					<div class="col col-6">
+						<div class="input-block">
+							<label for="id_rent">Maintenance (€/month)</label>
+							{{ form.rent_maintenance }}
+							{{ form.rent_maintenance.errors }}
+						</div>
+					</div>
 				</div>
-
-				<div class="col col-4 input-group">
-					<label for="id_lease">Lease</label>
-					{{ form.lease }}
-					{{ form.lease.errors }}
+				<div class="row">
+					<div class="col col-6">
+						<div class="input-block">
+							<label for="id_lease">Lease</label>
+							{{ form.lease }}
+							{{ form.lease.errors }}
+						</div>
+					</div>
+					<div class="col col-6">
+						<div class="input-block">
+							<label for="id_deposit">Deposit (€)</label>
+							{{ form.deposit }}
+							{{ form.deposit.errors }}
+						</div>
+					</div>
 				</div>
 			</div>
 
 		</fieldset>
 
-		<button class="btn primary" type="submit">Save</button>
-    <a href="{% url 'listings' %}" class="btn default">Cancel</a>
-    <span>
-      By clicking "Save", the listing will go into the state "Inactive" and
-    will appear in search after an Administrator reviews it.
-    </span>
+		<p class="text-center">
+			<button class="col-3 btn primary" type="submit">Save</button>
+	    <a href="{% url 'listings' %}" class="col-3 btn default">Cancel</a>
+    </p>
+    <p class="text-center small muted">The listing will only appear among search results after an Administrator reviews it.</p>
 	</form>
+{% endblock %}
+
+
+{% block modal %}
+	<div class="modal modal-map">
+		<div class="map-full" data-map='cool' data-address="Vienna"></div>
+	</div>
+{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgzwlVgB2yRIIW89qbpi9dAiWlD1DAjy0&language=en">
+	</script>
 {% endblock %}
