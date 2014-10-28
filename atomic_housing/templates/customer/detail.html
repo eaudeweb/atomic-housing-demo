@@ -61,7 +61,13 @@
 
 		<div class="text-center">
 			<a class="btn primary" href="">Contact landlord</a>
-			<a class="btn default" href="">Add to Favorites</a>
+			<a class="btn default" href="">
+        {% if object in user.customer.favorites.all %}
+          Remove from Favorites
+        {% else %}
+          Add to Favorites
+        {% endif %}
+      </a>
 		</div>
 	</div>
 
@@ -131,9 +137,9 @@
 			<dd>
 
 				{% if object.outdoor_size %}
-					{{ object.outdoor_size}} m<sup>2</sup>&ensp; 
+					{{ object.outdoor_size}} m<sup>2</sup>&ensp;
 					{{ object.get_outdoor_display|default:'' }}
-				{% else %}	
+				{% else %}
 					N/A
 				{% endif %}
 			</dd>
@@ -159,7 +165,13 @@
 
 	<div class="action-box">
 		<a class="btn primary" href="">Contact landlord</a>
-		<a class="btn default" href="">Add to Favorites</a>
+    <a class="btn default" href="">
+        {% if object in user.customer.favorites.all %}
+          Remove from Favorites
+        {% else %}
+          Add to Favorites
+        {% endif %}
+     </a>
 	</div>
 
 </div>
