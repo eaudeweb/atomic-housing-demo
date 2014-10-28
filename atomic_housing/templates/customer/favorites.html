@@ -4,14 +4,18 @@
   <h1>My Favorites</h1>
 
   <div>
-    {% for listing in object_list %}
-      {% include 'customer/_house.html' %}
-      <div class="actions">
-        <a href="#">Remove from Favorites</a>
-      </div>
-    {% endfor %}
+    <ul class="listings-list">
+      {% for listing in object_list %}
+        <li>
+          <a href="#" class="demo btn-fake pull-right">Remove from Favorites</a>
+        {% include 'customer/_house.html' %}
+
+        </li>
+        {% empty %}
+        <p>No favorites yet</p>
+      {% endfor %}
+    </ul>
   </div>
 
-
-  <a href="{% url 'search' %}">Back to Search</a>
+  <a href="{% url 'search' %}" class="btn-fake">Back to Search</a>
 {% endblock %}
