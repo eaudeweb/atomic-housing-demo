@@ -3,12 +3,19 @@
 {% block page-title %}
   <div class="page-title">
     <h1>Overview</h1>
+    <div class="actions">
+      <select class="demo pull-right">
+        <option>Last week</option>
+        <option>Last month</option>
+        <option>All Time</option>
+      </select>
+    </div>
   </div>
 {% endblock %}
 
 {% block content %}
 
-  <h3>Last week</h3>
+{#  <h3 class="">Last week</h3>#}
   <!-- <hr> -->
 
   <table class="table-overview">
