@@ -27,10 +27,12 @@
   		<table class="table-data">
 				<caption>Most viewed listings</caption>
 				<tbody>
+          {% for listing in viewed %}
 					<tr>
-						<td><a class="demo" href="">Listing</a></td>
-						<td>1</td>
+						<td><a class="demo" href="">{{ listing }}</a></td>
+						<td>{{ listing.id|add:12 }}</td>
 					</tr>
+          {% endfor %}
 				</tbody>
 			</table>		
   	</div>
@@ -38,10 +40,12 @@
   		<table class="table-data">
 				<caption>Most clicked listings</caption>
 				<tbody>
+					{% for listing in favorited %}
 					<tr>
-						<td><a class="demo" href="">Listing</a></td>
-						<td>1</td>
+						<td><a class="demo" href="">{{ listing }}</a></td>
+						<td>{{ listing.id|add:6 }}</td>
 					</tr>
+          {% endfor %}
 				</tbody>
 			</table>		
   	</div>
