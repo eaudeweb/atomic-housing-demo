@@ -882,26 +882,28 @@ hr {
   .register-landlord .input-col .errorlist {
     margin-left: 50%; }
 
-.input-accomodation ul {
-  margin-left: -5px;
-  margin-right: -5px; }
-.input-accomodation li {
-  width: 25%;
-  float: left;
-  padding-left: 5px;
-  padding-right: 5px; }
-.input-accomodation label {
-  border-color: transparent;
-  display: block !important;
-  width: 100%;
-  height: auto;
-  border-style: solid;
-  border-width: 1px;
-  padding: 5px;
-  text-align: center; }
-.input-accomodation input {
-  display: block;
-  width: 30px; }
+.input-accomodation {
+  margin-top: -10px; }
+  .input-accomodation ul {
+    margin-left: -5px;
+    margin-right: -5px; }
+  .input-accomodation li {
+    width: 25%;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px; }
+  .input-accomodation label {
+    border-color: transparent;
+    display: block !important;
+    width: 100%;
+    height: auto;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+    text-align: center; }
+  .input-accomodation input {
+    display: block;
+    width: 30px; }
 
 .table-list .col-status {
   width: 60px; }

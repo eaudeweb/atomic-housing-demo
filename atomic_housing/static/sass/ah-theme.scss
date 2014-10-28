@@ -371,6 +371,7 @@ p, .p {
 
 .input-accomodation {
 	@extend .input-block;
+	margin-top: $leading * -1;
 	ul {
 		@extend %no-ul;
 		@extend %clearfix;
