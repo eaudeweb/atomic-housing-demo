@@ -1,3 +1,4 @@
+from random import shuffle
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.forms import formset_factory
 from django.shortcuts import get_object_or_404, render, redirect
@@ -77,6 +78,15 @@ class HSAdminContracts(ListView):
 
 class HSReport(TemplateView):
     template_name = 'hsadmin/report_listings.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(HSReport, self).get_context_data(**kwargs) or {}
+        qs = list(models.Listing.objects.all())
+        shuffle(qs)
+        context['viewed'] = qs[:10]
+        shuffle(qs)
+        context['favorited'] = qs[:10]
+        return context
 
 
 # Landlord Views
