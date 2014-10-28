@@ -4,9 +4,9 @@
 	<div class="page-title">
 		<h1>
 			{% if object %}
-				Edit listing
+				Edit Listing
 			{% else %}
-				Add a new listing
+				Add a new Listing
 			{% endif %}
 		</h1>
 		<div class="actions">
@@ -38,7 +38,7 @@
 			<div class="row">
 				<div class="col col-6 offset-3">
 					<div class="row">
-						
+
 							<div class="col col-6">
 								<div class="input-group">
 									<label for="id_address_zipcode">Zip code</label>
@@ -77,19 +77,19 @@
 				{{ form.rooms }}
 				{{ form.rooms.errors }}
 			</div>
-			
+
 			<div class="input-group">
 				<label for="id_bedrooms">Bedrooms</label>
 				{{ form.bedrooms }}
 				{{ form.bedrooms.errors }}
 			</div>
-			
+
 			<div class="input-group">
 				<label for="id_bathrooms">Bathrooms</label>
 				{{ form.bathrooms }}
 				{{ form.bathrooms.errors }}
 			</div>
-			
+
 			<div class="input-group">
 				<label for="id_toilets">Toilets</label>
 				{{ form.toilets }}
@@ -100,35 +100,35 @@
 
 		<fieldset>
 			<legend>Amenities</legend>
-			
+
 			<div class="input-group">
 				<label for="id_outdoor">Outdoor</label>
 				{{ form.outdoor }}
 				{{ form.outdoor.errors }}
 			</div>
-			
+
 			<div class="input-group">
 				<label for="id_outdoor_size">Outdoor size</label>
 				{{ form.outdoor_size }}
 				{{ form.outdoor_size.errors }}
 			</div>
-			
+
 			<div class="input-group">
 				<label for="id_heating">Heating</label>
 				{{ form.heating }}
 				{{ form.heating.errors }}
 			</div>
-			
+
 			<div class="input-group">
 				<label for="id_heating_emission">Heating emission</label>
 				{{ form.heating_emission }}
 				{{ form.heating_emission.errors }}
 			</div>
-			
+
 			<div class="input-group">
 				<label for="id_furnished">Furnished</label>
 				{{ form.furnished }}
-				
+
 			</div>
 			<div class="input-group">
 				<label for="id_parking">Parking</label>
@@ -173,20 +173,20 @@
 
 		<fieldset>
 			<legend>Costs</legend>
-				
+
 			<div class="row">
 				<div class="col col-4 input-group">
 					<label for="id_rent">Rent</label>
 					{{ form.rent }}
 					{{ form.rent.errors }}
 				</div>
-			
+
 				<div class="col col-4 input-group">
 					<label for="id_deposit">Deposit</label>
 					{{ form.deposit }}
 					{{ form.deposit.errors }}
 				</div>
-				
+
 				<div class="col col-4 input-group">
 					<label for="id_lease">Lease</label>
 					{{ form.lease }}
@@ -196,9 +196,11 @@
 
 		</fieldset>
 
-			<!-- <small>
-				{{ form.as_p }}
-			</small> -->
-		<button class="btn btn-primary" type="submit">Save</button>
+		<button class="btn primary" type="submit">Save</button>
+    <a href="{% url 'listings' %}" class="btn default">Cancel</a>
+    <span>
+      By clicking "Save", the listing will go into the state "Inactive" and
+    will appear in search after an Administrator reviews it.
+    </span>
 	</form>
 {% endblock %}
