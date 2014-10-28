@@ -518,6 +518,11 @@ p, .p {
 }
 .listing-thumbnail {
 	overflow: hidden;
+	.img {
+		img {
+			width: 150%;
+		}
+	}
 	.img.no-photo {
 		@extend %icon-no-photo;
 		background-color: $color-soft;

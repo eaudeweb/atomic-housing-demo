@@ -964,6 +964,8 @@ hr {
 
 .listing-thumbnail {
   overflow: hidden; }
+  .listing-thumbnail .img img {
+    width: 150%; }
   .listing-thumbnail .img.no-photo {
     background-color: #eee; }
     .listing-thumbnail .img.no-photo:before {
