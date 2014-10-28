@@ -17,6 +17,7 @@ OUTDOOR_TYPES = (
 )
 
 PARKING_TYPES = (
+    (2, 'No Parking'),
     (0, 'Private'),
     (1, 'Garage'),
 )
