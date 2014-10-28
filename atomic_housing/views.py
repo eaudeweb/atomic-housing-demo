@@ -70,6 +70,10 @@ class HSAdminContracts(ListView):
     model = models.Contract
 
 
+class HSReport(TemplateView):
+    template_name = 'hsadmin/report_listings.html'
+
+
 # Landlord Views
 class LandLordListings(ListView):
     model = models.Listing

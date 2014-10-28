@@ -21,6 +21,8 @@ urlpatterns = patterns(
         name='hsadmin_listing_list'),
     url(r'^hsadmin/contract/list', views.HSAdminContracts.as_view(),
         name='hsadmin_contract_list'),
+    url(r'^hsadmin/reports/', views.HSReport.as_view(),
+        name='hsadmin_reports'),
 
     url(r'^landlord/listings$',
         views.LandLordListings.as_view(),
