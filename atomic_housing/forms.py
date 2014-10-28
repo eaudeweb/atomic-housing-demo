@@ -1,4 +1,7 @@
-from django.forms import ModelForm, BaseFormSet, Form, ChoiceField, CharField
+from django.forms import (
+    ModelForm, BaseFormSet, Form, ChoiceField, CharField,
+    PasswordInput,
+)
 from django.forms.models import BaseModelFormSet
 from atomic_housing import models
 from atomic_housing.middleware import get_current_request
@@ -35,11 +38,17 @@ class RegisterCustomerForm(ModelForm):
         model = models.Customer
         exclude = ('user', 'status',)
 
+    password = CharField(widget=PasswordInput)
+    confirm_password = CharField(widget=PasswordInput)
+
 
 class RegisterLandlordForm(ModelForm):
     class Meta:
         model = models.Landlord
         exclude = ('user', 'status')
+
+    password = CharField(widget=PasswordInput)
+    confirm_password = CharField(widget=PasswordInput)
 
 
 class ListingPhotoForm(ModelForm):

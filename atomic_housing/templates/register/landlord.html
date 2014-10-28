@@ -3,18 +3,18 @@
 
 {% block content %}
 	<h1 class="text-center h3 no-leading">Landlord Registration</h1>
-	
+
 	<hr class="hr-soft">
 
   <form class="register-landlord" method="POST">
     {% csrf_token %}
-			
+
 		<div class="input-col">
 			<label for="id_first_name">First name</label>
 			{{ form.first_name }}
 			{{ form.first_name.errors }}
 		</div>
-	
+
 		<div class="input-col">
 			<label for="id_last_name">Last name</label>
 			{{ form.last_name }}
@@ -32,7 +32,7 @@
 			{{ form.phone }}
 			{{ form.phone.errors }}
 		</div>
-	
+
 		<div class="input-col">
 			<label for="id_email">Email</label>
 			{{ form.email }}
@@ -40,7 +40,19 @@
 		</div>
 
     <div class="input-col">
-      <ul class="">
+      <label for="id_email">Password</label>
+      {{ form.password }}
+      {{ form.password.errors }}
+    </div>
+
+    <div class="input-col">
+      <label for="id_email">Confirm Password</label>
+      {{ form.confirm_password }}
+      {{ form.confirm_password.errors }}
+    </div>
+
+    <div class="">
+      <ul class="no-ul">
         <li>
           <input type="checkbox" id="id_terms" />
           <label for="id_terms">I accept the <a href="#">Terms and Conditions</a></label>

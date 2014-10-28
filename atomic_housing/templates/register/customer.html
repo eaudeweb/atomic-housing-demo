@@ -44,6 +44,18 @@
       {{ form.nationality.errors }}
     </div>
 
+    <div class="input-col">
+      <label for="id_email">Password</label>
+      {{ form.password }}
+      {{ form.password.errors }}
+    </div>
+
+    <div class="input-col">
+      <label for="id_email">Confirm Password</label>
+      {{ form.confirm_password }}
+      {{ form.confirm_password.errors }}
+    </div>
+
     <p class="text-center">{{ form.errors }}
       <button class="btn primary col-3" type="submit">Register</button>
       <a class="btn default col-3" href="{% url 'register' %}">Cancel</a>
