@@ -130,6 +130,9 @@ p, .p {
 		font-weight: bold;
 	}	
 }
+.dl-horizontal {
+	@extend %dl-horizontal;
+}
 .img {
 	img {
 		display: block;
@@ -543,6 +546,7 @@ p, .p {
 }
 .listing-published {
 	@extend .muted;
+	@extend .small;
 }
 // price
 .price {
@@ -576,6 +580,13 @@ p, .p {
 		float: right;
 		margin-left: 12px;
 		width: 180px;
+		.dl-horizontal {
+			margin: 0;
+			dt, dd {
+				@extend %clip;
+				width: 50%;
+			}
+		}
 	}
 }
 

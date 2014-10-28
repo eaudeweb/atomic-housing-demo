@@ -20,13 +20,14 @@
 
 
 	<div class="listing-photo">
+    {% if object.cover_photo %}
 		<div class="img">
-      {% if object.cover_photo %}
 			  <img src="{{ object.cover_photo.name.url }}" alt="">
-      {% else %}
-			  <img src="{% static "img/photo.jpg" %}" alt="">
-      {% endif %}
 		</div>
+    {% else %}
+    <div class="img no-photo">
+		</div>
+    {% endif %}
 	</div>
 
 	<div class="listing-summary">

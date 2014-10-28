@@ -230,10 +230,16 @@ fieldset, .hr-page, .page-title {
   text-transform: uppercase;
   letter-spacing: .03em; }
 
-.input-inline label, .input-append label, .no-br, .dl-inline dt, .listing-title, .listing-address, .filters label {
+.input-inline label, .input-append label, .no-br, .dl-inline dt, .listing-title, .listing-address, .listings-list .listing-stats .dl-horizontal dt, .listings-list .listing-stats .dl-horizontal dd, .filters label {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; }
+
+.dl-horizontal dt {
+  float: left; }
+.dl-horizontal dd {
+  float: right;
+  margin-left: 0; }
 
 .availability {
   white-space: nowrap; }
@@ -670,7 +676,7 @@ body {
   color: #444;
   text-rendering: optimizeLegibility; }
 
-.small, .errorlist, .copyright,
+.small, .errorlist, .listing-published, .copyright,
 small {
   font-size: 90%; }
 
@@ -996,6 +1002,10 @@ hr {
   float: right;
   margin-left: 12px;
   width: 180px; }
+  .listings-list .listing-stats .dl-horizontal {
+    margin: 0; }
+    .listings-list .listing-stats .dl-horizontal dt, .listings-list .listing-stats .dl-horizontal dd {
+      width: 50%; }
 
 .listing-photo {
   overflow: hidden;

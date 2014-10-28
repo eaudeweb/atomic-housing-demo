@@ -16,26 +16,28 @@
     {% for listing in object_list %}
     <li>
       <div class="listing">
-        <div class="listing-photo {% if not listing.cover_photo %}no-photo{% endif %}">
-          <!-- <div class="muted">No photo</div>
-          <a class="btn btn-success" data-modal=".modal-add-photo">Add photo</a> -->
+        <div class="listing-thumbnail">
           {% if listing.cover_photo %}
-          <img src="{{ listing.cover_photo.name.url }}" width="100"/>
+          <div class="img">
+            <img src="{{ listing.cover_photo.name.url }}" class=""/>
+          </div>
+          {% else %}
+          <div class="img no-photo"></div>
           {% endif %}
-          <a href="{% url 'listings_photos' listing.pk %}">Photos</a>
         </div>
-        <div class="listing-description">
+        <div class="listing-body">
+          <div class="listing-stats text-right">
+            <div class="price">{{ listing.rent }}€</div>
+            <small>{{ listing.pk|add:12 }} views | {{ listing.pk|add:6 }} favorites </small><br>
+            <div class="pull-right badge {{ listing.get_status_display }}">{{ listing.get_status_display }}</div>
+          </div>
           <div class="listing-title">
             <a href="{% url 'listings_edit' listing.pk %}" title="{{ listing.title }}">{{ listing.title }}</a>
           </div>
-          <dl class="listing-stats">
-            <dt>Status</dt>
-            <dd><span class="badge {{ listing.get_status_display }}">{{ listing.get_status_display }}</span></dd>
-            <dt>Views</dt>
-            <dd>{{ listing.pk|add:12 }}</dd>
-          </dl>
-          <div class="listing-type">{{ listing.address }}</div>
-          <div class="listing-published">{{ listing.updated|just_date }}</div>
+          <div class="listing-address">
+            <strong>{{ listing.address_district }}</strong> - {{ listing.address_address }}
+          </div>
+          <div class="listing-published">Last modified: {{ listing.updated|just_date }}</div>
         </div>
       </div>
     </li>
