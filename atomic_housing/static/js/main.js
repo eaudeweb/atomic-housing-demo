@@ -1,4 +1,4 @@
-var openModal = function(elem) {
+var openModal = function(elem, onOpen) {
 	$(elem).addClass('active');
 	$('body').addClass('modal-open');
 
@@ -13,6 +13,9 @@ var openModal = function(elem) {
           closeModal();
       }
   });
+  if (onOpen) {
+    onOpen();
+  }
 }
 
 var closeModal = function () {
@@ -22,27 +25,16 @@ var closeModal = function () {
 
 $("[data-modal]").on('click', function () {
     var target = $(this).data('modal');
-    var listing = $(this).data('listing');
-    var url = '/landlord/listings/' + listing + '/photos';
-
-    $.ajax(
-        {
-            url: url,
-            success: function (html) {
-                $('#modalcontainer').html(html);
-                openModal(target);
-            }
-        }
-    )
+    var onOpen = $(this).data('onopen');
+    openModal(target, function () {initialize(onOpen);});
 });
-
 
 
 var map;
 var geocoder;
 
-function initialize() {
-	var mapContainer = $('#map-canvas');
+function initialize(elem) {
+	var mapContainer = $(elem);
 	var address = mapContainer.data('address');
 	var icon = '../img/map-marker.png';
 
@@ -75,5 +67,9 @@ function codeAddress(address) {
 }
 
 $(document).ready(function () {
-	initialize();
+  $("[data-map]").each(function () {
+    if ($(this).data('map') == '') {
+      initialize(this);
+    }
+  });
 });

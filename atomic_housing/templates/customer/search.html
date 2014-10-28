@@ -64,9 +64,9 @@
 			</label>
 		</div>
 
-		<!-- <div class="filter-map">
-			Map here  
-		</div> -->
+		<div class="filter-map">
+			<a data-modal=".modal-map" data-onopen='.map-full'>Map</a>
+		</div>
 	</div>
 
 	<div class="main">
@@ -96,4 +96,16 @@
 		{% endif %}
 	</div>
 
+{% endblock %}
+
+
+{% block modal %}
+	<div class="modal modal-map">
+		<div class="map-full" data-map='cool' data-address="Vienna"></div>
+	</div>
+{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgzwlVgB2yRIIW89qbpi9dAiWlD1DAjy0&language=en">
+	</script>
 {% endblock %}

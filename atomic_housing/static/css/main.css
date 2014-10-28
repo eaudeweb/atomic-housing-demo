@@ -222,7 +222,7 @@ fieldset, .hr-page, .page-title {
   background-color: #4088d4;
   background: linear-gradient(to right, #396ccf 0%, #47a5da 100%); }
 
-.content, .table, .table-list, .table-overview, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, .filters, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing, .listing-photo, #map-canvas {
+.content, .table, .table-list, .table-overview, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, .filters, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing, .listing-photo, .map {
   margin-top: auto;
   margin-bottom: 20px; }
 
@@ -320,7 +320,7 @@ input[type='text'], input[type='number'], input[type='password'], input[type='em
 .table-stats .bars .popout, .jump-to-map {
   border-radius: 3px; }
 
-.listing-photo, #map-canvas {
+.listing-photo, .map {
   border-radius: 6px; }
 
 [data-popout], .table-stats .bars .bar {
@@ -755,12 +755,26 @@ hr {
 [data-popout='hover']:hover .popout {
   display: block; }
 
+.modal-open {
+  overflow: hidden; }
+
 .modal-open .modal-container {
   display: block;
   overflow: hidden; }
 
 .modal-title h2 {
   margin-bottom: 0; }
+
+.modal-map {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  bottom: 60px;
+  left: 60px;
+  padding: 3px; }
+  .modal-map .map-full {
+    width: 100%;
+    height: 100%; }
 
 .topbar {
   padding: 15px; }
@@ -1014,7 +1028,7 @@ hr {
   font-size: 120%;
   color: #a52a2a; }
 
-#map-canvas {
+.map {
   overflow: hidden;
   height: 300px; }
 

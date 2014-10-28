@@ -148,6 +148,9 @@ p, .p {
 }
 
 // modals
+.modal-open {
+	overflow: hidden;
+}
 .modal-open .modal-container {
 	display: block;
 	overflow: hidden;
@@ -163,6 +166,19 @@ p, .p {
 	h2 {
 		@extend .muted;
 		margin-bottom: 0;
+	}
+}
+
+.modal-map {
+	position: absolute;
+	top: 60px;
+	right: 60px;
+	bottom: 60px;
+	left: 60px;
+	padding: 3px;
+	.map-full {
+		width: 100%;
+		height: 100%;
 	}
 }
 
@@ -593,7 +609,7 @@ p, .p {
 }
 
 // map
-#map-canvas {
+.map {
 	@extend %leading;
 	@extend %radius-medium;
 	overflow: hidden;
