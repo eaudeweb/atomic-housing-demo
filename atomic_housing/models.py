@@ -56,7 +56,7 @@ LISTING_STATUSES = (
     (LISTING_ACTIVE, 'active'),
     (LISTING_PASSIVE, 'passive'),
     (LISTING_OCCUPIED, 'occupied'),
-    (LISTING_INACTIVE, 'inactive'),
+    (LISTING_INACTIVE, 'needs review'),
 )
 
 (CONTRACT_NEW,
