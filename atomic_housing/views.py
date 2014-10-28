@@ -39,6 +39,11 @@ class HSAdminListings(ListView):
     template_name = 'hsadmin/listing_list.html'
     model = models.Listing
 
+    def get_queryset(self):
+        qs = super(HSAdminListings, self).get_queryset()
+        qs = qs.order_by('status', 'posted')
+        return qs
+
 
 class HSAdminLandlords(ListView):
     template_name = 'hsadmin/landlord_list.html'

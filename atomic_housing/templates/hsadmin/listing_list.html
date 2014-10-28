@@ -17,7 +17,6 @@
   <table class="table-list">
     <thead>
       <tr>
-        <th>Accomodation</th>
         <th>Listing</th>
         <th>Landlord</th>
         <th class="col-status">Status</th>
@@ -27,9 +26,8 @@
     <tbody>
       {% for listing in object_list %}
       <tr>
-        <td>{{ listing.accomodation_type }}</td>
         <td><a href="">{{ listing.title }}</a></td>
-        <td><a href="">{{ listing.owner }}</a></td>
+        <td><a href="">{{ listing.owner.landlord }}</a></td>
         <td>
           <span class="td-badge {{ listing.get_status_display }}">
             {{ listing.get_status_display }}

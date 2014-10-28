@@ -20,6 +20,15 @@
       <th>Last Name:</th>
       <td>{{ object.last_name }}</td>
     </tr>
+
+    <tr>
+      <th>Status:</th>
+      <td>
+        <span class="td-badge {{ object.get_status_display }}">
+            {{ object.get_status_display }}
+        </span>
+      </td>
+    </tr>
     <tr>
 
       <th>Nationality:</th>
