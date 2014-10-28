@@ -7,14 +7,14 @@
 {% endblock %}
 
 {% block content %}
-  <table class="table table-simple">
+  <table class="table-list">
     <thead>
     <tr>
       <th>Name</th>
       <th>Nationality</th>
       <th>Phone</th>
       <th>Email</th>
-      <th>Status</th>
+      <th class="col-status">Status</th>
       <th>Contracts</th>
     </tr>
     </thead>
@@ -30,7 +30,7 @@
           <a href="mailto:{{ customer.email }}">{{ customer.email }}</a>
         </td>
         <td>
-          <span class="badge {{ customer.get_status_display }}">
+          <span class="td-badge {{ customer.get_status_display }}">
             {{ customer.get_status_display }}
           </span>
         </td>

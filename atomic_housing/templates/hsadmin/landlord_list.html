@@ -14,7 +14,7 @@
       <th>Address</th>
       <th>Phone</th>
       <th>Email</th>
-      <th>Status</th>
+      <th class="col-status">Status</th>
       <th>Listings</th>
     </tr>
     </thead>
@@ -30,7 +30,7 @@
           <a href="mailto:{{ landlord.email }}">{{ landlord.email }}</a>
         </td>
         <td>
-          <span class="badge {{ landlord.get_status_display }}">
+          <span class="td-badge {{ landlord.get_status_display }}">
             {{ landlord.get_status_display }}
           </span>
         </td>

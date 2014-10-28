@@ -206,10 +206,10 @@ fieldset, .hr-page, .page-title {
   position: relative;
   left: -100%; }
 
-.table, .table-overview, .text-left {
+.table, .table-list, .table-overview, .text-left {
   text-align: left; }
 
-.text-center, .table-layout, .table-rent, .action-box, .copyright {
+.text-center, .table-layout, .table-rent, .td-badge, .action-box, .copyright {
   text-align: center; }
 
 .text-right {
@@ -222,7 +222,7 @@ fieldset, .hr-page, .page-title {
   background-color: #4088d4;
   background: linear-gradient(to right, #396ccf 0%, #47a5da 100%); }
 
-.content, .table, .table-overview, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, .filters, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing, .listing-photo, #map-canvas {
+.content, .table, .table-list, .table-overview, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, .filters, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing, .listing-photo, #map-canvas {
   margin-top: auto;
   margin-bottom: 20px; }
 
@@ -252,7 +252,7 @@ fieldset, .hr-page, .page-title {
 .errorlist, .no-leading, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6, .copyright {
   margin-bottom: 0; }
 
-.badge {
+.badge, .td-badge {
   display: inline-block;
   padding: .2em .25em;
   border-radius: 2px;
@@ -416,18 +416,18 @@ body {
   .layout-passage .content h1 {
     color: #396ccf; }
 
-.table, .table-overview {
+.table, .table-list, .table-overview {
   width: 100%; }
-  .table th, .table-overview th {
+  .table th, .table-list th, .table-overview th {
     font-weight: normal; }
 
-.table-simple {
+.table-simple, .table-list {
   text-align: left; }
-  .table-simple th {
+  .table-simple th, .table-list th {
     font-weight: normal; }
-  .table-simple td, .table-simple th {
+  .table-simple td, .table-list td, .table-simple th, .table-list th {
     padding: 5px 8px; }
-  .table-simple tbody tr {
+  .table-simple tbody tr, .table-list tbody tr {
     border-top: 1px solid #eee; }
 
 .td-vr td, .table-rent td, .table-overview td {
@@ -686,7 +686,7 @@ body {
 .large {
   font-size: 120%; }
 
-.muted, .table-simple th, fieldset legend, .filter-name, .quiet, .copyright, .dl-inline dt, .modal-title h2, .nav-title, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6, .listing-stats, .listing-published, .badge.passive {
+.muted, .table-simple th, .table-list th, fieldset legend, .filter-name, .quiet, .copyright, .dl-inline dt, .modal-title h2, .nav-title, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6, .listing-stats, .listing-published, .badge.passive, .passive.td-badge {
   color: gray; }
 
 .quiet a, .copyright a {
@@ -896,6 +896,9 @@ hr {
   .listings-list .listing-stats dt, .listings-list .listing-stats dd {
     width: 50%; }
 
+.table-list .col-status {
+  width: 60px; }
+
 .table-layout {
   table-layout: fixed; }
   .table-layout td {
@@ -937,16 +940,23 @@ hr {
     border-color: #47a5da;
     box-shadow: 0 0 2px 0 rgba(71, 165, 218, 0.5); }
 
-.badge.primary {
+.badge.primary, .primary.td-badge {
   color: #fff;
   background-color: #396ccf; }
-.badge.active {
+.badge.active, .active.td-badge {
   color: #fff;
   background-color: #3dcb4b; }
-.badge.passive {
+.badge.passive, .passive.td-badge {
   background-color: #d6d6d6; }
-.badge.new {
+.badge.new, .new.td-badge {
   background-color: #ffcc66; }
+.badge.terminated, .terminated.td-badge {
+  color: #fff;
+  background-color: #a52a2a; }
+
+.td-badge {
+  display: block;
+  min-width: 100%; }
 
 .section-photo {
   position: relative; }

@@ -14,13 +14,13 @@
 {% endblock %}
 
 {% block content %}
-  <table class="table table-simple">
+  <table class="table-list">
     <thead>
       <tr>
         <th>Accomodation</th>
         <th>Listing</th>
-        <th>Status</th>
         <th>Landlord</th>
+        <th class="col-status">Status</th>
         <th>Posted</th>
       </tr>
     </thead>
@@ -29,8 +29,12 @@
       <tr>
         <td>{{ listing.accomodation_type }}</td>
         <td><a href="">{{ listing.title }}</a></td>
-        <td><span class="badge {{ listing.get_status_display }}">{{ listing.get_status_display }}</span></td>
         <td><a href="">{{ listing.owner }}</a></td>
+        <td>
+          <span class="td-badge {{ listing.get_status_display }}">
+            {{ listing.get_status_display }}
+          </span>
+        </td>
         <td>{{ listing.posted|just_date }}</td>
       </tr>
       {% endfor %}

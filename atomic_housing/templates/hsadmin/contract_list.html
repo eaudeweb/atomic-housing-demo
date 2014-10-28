@@ -16,7 +16,7 @@
 				<th>Contract</th>
 				<th>Landlord</th>
 				<th>Customer</th>
-				<th>Status</th>
+				<th class="col-status">Status</th>
 				<th>Awarded</th>
 			</tr>
 		</thead>
@@ -27,7 +27,7 @@
 				<td><a href="">{{ contract.listing.landlord }}</a></td>
 				<td><a href="">{{ contract.customer }}</a></td>
 				<td>
-					<span class="badge {{ contract.get_status_display }}">
+					<span class="td-badge {{ contract.get_status_display }}">
 						{{ contract.get_status_display }}
 					</span>
 				</td>

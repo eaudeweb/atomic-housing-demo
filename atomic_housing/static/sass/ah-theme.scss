@@ -397,6 +397,15 @@ p, .p {
 }
 
 // tables
+.table-list {
+	@extend .table;
+	@extend .table-simple;
+	// table-layout: fixed;
+	.col-status {
+		width: 60px;
+	}
+}
+
 .table-layout {
 	@extend %text-center;
 	table-layout: fixed;
@@ -485,7 +494,18 @@ p, .p {
 	&.new {
 		background-color: $brand-yellow;
 	}
+	&.terminated {
+		color: #fff;
+		background-color: $brand-red;
+	}
 }
+.td-badge {
+	@extend .badge;
+	@extend %text-center;
+	display: block;
+	min-width: 100%;
+}
+
 
 .listing-gallery {
 	@extend %no-ul;
