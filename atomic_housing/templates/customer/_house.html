@@ -1,37 +1,27 @@
 {% load utils %}
 
 <div class="listing">
-	<div class="listing-photo no-photo">
-		<!-- <div class="muted">No photo</div>
-		<a class="btn btn-success" data-modal=".modal-add-photo">Add photo</a> -->
+	<div class="listing-thumbnail">
+		<div class="img no-photo"><img src="" alt=""></div>
 	</div>
-	<div class="listing-description">
+	<div class="listing-body">
+		<div class="listing-stats">
+			<div class="price">{{ listing.rent }} €</div>
+			<small class="muted">available</small> <br>
+			{% if not listing.availability %}
+				<span class="availability now">Now</span>
+			{% else %}
+				<span class="availability">{{ listing.availability }}</span>
+			{% endif %}
+		</div>
 		<div class="listing-title">
 			<a href="{% url 'detail' listing.pk %}" title="{{ listing.title }}">{{ listing.title }}</a>
 		</div>
-		<dl class="listing-stats">
-			<!-- <dt>Status</dt>
-			<dd><span class="badge {{ listing.get_status_display }}">{{ listing.get_status_display }}</span></dd> -->
-			<!-- <dt>Views</dt>
-			<dd>12</dd> -->
-			<dt>Rent</dt>
-			<dd>{{ listing.rent }} €</dd>
-		</dl>
-		<div class="listing-type">{{ listing.address }}</div>
-		<div class="listing-published">{{ listing.updated|just_date }}</div>
+		<div class="listing-address">
+			<strong>{{ listing.address_district }}</strong> - {{ listing.address_address }}
+		</div>
+		<div class="listing-published">
+			Published: {{ listing.updated|just_date }}
+		</div>
 	</div>
 </div>
-
-
-
-<!-- <div class="row">
-	<h2>{{ listing.title }}</h2>
-
-	<p class="address">{{ listing.address }}</p>
-	<span class="price">{{ listing.rent }} €</span>
-	<span>Date posted: {{ listing.posted|just_date }}</span>
-	<span>District: {{ listing.address_district }}</span>
-	<span>Size: {{ listing.size }}m<sup>2</sup></span>
-	<a href="{% url 'detail' listing.pk %}">Details</a>
-</div>
- -->

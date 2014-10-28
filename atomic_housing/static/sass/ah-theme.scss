@@ -77,6 +77,9 @@ body {
 .no-leading {
 	@extend %no-leading;
 }
+.no-ul {
+	@extend %no-ul;
+}
 #{$headings} {
 	@extend %leading;
 	font-family: $font-heading;
@@ -361,57 +364,6 @@ p, .p {
 	}
 }
 
-// listing - common
-.listing {
-	@extend %leading;
-	@extend %z-index-button;
-	overflow: hidden;
-	padding: 5px;
-	border: 1px solid $color-medium;
-}
-.listing-photo {
-	&.no-photo {
-		@extend %icon-no-photo;
-		&:before { opacity: .25; height: 90; margin-top: -15px; }
-		background-color: $color-soft;
-	}
-}
-.listing-stats {
-	@extend .muted;
-}
-.listing-title {
-	@extend %clip;
-}
-.listing-published {
-	@extend .muted;
-}
-
-// listing - list
-.listings-list {
-	@extend %no-ul;
-	@include media-object('.listing-photo', 120px, '.listing-description');
-	.listing-photo {
-		height: 90px;
-	}
-	.listing-description {
-		padding-left: 8px;
-	}
-	.listing-title {
-		@extend .h4;
-		clear: right;
-	}
-	.listing-stats {
-		@extend %dl-horizontal;
-		dt, dd {
-			width: 50%;
-		}
-		float: right;
-		margin: 0;
-		margin-left: 8px;
-		width: 120px;
-	}
-}
-
 // tables
 .table-list {
 	@extend .table;
@@ -607,12 +559,6 @@ p, .p {
 	&:active {
 		@extend %z-index-0;
 	}
-}
-
-// price
-.price {
-	font-size: $larger;
-	color: $brand-red;
 }
 
 // map

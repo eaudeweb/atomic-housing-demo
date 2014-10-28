@@ -1,10 +1,10 @@
 .topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .input-accomodation li, .col, input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, .btn, .btn-fake, .input-append label, .input-accomodation label, .menu-item, .account-choice, .jump-to-map, .input-col label, .input-inline label, .search button, .popout, body, .layout-admin .main {
   box-sizing: border-box; }
 
-.layout-user .content:before, .layout-admin .content:before, .input-accomodation ul:before, .row:before, .input-col:before, .filters label:before, .clearfix:before, .dl-inline:before, .search:before, .menu:before, .page-title:before, .listings-list:before, .layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .filters label:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after, .listings-list:after {
+.layout-user .content:before, .layout-admin .content:before, .input-accomodation ul:before, .row:before, .input-col:before, .filters label:before, .listings-list:before, .clearfix:before, .dl-inline:before, .search:before, .menu:before, .page-title:before, .layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .filters label:after, .listings-list:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after {
   content: "";
   display: table; }
-.layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .filters label:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after, .listings-list:after {
+.layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .filters label:after, .listings-list:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after {
   clear: both; }
 
 .vertical-align {
@@ -212,7 +212,7 @@ fieldset, .hr-page, .page-title {
 .text-center, .table-layout, .table-rent, .td-badge, .action-box, .copyright {
   text-align: center; }
 
-.text-right {
+.listings-list .listing-stats, .text-right {
   text-align: right; }
 
 .text-justifiy {
@@ -222,7 +222,7 @@ fieldset, .hr-page, .page-title {
   background-color: #4088d4;
   background: linear-gradient(to right, #396ccf 0%, #47a5da 100%); }
 
-.content, .table, .table-list, .table-overview, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, .filters, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing, .listing-photo, .map {
+.content, .table, .table-list, .table-overview, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, .filters, .listing, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing-photo, .map {
   margin-top: auto;
   margin-bottom: 20px; }
 
@@ -230,22 +230,19 @@ fieldset, .hr-page, .page-title {
   text-transform: uppercase;
   letter-spacing: .03em; }
 
-.input-inline label, .input-append label, .no-br, .dl-inline dt, .listing-title {
+.input-inline label, .input-append label, .listing-title, .listing-address, .no-br, .dl-inline dt {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; }
 
-.listings-list .listing-stats dt {
-  float: left; }
-.listings-list .listing-stats dd {
-  float: right;
-  margin-left: 0; }
+.availability {
+  white-space: nowrap; }
 
 .nav a {
   color: inherit;
   text-decoration: none; }
 
-.errorlist, .section-photo .photo-gallery, .nav, .listings-list, .listing-gallery {
+.errorlist, .section-photo .photo-gallery, .listings-list, .no-ul, .nav, .listing-gallery {
   list-style: none;
   padding-left: 0; }
 
@@ -267,7 +264,7 @@ fieldset, .hr-page, .page-title {
   z-index: 100;
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.25); }
 
-.btn, .account-choice, .listing {
+.btn, .account-choice {
   z-index: 100;
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.25); }
 
@@ -317,7 +314,7 @@ input[type='text'], input[type='number'], input[type='password'], input[type='em
   .btn:hover, .btn-fake:hover, .input-append label:hover, .input-accomodation label:hover, .menu-item:hover, .account-choice:hover, .jump-to-map:hover {
     cursor: pointer; }
 
-.table-stats .bars .popout, .jump-to-map {
+.listing, .table-stats .bars .popout, .jump-to-map {
   border-radius: 3px; }
 
 .listing-photo, .map {
@@ -493,7 +490,7 @@ label[for] {
   clear: both;
   color: red; }
 
-.input-accomodation li:nth-child(1) label:before, .input-accomodation li:nth-child(2) label:before, .input-accomodation li:nth-child(3) label:before, .input-accomodation li:nth-child(4) label:before, .listing-photo.no-photo:before, .icon-reports:before, .icon-settings:before, .icon-listings:before, .icon-landlords:before, .icon-customers:before, .icon-contracts:before, .icon-overview:before, .icon-visitors:before, .icon-rooms:before, .icon-bedrooms:before, .icon-size:before, .icon-bathrooms:before, .icon-toilets:before, .icon-map:before, .jump-to-map:before {
+.input-accomodation li:nth-child(1) label:before, .input-accomodation li:nth-child(2) label:before, .input-accomodation li:nth-child(3) label:before, .input-accomodation li:nth-child(4) label:before, .listing-thumbnail .img.no-photo:before, .icon-reports:before, .icon-settings:before, .icon-listings:before, .icon-landlords:before, .icon-customers:before, .icon-contracts:before, .icon-overview:before, .icon-visitors:before, .icon-rooms:before, .icon-bedrooms:before, .icon-size:before, .icon-bathrooms:before, .icon-toilets:before, .icon-map:before, .jump-to-map:before {
   content: "";
   display: inline-block;
   overflow: hidden;
@@ -519,7 +516,7 @@ label[for] {
   height: 90px;
   background-position: -270px 0px; }
 
-.listing-photo.no-photo:before {
+.listing-thumbnail .img.no-photo:before {
   width: 90px;
   height: 90px;
   background-position: -360px 0px; }
@@ -670,6 +667,42 @@ fieldset {
       box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.25);
       overflow: hidden; }
 
+.listing {
+  overflow: hidden;
+  padding: 5px;
+  border: 1px solid #ddd; }
+
+.listing-thumbnail {
+  overflow: hidden; }
+  .listing-thumbnail .img.no-photo {
+    background-color: #eee; }
+    .listing-thumbnail .img.no-photo:before {
+      margin-left: 15px;
+      opacity: .25; }
+
+.price {
+  font-size: 120%;
+  color: #a52a2a; }
+
+.availability {
+  color: #32bc40; }
+  .availability.now {
+    font-weight: bold; }
+
+.listings-list .listing-thumbnail {
+  float: left;
+  width: 120px; }
+.listings-list .listing-body {
+  margin-left: 120px; }
+.listings-list .listing-thumbnail {
+  height: 90px; }
+.listings-list .listing-body {
+  padding: 6px 8px 6px 12px; }
+.listings-list .listing-stats {
+  float: right;
+  margin-left: 12px;
+  width: 180px; }
+
 .pull-left {
   float: left !important; }
 
@@ -690,7 +723,7 @@ body {
 .large {
   font-size: 120%; }
 
-.muted, .table-simple th, .table-list th, fieldset legend, .filter-name, .quiet, .copyright, .dl-inline dt, .modal-title h2, .nav-title, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6, .listing-stats, .listing-published, .badge.passive, .passive.td-badge {
+.muted, .table-simple th, .table-list th, fieldset legend, .filter-name, .listing-published, .quiet, .copyright, .dl-inline dt, .modal-title h2, .nav-title, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6, .badge.passive, .passive.td-badge {
   color: gray; }
 
 .quiet a, .copyright a {
@@ -716,7 +749,7 @@ a {
 .h3 {
   font-size: 1.6rem; }
 
-.h4, .listings-list .listing-title {
+.h4, .listing-title, .price {
   font-size: 1.4rem; }
 
 .h5 {
@@ -883,37 +916,6 @@ hr {
   .register-landlord .input-col .errorlist {
     margin-left: 50%; }
 
-.listing {
-  overflow: hidden;
-  padding: 5px;
-  border: 1px solid #ddd; }
-
-.listing-photo.no-photo {
-  background-color: #eee; }
-  .listing-photo.no-photo:before {
-    opacity: .25;
-    height: 90;
-    margin-top: -15px; }
-
-.listings-list .listing-photo {
-  float: left;
-  width: 120px; }
-.listings-list .listing-description {
-  margin-left: 120px; }
-.listings-list .listing-photo {
-  height: 90px; }
-.listings-list .listing-description {
-  padding-left: 8px; }
-.listings-list .listing-title {
-  clear: right; }
-.listings-list .listing-stats {
-  float: right;
-  margin: 0;
-  margin-left: 8px;
-  width: 120px; }
-  .listings-list .listing-stats dt, .listings-list .listing-stats dd {
-    width: 50%; }
-
 .table-list .col-status {
   width: 60px; }
 
@@ -1028,10 +1030,6 @@ hr {
   .jump-to-map:hover {
     border-color: #ddd;
     background-color: #fff; }
-
-.price {
-  font-size: 120%;
-  color: #a52a2a; }
 
 .map {
   overflow: hidden;
