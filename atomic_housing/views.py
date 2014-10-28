@@ -58,7 +58,7 @@ class HSAdminCustomers(ListView):
         qs = super(HSAdminCustomers, self).get_queryset()
         qs = qs.order_by('status')
         return qs
-    
+
 
 class HSAdminCustomerDetail(DetailView):
     template_name = 'hsadmin/customer_detail.html'
