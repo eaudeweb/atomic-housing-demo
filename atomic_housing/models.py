@@ -47,16 +47,17 @@ ACCOUNT_STATUSES = (
 )
 
 (LISTING_NEW,
+ LISTING_INACTIVE,
  LISTING_ACTIVE,
  LISTING_PASSIVE,
  LISTING_OCCUPIED,
- LISTING_INACTIVE) = range(5)
+) = range(5)
 LISTING_STATUSES = (
     (LISTING_NEW, 'new'),
+    (LISTING_INACTIVE, 'modified'),
     (LISTING_ACTIVE, 'active'),
     (LISTING_PASSIVE, 'passive'),
     (LISTING_OCCUPIED, 'occupied'),
-    (LISTING_INACTIVE, 'needs review'),
 )
 
 (CONTRACT_NEW,

@@ -20,12 +20,12 @@
         <th>Listing</th>
         <th>Landlord</th>
         <th class="col-status">Status</th>
-        <th>Posted</th>
+        <th>Updated</th>
       </tr>
     </thead>
     <tbody>
       {% for listing in object_list %}
-      <tr>
+      <tr {% if listing.status < 2 %}class="new"{% endif %}>
         <td><a href="">{{ listing.title }}</a></td>
         <td><a href="">{{ listing.owner.landlord }}</a></td>
         <td>
