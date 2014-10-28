@@ -73,3 +73,7 @@ $(document).ready(function () {
     }
   });
 });
+
+$("[data-toggle]").on('click', function () {
+  $(this).siblings($(this).data('toggle')).toggleClass('collapsed');
+});

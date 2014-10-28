@@ -1,9 +1,10 @@
 from django.forms import (
     ModelForm, BaseFormSet, Form, ChoiceField, CharField,
     PasswordInput,
+    MultipleChoiceField, CheckboxSelectMultiple,
 )
 from django.forms.models import BaseModelFormSet
-from atomic_housing import models
+from atomic_housing import models, definitions
 from atomic_housing.middleware import get_current_request
 from django import forms
 
@@ -73,3 +74,7 @@ class BaseListingPhotoFormset(BaseFormSet):
 class SearchForm(Form):
     search = CharField()
     sortby = ChoiceField(choices=SORTBY_CHOICES)
+    district = MultipleChoiceField(
+        choices=definitions.DISTRICTS, 
+        widget=CheckboxSelectMultiple
+    )

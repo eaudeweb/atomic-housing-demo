@@ -1,5 +1,7 @@
 {% extends '_layout.html' %}
 
+{% load staticfiles %}
+
 {% block content %}
 
 	<div class="aside">
@@ -7,65 +9,88 @@
 			
 			<h3>Refine results</h3>
 
-			<h4 class="filter-name">Accomodation</h4>
-			<label for="apartment">
-				<input type="checkbox" id="apartment"> Apartment
-			</label>
-			<label for="single">
-				<input type="checkbox" id="single"> Single house
-			</label>
-			<label for="duplex">
-				<input type="checkbox" id="duplex"> Duplex
-			</label>
-			<label for="other">
-				<input type="checkbox" id="other"> Other
-			</label>
+			<div class="filter-section">
+				<div class="filter-name" data-toggle=".filter-list">Accomodation</div>
+				<div class="filter-list">
+					<label for="apartment">
+						<input type="checkbox" id="apartment"> Apartment
+					</label>
+					<label for="single">
+						<input type="checkbox" id="single"> Single house
+					</label>
+					<label for="duplex">
+						<input type="checkbox" id="duplex"> Duplex
+					</label>
+					<label for="other">
+						<input type="checkbox" id="other"> Other
+					</label>
+				</div>
+			</div>
 
-			<hr>
+			<div class="filter-section">
+				<div class="filter-name" data-toggle=".filter-list">Rooms</div>
+				<div class="filter-list">
+					<label for="">
+						<input type="checkbox"> 1 room 
+					</label>
+					<label for="">
+						<input type="checkbox"> 2 rooms 
+					</label>
+					<label for="">
+						<input type="checkbox"> 3 rooms 
+					</label>
+					<label for="">
+						<input type="checkbox"> 4+ rooms 
+					</label>
+				</div>
+			</div>
 
-			<h4 class="filter-name">Lease</h4>
-			<label for="short">
-				<input type="checkbox" id="short"> Short term
-			</label>
-			<label for="threeyear">
-				<input type="checkbox" id="threeyear"> 3 year contract
-			</label>
-			<label for="fiveyear">
-				<input type="checkbox" id="fiveyear"> 5 year contract
-			</label>
-			<label for="unlimited">
-				<input type="checkbox" id="unlimited"> Unlimited
-			</label>
+			<div class="filter-section">
+				<div class="filter-name" data-toggle=".filter-list">Lease</div>
+				<div class="filter-list">
+					<label for="short">
+						<input type="checkbox" id="short"> Short term
+					</label>
+					<label for="threeyear">
+						<input type="checkbox" id="threeyear"> 3 year contract
+					</label>
+					<label for="fiveyear">
+						<input type="checkbox" id="fiveyear"> 5 year contract
+					</label>
+					<label for="unlimited">
+						<input type="checkbox" id="unlimited"> Unlimited
+					</label>
+				</div>
+			</div>
 
-			<hr>
+			<div class="filter-section">
+				<div class="filter-name" data-toggle=".filter-list">Districts</div>
+				<div class="filter-list collapsed">
+					{{ form.district }}
+				</div>
+			</div>
 
-			<h4 class="filter-name">Rooms</h4>
-			<label for="">
-				<input type="checkbox"> 1 room 
-			</label>
-			<label for="">
-				<input type="checkbox"> 2 rooms 
-			</label>
-			<label for="">
-				<input type="checkbox"> 3 rooms 
-			</label>
-			<label for="">
-				<input type="checkbox"> 4+ rooms 
-			</label>
+			<div class="filter-section">
+				<div class="filter-name" data-toggle=".filter-list">Ammenities</div>
+				<div class="filter-list collapsed">
+					<label for="">
+						<input type="checkbox"> Furnished
+					</label>
+					<label for="">
+						<input type="checkbox"> Parking
+					</label>
+					<label for="">
+						<input type="checkbox"> Outdoor
+					</label>
+				</div>
+			</div>
 
-			<hr>
-
-			<h4 class="filter-name">Ammenities</h4>
-			<label for="">
-				<input type="checkbox"> Furnished
-			</label>
-			<label for="">
-				<input type="checkbox"> Parking
-			</label>
-		</div>
-
-		<div class="filter-map">
-			<a data-modal=".modal-map" data-onopen='.map-full'>Map</a>
+			<div class="filter-map">
+				<div class="filter-name">Map view</div>
+				<a class="img" data-modal=".modal-map" data-onopen='.map-full'>
+					<img src="{% static "img/map-thumbnail.jpg" %}" alt="">
+				</a>
+			</div>
 		</div>
 	</div>
 

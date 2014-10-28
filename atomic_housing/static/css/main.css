@@ -1,10 +1,10 @@
 .topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .input-accomodation li, .col, input[type='text'], input[type='number'], input[type='password'], input[type='email'], input[type='search'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='week'], input[type='tel'], input[type='time'], input[type='url'], select, textarea, .btn, .btn-fake, .input-append label, .input-accomodation label, .menu-item, .account-choice, .jump-to-map, .input-col label, .input-inline label, .search button, .popout, body, .layout-admin .main {
   box-sizing: border-box; }
 
-.layout-user .content:before, .layout-admin .content:before, .input-accomodation ul:before, .row:before, .input-col:before, .filters label:before, .listings-list:before, .clearfix:before, .dl-inline:before, .search:before, .menu:before, .page-title:before, .layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .filters label:after, .listings-list:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after {
+.layout-user .content:before, .layout-admin .content:before, .input-accomodation ul:before, .row:before, .input-col:before, .clearfix:before, .dl-inline:before, .search:before, .menu:before, .page-title:before, .listings-list:before, .filters label:before, .layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after, .listings-list:after, .filters label:after {
   content: "";
   display: table; }
-.layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .filters label:after, .listings-list:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after {
+.layout-user .content:after, .layout-admin .content:after, .input-accomodation ul:after, .row:after, .input-col:after, .clearfix:after, .dl-inline:after, .search:after, .menu:after, .page-title:after, .listings-list:after, .filters label:after {
   clear: both; }
 
 .vertical-align {
@@ -212,7 +212,7 @@ fieldset, .hr-page, .page-title {
 .text-center, .table-layout, .table-rent, .td-badge, .action-box, .copyright {
   text-align: center; }
 
-.listings-list .listing-stats, .text-right {
+.text-right, .listings-list .listing-stats {
   text-align: right; }
 
 .text-justifiy {
@@ -222,15 +222,15 @@ fieldset, .hr-page, .page-title {
   background-color: #4088d4;
   background: linear-gradient(to right, #396ccf 0%, #47a5da 100%); }
 
-.content, .table, .table-list, .table-overview, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, .filters, .listing, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing-photo, .map {
+.content, .table, .table-list, .table-overview, .input-block, .input-col, .input-inline, .input-append, .input-accomodation ul, .contracts, fieldset, fieldset legend, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing, .listing-photo, .filters, .map {
   margin-top: auto;
   margin-bottom: 20px; }
 
-.btn, .btn-fake, fieldset legend, .filter-name, .nav-title, .section-title {
+.btn, .btn-fake, fieldset legend, .nav-title, .section-title, .filter-name {
   text-transform: uppercase;
   letter-spacing: .03em; }
 
-.input-inline label, .input-append label, .listing-title, .listing-address, .no-br, .dl-inline dt {
+.input-inline label, .input-append label, .no-br, .dl-inline dt, .listing-title, .listing-address, .filters label {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; }
@@ -242,7 +242,7 @@ fieldset, .hr-page, .page-title {
   color: inherit;
   text-decoration: none; }
 
-.errorlist, .section-photo .photo-gallery, .listings-list, .no-ul, .nav, .listing-gallery {
+.errorlist, .section-photo .photo-gallery, .no-ul, .nav, .listings-list, .listing-gallery, .filter-list ul {
   list-style: none;
   padding-left: 0; }
 
@@ -314,10 +314,10 @@ input[type='text'], input[type='number'], input[type='password'], input[type='em
   .btn:hover, .btn-fake:hover, .input-append label:hover, .input-accomodation label:hover, .menu-item:hover, .account-choice:hover, .jump-to-map:hover {
     cursor: pointer; }
 
-.listing, .table-stats .bars .popout, .jump-to-map {
+.table-stats .bars .popout, .listing, .jump-to-map {
   border-radius: 3px; }
 
-.listing-photo, .map {
+.listing-photo, .filter-map .img, .map {
   border-radius: 6px; }
 
 [data-popout], .table-stats .bars .bar {
@@ -637,17 +637,6 @@ fieldset {
     font-size: 80%;
     padding: 0 12px; }
 
-.filters {
-  max-width: 180px; }
-  .filters label {
-    display: block;
-    overflow: hidden; }
-  .filters input {
-    vertical-align: baseline; }
-
-.filter-name {
-  margin-bottom: 10px; }
-
 .section-photo {
   position: relative; }
   .section-photo .photo-gallery {
@@ -666,47 +655,6 @@ fieldset {
       border-radius: 3px;
       box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.25);
       overflow: hidden; }
-
-.listing {
-  overflow: hidden;
-  padding: 5px;
-  border: 1px solid #ddd; }
-  .listing:hover {
-    cursor: pointer;
-    background-color: #eee; }
-
-.listing-thumbnail {
-  overflow: hidden; }
-  .listing-thumbnail .img.no-photo {
-    background-color: #eee; }
-    .listing-thumbnail .img.no-photo:before {
-      margin-left: 15px;
-      opacity: .25; }
-
-.price {
-  font-size: 120%;
-  color: #a52a2a; }
-
-.availability {
-  color: #32bc40; }
-  .availability.now {
-    font-weight: bold; }
-
-.listings-list .listing-thumbnail {
-  float: left;
-  width: 120px; }
-.listings-list .listing-body {
-  margin-left: 120px; }
-.listings-list .listing-thumbnail {
-  height: 90px;
-  margin: -5px;
-  border-right: 1px solid #ddd; }
-.listings-list .listing-body {
-  padding: 0 8px 0 12px; }
-.listings-list .listing-stats {
-  float: right;
-  margin-left: 12px;
-  width: 180px; }
 
 .pull-left {
   float: left !important; }
@@ -728,7 +676,7 @@ body {
 .large {
   font-size: 120%; }
 
-.muted, .table-simple th, .table-list th, fieldset legend, .filter-name, .listing-published, .quiet, .copyright, .dl-inline dt, .modal-title h2, .nav-title, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6, .badge.passive, .passive.td-badge {
+.muted, .table-simple th, .table-list th, fieldset legend, .quiet, .copyright, .dl-inline dt, .modal-title h2, .nav-title, .page-title h1, .page-title h2, .page-title h3, .page-title h4, .page-title h5, .page-title h6, .badge.passive, .passive.td-badge, .listing-published, .filter-name {
   color: gray; }
 
 .quiet a, .copyright a {
@@ -760,7 +708,7 @@ a {
 .h5 {
   font-size: 1.2rem; }
 
-.h6, .filter-name {
+.h6 {
   font-size: 1rem; }
 
 hr {
@@ -1005,6 +953,47 @@ hr {
   .bar.occupied {
     background-color: #a52a2a; }
 
+.listing {
+  overflow: hidden;
+  padding: 5px;
+  border: 1px solid #ddd; }
+  .listing:hover {
+    cursor: pointer;
+    background-color: #eee; }
+
+.listing-thumbnail {
+  overflow: hidden; }
+  .listing-thumbnail .img.no-photo {
+    background-color: #eee; }
+    .listing-thumbnail .img.no-photo:before {
+      margin-left: 15px;
+      opacity: .25; }
+
+.price {
+  font-size: 120%;
+  color: #a52a2a; }
+
+.availability {
+  color: #32bc40; }
+  .availability.now {
+    font-weight: bold; }
+
+.listings-list .listing-thumbnail {
+  float: left;
+  width: 120px; }
+.listings-list .listing-body {
+  margin-left: 120px; }
+.listings-list .listing-thumbnail {
+  height: 90px;
+  margin: -5px;
+  border-right: 1px solid #ddd; }
+.listings-list .listing-body {
+  padding: 0 8px 0 12px; }
+.listings-list .listing-stats {
+  float: right;
+  margin-left: 12px;
+  width: 180px; }
+
 .listing-photo {
   overflow: hidden;
   max-height: 420px; }
@@ -1024,6 +1013,32 @@ hr {
 .section-title {
   margin-bottom: 10px;
   font-size: 80%; }
+
+.filters {
+  font-size: 14px; }
+  .filters label {
+    display: block; }
+
+.filter-section {
+  padding-top: 10px;
+  border-top: 1px solid #eee; }
+
+.filter-list {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.filter-map .img {
+  display: block;
+  overflow: hidden; }
+.filter-map a:hover {
+  cursor: pointer; }
+
+.collapsed {
+  height: 0;
+  overflow: hidden; }
+
+[data-toggle]:hover {
+  cursor: pointer; }
 
 .jump-to-map {
   float: right;

@@ -504,6 +504,77 @@ p, .p {
 	}
 }
 
+.listing {
+	@extend %leading;
+	@extend %radius-small;
+	overflow: hidden;
+	padding: 5px;
+	border: 1px solid $color-medium;
+	&:hover {
+		cursor: pointer;
+		background-color: $color-soft;
+	}
+}
+.listing-thumbnail {
+	overflow: hidden;
+	.img.no-photo {
+		@extend %icon-no-photo;
+		background-color: $color-soft;
+		&:before {
+			margin-left: 15px;
+			opacity: .25; 
+		}
+	}
+}
+
+// listing
+.listing-title {
+	@extend .h4;
+	@extend %clip;
+}
+.listing-address {
+	@extend %clip;
+}
+.listing-published {
+	@extend .muted;
+}
+// price
+.price {
+	@extend .h4;
+	font-size: $larger;
+	color: $brand-red;
+}
+// availability
+.availability {
+	@extend %no-br;
+	color: darken($brand-green, 5%);
+	// color: $brand-green;
+	&.now {
+		font-weight: bold;
+	}
+}
+
+.listings-list {
+	@extend %no-ul;
+	@include media-object('.listing-thumbnail', 120px, '.listing-body');
+	.listing-thumbnail {
+		height: 90px;
+		margin: -5px;
+		border-right: 1px solid $color-medium;
+	}
+	.listing-body {
+		padding: 0 8px 0 12px;
+	}
+	.listing-stats {
+		@extend %text-right;
+		float: right;
+		margin-left: 12px;
+		width: 180px;
+	}
+}
+
+
+
 
 .listing-gallery {
 	@extend %no-ul;
@@ -537,6 +608,54 @@ p, .p {
 	@extend %uppercase;
 	margin-bottom: $leading / 2;
 	font-size: $smaller;
+}
+
+// filters
+.filters {
+	@extend %leading;
+	font-size: 14px;
+	label {
+		@extend %clearfix;
+		@extend %clip;
+		display: block;
+	}
+}
+.filter-section {
+	padding-top: $leading / 2;
+	border-top: 1px solid $color-soft;
+}
+.filter-name {
+	@extend .muted;
+	@extend %uppercase;
+}
+.filter-list {
+	margin-top: $leading / 2;
+	margin-bottom: $leading / 2;
+	ul {
+		@extend %no-ul;
+	}
+}
+.filter-map {
+	.img {
+		@extend %radius-medium;
+		display: block;
+		overflow: hidden;
+	}
+	a:hover {
+		cursor: pointer;
+	}
+}
+
+.collapsed {
+	height: 0;
+	overflow: hidden;
+}
+
+// data toggle
+[data-toggle] {
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 // map jump
