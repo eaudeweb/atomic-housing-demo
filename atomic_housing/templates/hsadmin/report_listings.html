@@ -29,8 +29,8 @@
 				<tbody>
           {% for listing in viewed %}
 					<tr>
-						<td><a class="demo" href="">{{ listing }}</a></td>
-						<td>{{ listing.id|add:12 }}</td>
+						<td class="col-listing"><a class="demo" href="">{{ listing }}</a></td>
+						<td class="col-counter">{{ listing.id|add:12 }}</td>
 					</tr>
           {% endfor %}
 				</tbody>
@@ -42,8 +42,8 @@
 				<tbody>
 					{% for listing in favorited %}
 					<tr>
-						<td><a class="demo" href="">{{ listing }}</a></td>
-						<td>{{ listing.id|add:6 }}</td>
+						<td class="col-listing"><a class="demo" href="">{{ listing }}</a></td>
+						<td class="col-counter">{{ listing.id|add:6 }}</td>
 					</tr>
           {% endfor %}
 				</tbody>

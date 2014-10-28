@@ -230,7 +230,7 @@
   text-transform: uppercase;
   letter-spacing: .03em; }
 
-.input-inline label, .no-br, .dl-inline dt, .listing-title, .listing-address, .listings-list .listing-stats .dl-horizontal dt, .listings-list .listing-stats .dl-horizontal dd, .filters label {
+.input-inline label, .no-br, .dl-inline dt, .table-data .col-listing, .listing-title, .listing-address, .listings-list .listing-stats .dl-horizontal dt, .listings-list .listing-stats .dl-horizontal dd, .filters label {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; }
@@ -953,6 +953,7 @@ hr {
     box-shadow: 0 0 2px 0 rgba(71, 165, 218, 0.5); }
 
 .table-data {
+  table-layout: fixed;
   border: 1px solid #ddd; }
   .table-data caption {
     font-style: normal;
@@ -960,6 +961,10 @@ hr {
     overflow: hidden;
     border: 1px solid #ddd;
     background-color: #eee; }
+  .table-data .col-listing {
+    width: 80%; }
+  .table-data .col-counter {
+    width: 20%; }
 
 .badge.primary, .primary.td-badge {
   color: #fff;
