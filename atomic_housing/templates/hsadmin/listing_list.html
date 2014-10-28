@@ -26,7 +26,11 @@
     <tbody>
       {% for listing in object_list %}
       <tr {% if listing.status < 2 %}class="new"{% endif %}>
-        <td><a href="{% url 'hsadmin_listing_detail' listing.pk %}">{{ listing.title }}</a></td>
+        <td>
+          <a href="{% url 'hsadmin_listing_detail' listing.pk %}">
+            <strong>{{ listing.title }}</strong>
+          </a>
+        </td>
         <td><a href="" class="demo">{{ listing.owner.landlord }}</a></td>
         <td>
           <span class="td-badge {{ listing.get_status_display }}">
