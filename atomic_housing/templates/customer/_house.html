@@ -15,7 +15,7 @@
 			<!-- <dt>Views</dt>
 			<dd>12</dd> -->
 			<dt>Rent</dt>
-			<dd>{{ listing.rent }} EURO</dd>
+			<dd>{{ listing.rent }} €</dd>
 		</dl>
 		<div class="listing-type">{{ listing.address }}</div>
 		<div class="listing-published">{{ listing.updated|just_date }}</div>
@@ -28,7 +28,7 @@
 	<h2>{{ listing.title }}</h2>
 
 	<p class="address">{{ listing.address }}</p>
-	<span class="price">{{ listing.rent }} EURO</span>
+	<span class="price">{{ listing.rent }} €</span>
 	<span>Date posted: {{ listing.posted|just_date }}</span>
 	<span>District: {{ listing.address_district }}</span>
 	<span>Size: {{ listing.size }}m<sup>2</sup></span>

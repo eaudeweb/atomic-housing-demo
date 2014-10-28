@@ -514,6 +514,10 @@ p, .p {
 		color: #fff;
 		background-color: $brand-red;
 	}
+	&.occupied {
+		color: #fff;
+		background-color: $brand-red;	
+	}
 }
 .td-badge {
 	@extend .badge;
@@ -541,6 +545,9 @@ p, .p {
 		background-color: #d6d6d6;
 	}
 	&.terminated {
+		background-color: $brand-red;	
+	}
+	&.occupied {
 		background-color: $brand-red;	
 	}
 }

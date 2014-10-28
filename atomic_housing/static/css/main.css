@@ -971,6 +971,9 @@ hr {
 .badge.terminated, .terminated.td-badge {
   color: #fff;
   background-color: #a52a2a; }
+.badge.occupied, .occupied.td-badge {
+  color: #fff;
+  background-color: #a52a2a; }
 
 .td-badge {
   display: block;
@@ -991,6 +994,8 @@ hr {
   .bar.passive {
     background-color: #d6d6d6; }
   .bar.terminated {
+    background-color: #a52a2a; }
+  .bar.occupied {
     background-color: #a52a2a; }
 
 .listing-photo {

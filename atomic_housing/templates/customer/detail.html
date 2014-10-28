@@ -26,7 +26,7 @@
 	</div>
 
 	<div class="listing-summary">
-		<a class="jump-to-map" href="#map-canvas" title="Jump to map"></a>
+		<a class="jump-to-map" href="#location" title="Jump to map"></a>
 		<h1 class="h3 no-leading">{{ object.title }}</h1>
 		<p>{{ object.address }}</p>
 
@@ -36,8 +36,8 @@
 			<tbody>
 				<tr>
 					<td>{{ object.lease_type }}</td>
-					<td><span class="price">{{ object.rent }} EURO</span></td>
-					<td>{{ object.deposit }} EURO</td>
+					<td><span class="price">{{ object.rent }} €</span></td>
+					<td>{{ object.deposit }} €</td>
 				</tr>
 				<tr>
 					<td>Lease</td>
@@ -94,15 +94,18 @@
 			<dt>Heating</dt>
 			<dd>
 				{{ object.get_heating_display|default:"N/A" }}
-				{% if object.heating %}
-					{{ object.heating_emission }}
+				{% if object.heating_emission %}
+					({{ object.heating_emission }} KW/m<sup>2</sup>)
 				{% endif %}
 			</dd>
 			<dt>Outdoor</dt>
 			<dd>
-				{{ object.outdoor_size|default:"N/A" }}
+
 				{% if object.outdoor_size %}
-					{{ object.get_outdoor_display }}
+					{{ object.outdoor_size}} m<sup>2</sup>&ensp; 
+					{{ object.get_outdoor_display|default:'' }}
+				{% else %}	
+					N/A
 				{% endif %}
 			</dd>
 		</dl>
@@ -120,9 +123,9 @@
 		</dl>
 	</div>
 
-	<div class="section">
+	<div class="section" id="location">
 		<h3 class="section-title">Map location</h3>
-		<div class="map" data-map='' data-address="Maior Gheorghe Șonțu 8, ap. 3 - 011448 Bucharest"></div>
+		<div class="map" data-map='' data-address="{{ object.address_city }} {{ object.address_address }}"></div>
 	</div>
 
 	<div class="action-box">
