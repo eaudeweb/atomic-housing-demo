@@ -54,6 +54,11 @@ class HSAdminCustomers(ListView):
     template_name = 'hsadmin/customer_list.html'
     model = models.Customer
 
+    def get_queryset(self):
+        qs = super(HSAdminCustomers, self).get_queryset()
+        qs = qs.order_by('status')
+        return qs
+    
 
 class HSAdminCustomerDetail(DetailView):
     template_name = 'hsadmin/customer_detail.html'
