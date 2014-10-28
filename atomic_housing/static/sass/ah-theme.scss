@@ -778,3 +778,10 @@ p, .p {
 	@extend %no-leading;
 	@extend %text-center;
 }
+
+.demo:hover {
+	cursor: not-allowed!important;
+	background: transparent!important;
+	color: red!important;
+}
+

@@ -77,3 +77,17 @@ $(document).ready(function () {
 $("[data-toggle]").on('click', function () {
   $(this).siblings($(this).data('toggle')).toggleClass('collapsed');
 });
+
+$(".demo").on('click', function(e) {
+  e.preventDefault();
+});
+
+// var html;
+// $(".demo").on('mouseenter', function(e) {
+//   html = $(this).html();
+//   $(this).html('Not in the demo');
+// });
+
+// $(".demo").on('mouseleave', function(e) {
+//   $(this).html(html);
+// });

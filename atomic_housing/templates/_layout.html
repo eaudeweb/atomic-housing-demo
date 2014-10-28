@@ -25,7 +25,7 @@
 				</div>
 				<div class="menu">
 					{% if user.is_authenticated %}
-					<div class="menu-item" data-popout="hover" data-target="">My Account</div>
+					<div class="menu-item demo" data-popout="hover" data-target="">My Account</div>
 			  	<a class="menu-item" href="{% url 'favorites' %}">My Favorites</a>
 				  {% else %}
 					<a class="menu-item" href="{% url 'register' %}">Sign in</a>

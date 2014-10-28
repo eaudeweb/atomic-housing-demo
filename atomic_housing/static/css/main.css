@@ -695,6 +695,9 @@ small {
   .quiet a:hover, .copyright a:hover {
     color: #444; }
 
+.b {
+  font-weight: bold; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Karla", sans-serif;
   line-height: 1.2;
@@ -883,7 +886,7 @@ hr {
     margin-left: 50%; }
 
 .input-accomodation {
-  margin-top: -10px; }
+  margin-top: -20px; }
   .input-accomodation ul {
     margin-left: -5px;
     margin-right: -5px; }
@@ -1105,5 +1108,10 @@ hr {
     overflow: hidden; }
   .map-form a:hover {
     cursor: pointer; }
+
+.demo:hover {
+  cursor: not-allowed !important;
+  background: transparent !important;
+  color: red !important; }
 
 /*# sourceMappingURL=main.css.map */
