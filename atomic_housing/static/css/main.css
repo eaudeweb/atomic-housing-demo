@@ -671,6 +671,9 @@ fieldset {
   overflow: hidden;
   padding: 5px;
   border: 1px solid #ddd; }
+  .listing:hover {
+    cursor: pointer;
+    background-color: #eee; }
 
 .listing-thumbnail {
   overflow: hidden; }
@@ -695,9 +698,11 @@ fieldset {
 .listings-list .listing-body {
   margin-left: 120px; }
 .listings-list .listing-thumbnail {
-  height: 90px; }
+  height: 90px;
+  margin: -5px;
+  border-right: 1px solid #ddd; }
 .listings-list .listing-body {
-  padding: 6px 8px 6px 12px; }
+  padding: 0 8px 0 12px; }
 .listings-list .listing-stats {
   float: right;
   margin-left: 12px;
