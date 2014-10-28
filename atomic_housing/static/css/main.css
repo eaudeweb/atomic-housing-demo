@@ -245,7 +245,7 @@ fieldset, .hr-page, .page-title {
   color: inherit;
   text-decoration: none; }
 
-.errorlist, .nav, .listings-list, .listing-gallery, .section-photo .photo-gallery {
+.errorlist, .section-photo .photo-gallery, .nav, .listings-list, .listing-gallery {
   list-style: none;
   padding-left: 0; }
 
@@ -651,20 +651,24 @@ fieldset {
 .filter-name {
   margin-bottom: 10px; }
 
-.bars {
-  height: 6px;
-  background-color: #eee;
-  box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 0.4); }
-
-.bar {
-  float: left;
-  height: 100%; }
-  .bar.new {
-    background-color: #ffcc66; }
-  .bar.active {
-    background-color: #3dcb4b; }
-  .bar.passive {
-    background-color: #d6d6d6; }
+.section-photo {
+  position: relative; }
+  .section-photo .photo-gallery {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 12px; }
+    .section-photo .photo-gallery li {
+      float: left;
+      width: 90px;
+      margin-bottom: 12px;
+      margin-left: 12px;
+      border-radius: 3px;
+      box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.25);
+      overflow: hidden; }
 
 .pull-left {
   float: left !important; }
@@ -958,24 +962,22 @@ hr {
   display: block;
   min-width: 100%; }
 
-.section-photo {
-  position: relative; }
-  .section-photo .photo-gallery {
-    float: right;
-    position: absolute;
-    top: 0;
-    right: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 12px; }
-    .section-photo .photo-gallery li {
-      float: left;
-      width: 90px;
-      margin-bottom: 12px;
-      margin-left: 12px;
-      border-radius: 3px;
-      box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.25);
-      overflow: hidden; }
+.bars {
+  height: 6px;
+  background-color: #eee;
+  box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 0.4); }
+
+.bar {
+  float: left;
+  height: 100%; }
+  .bar.new {
+    background-color: #ffcc66; }
+  .bar.active {
+    background-color: #3dcb4b; }
+  .bar.passive {
+    background-color: #d6d6d6; }
+  .bar.terminated {
+    background-color: #a52a2a; }
 
 .listing-photo {
   overflow: hidden;

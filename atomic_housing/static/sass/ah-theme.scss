@@ -506,32 +506,32 @@ p, .p {
 	min-width: 100%;
 }
 
+// bars
+.bars {
+	height: 6px;
+	background-color: $color-soft;
+	box-shadow: inset 0 0 1px 0 rgba(black, .4);
+}
+.bar {
+	float: left;
+	height: 100%;
+	&.new {
+		background-color: $brand-yellow;
+	}
+	&.active {
+		background-color: $brand-green;
+	}
+	&.passive {
+		background-color: #d6d6d6;
+	}
+	&.terminated {
+		background-color: $brand-red;	
+	}
+}
+
 
 .listing-gallery {
 	@extend %no-ul;
-}
-
-.section-photo {
-	position: relative;
-	.photo-gallery {
-		@extend %no-ul;
-		float: right;
-		position: absolute;
-		top: 0;
-		right: 100%;
-		margin-top: auto;
-		margin-bottom: auto;
-		margin-right: $gutter / 2;
-		li {
-			float: left;
-			width: 90px;
-			margin-bottom: $gutter / 2;
-			margin-left: $gutter / 2;
-			border-radius: 3px;
-			box-shadow: inset 0 0 2px 0 rgba(black, .25);
-			overflow: hidden;
-		}
-	}
 }
 
 // photo
@@ -564,6 +564,7 @@ p, .p {
 	font-size: $smaller;
 }
 
+// map jump
 .jump-to-map {
 	@extend %button;
 	@extend %icon-map;
@@ -585,31 +586,11 @@ p, .p {
 	}
 }
 
+// price
 .price {
 	font-size: $larger;
 	color: $brand-red;
 }
-
-// sections
-// .section {
-// 	@extend %row;
-// }
-// .section-title {
-// 	@extend %col;
-// 	@include new-col('width', 2);
-// 	h3 {
-// 		@extend .h5;
-// 		@extend .muted;
-// 		padding-top: $leading;
-// 		border-top: 1px solid $color-medium;
-// 	}
-// }
-// .section-body {
-// 	@extend %col;
-// 	@include new-col('width', 8);
-// 	padding-top: $leading;
-// 	border-top: 1px solid $color-medium;
-// }
 
 // map
 #map-canvas {
