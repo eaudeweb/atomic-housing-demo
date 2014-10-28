@@ -25,7 +25,10 @@
     <tbody>
     {% for landlord in object_list %}
       <tr>
-        <td><strong>{{ landlord.first_name }} {{ landlord.last_name }}</strong></td>
+        <td class="no-br">
+          <a class="demo" href="">
+            <strong>{{ landlord.first_name }} {{ landlord.last_name }}</strong>
+          </a></td>
         <td class="no-br">{{ landlord.address }}</td>
         <td>
           <a href="tel:{{ landlord.phone }}">{{ landlord.phone }}</a>

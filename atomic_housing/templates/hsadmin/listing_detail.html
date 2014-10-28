@@ -1,0 +1,33 @@
+{% extends '_layout_admin.html' %}
+
+{% block page-title %}
+  <div class="page-title">
+    <h1>Listing Details</h1>
+
+    <div class="actions">
+      <a href="{% url 'hsadmin_listing_list' %}" class="btn-fake">Back</a>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <dl class="dl-inline">
+    <dt>Listing</dt>
+    <dd>{{ object.title }}</dd>
+    <dt>Status</dt>
+    <dd>
+      <span class="badge {{ object.get_status_display }}">{{ object.get_status_display }}</span>
+      {% if object.status == 1 %}
+        <a class="btn-fake primary demo">Review changes</a>
+      {% endif %}
+    </dd>
+  </dl>
+  <p class="muted demo">Full details about the listing will appear here.</p>
+
+  <hr class="hr-page">
+  <p>
+    <a class="btn primary demo">Edit</a>
+    <a class="btn default demo">Change Status</a>
+    <a class="btn default demo">Delete</a>
+  </p>
+{% endblock %}

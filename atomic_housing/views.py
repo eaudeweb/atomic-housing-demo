@@ -45,6 +45,11 @@ class HSAdminListings(ListView):
         return qs
 
 
+class HSAdminListingDetail(DetailView):
+    template_name = 'hsadmin/listing_detail.html'
+    model = models.Listing
+
+
 class HSAdminLandlords(ListView):
     template_name = 'hsadmin/landlord_list.html'
     model = models.Landlord
