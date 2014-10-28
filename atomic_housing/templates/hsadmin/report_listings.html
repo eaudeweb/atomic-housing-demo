@@ -1,12 +1,50 @@
 {% extends '_layout_admin.html' %}
 {% load utils %}
+{% load staticfiles %}
+
 
 {% block page-title %}
   <div class="page-title">
-    <h1>Reports</h1>
+    <h1>Listing reports</h1>
+	  <div class="actions">
+	  	<select name="" id="" class="demo">
+	  		<option value="">Last Month</option>
+	  		<option value="">Last Year</option>
+	  		<option value="" selected>All time</option>
+	  	</select>
+	  </div>
   </div>
 {% endblock %}
 
 {% block content %}
-  TODO
+  <div class="img">
+  	<img src="{% static 'img/chart.jpg' %}" alt="">
+  </div>
+  <hr class="hr-page">
+
+  <div class="row">
+  	<div class="col col-6">
+  		<table class="table-data">
+				<caption>Most viewed listings</caption>
+				<tbody>
+					<tr>
+						<td><a class="demo" href="">Listing</a></td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>		
+  	</div>
+  	<div class="col col-6">
+  		<table class="table-data">
+				<caption>Most clicked listings</caption>
+				<tbody>
+					<tr>
+						<td><a class="demo" href="">Listing</a></td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>		
+  	</div>
+  </div>
+
 {% endblock %}

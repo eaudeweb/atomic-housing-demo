@@ -426,7 +426,7 @@ p, .p {
 	@extend .table-simple;
 	// table-layout: fixed;
 	.col-status {
-		width: 60px;
+		width: 48px;
 	}
 }
 
@@ -500,6 +500,21 @@ p, .p {
 	}
 }
 
+.table-data {
+	@extend .table;
+	@extend .table-simple;
+	@extend %radius-small;
+	border: 1px solid $color-medium;
+	caption {
+		@extend .h6;
+		font-style: normal;
+		text-align: left;
+		overflow: hidden;
+		border: 1px solid $color-medium;
+		background-color: $color-soft;
+	}
+}
+
 // badges
 .badge {
 	@extend %badge;
@@ -518,13 +533,18 @@ p, .p {
 	&.new {
 		background-color: $brand-yellow;
 	}
+	&.modified {
+		color: #fff;
+		background-color: #EB7028;
+	}
 	&.terminated {
 		color: #fff;
 		background-color: $brand-red;
 	}
 	&.occupied {
 		color: #fff;
-		background-color: $brand-red;	
+		// background-color: $brand-red;
+		background-color: $brand-primary;	
 	}
 }
 .td-badge {
@@ -546,6 +566,9 @@ p, .p {
 	&.new {
 		background-color: $brand-yellow;
 	}
+	&.modified {
+		background-color: #EB7028;
+	}
 	&.active {
 		background-color: $brand-green;
 	}
@@ -556,7 +579,8 @@ p, .p {
 		background-color: $brand-red;	
 	}
 	&.occupied {
-		background-color: $brand-red;	
+		// background-color: $brand-red;	
+		background-color: $brand-primary;
 	}
 }
 
