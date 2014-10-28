@@ -15,7 +15,7 @@
   <ol class="listings-list">
     {% for listing in object_list %}
     <li>
-      <div class="listing">
+      <div class="listing" onclick="window.location='{% url 'listings_edit' listing.pk %}'">
         <div class="listing-thumbnail">
           {% if listing.cover_photo %}
           <div class="img">
