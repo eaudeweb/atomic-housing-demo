@@ -21,7 +21,7 @@ SORTBY_CHOICES = (
 class ListingForm(ModelForm):
     class Meta:
         model = models.Listing
-        exclude = ('owner', 'status', 'posted',)
+        exclude = ('owner', 'status', 'posted', 'address_city')
 
     accomodation = forms.ChoiceField(choices=models.ACCOMODATION_TYPES,
                                      widget=forms.RadioSelect)

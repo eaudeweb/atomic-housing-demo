@@ -109,7 +109,7 @@ class Listing(models.Model):
     updated = models.DateTimeField(auto_now=True)
     # info
     description = models.TextField(blank=True)
-    address_city = models.CharField(max_length=255)
+    address_city = models.CharField(max_length=255, default='Vienna')
     address_address = models.CharField(max_length=255)
     address_zipcode = models.CharField(max_length=10)
     address_district = models.CharField(max_length=32,

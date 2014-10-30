@@ -19,6 +19,7 @@
 
 
 {% block content %}
+  {{ form.errors }}
   <form method="POST" class="form-listing">
     {% csrf_token %}
 
