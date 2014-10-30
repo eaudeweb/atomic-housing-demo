@@ -10,7 +10,9 @@
 .vertical-align {
   position: relative;
   top: 50%;
-  transform: translateY(-50%); }
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 .container, .topbar .logo, .topbar .search, .topbar .menu, .layout-user .aside, .layout-user .main, .layout-admin .aside, .input-layout li, .col {
   padding-left: 12px;
@@ -220,6 +222,7 @@
 
 .topbar, .nav a:hover {
   background-color: #4088d4;
+  background: -webkit-linear-gradient(left, #396ccf 0%, #47a5da 100%);
   background: linear-gradient(to right, #396ccf 0%, #47a5da 100%); }
 
 .content, .table, .table-list, .table-overview, .table-data, .input-block, .input-accomodation, .input-col, .input-inline, .contracts, .fieldset, .fieldset legend, .input-layout, h1, h2, h3, h4, h5, h6, p, .p, .dl-inline, .topbar, .nav, .listing, .listing-photo, .filters, .map {
@@ -316,7 +319,8 @@ input[type='text'], input[type='number'], input[type='password'], input[type='em
   padding-right: 8px;
   border-radius: 2px;
   text-align: center;
-  transition: all 120ms ease-out; }
+  -webkit-transition: all 120ms ease-out;
+          transition: all 120ms ease-out; }
   .btn:hover, .btn-fake:hover, .menu-item:hover, .account-choice:hover, .input-accomodation label:hover, .jump-to-map:hover {
     cursor: pointer; }
 
