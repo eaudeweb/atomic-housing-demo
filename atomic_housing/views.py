@@ -55,6 +55,11 @@ class HSAdminLandlords(ListView):
     template_name = 'hsadmin/landlord_list.html'
     model = models.Landlord
 
+    def get_queryset(self):
+        qs = super(HSAdminLandlords, self).get_queryset()
+        qs = qs.order_by('status')
+        return qs
+
 
 class HSAdminCustomers(ListView):
     template_name = 'hsadmin/customer_list.html'
@@ -84,11 +89,11 @@ class HSReport(TemplateView):
         qs = list(models.Listing.objects.all())
         shuffle(qs)
         viewed = qs[:10]
-        viewed.sort(key=lambda o:o.id, reverse=True)
+        viewed.sort(key=lambda o: o.id, reverse=True)
         context['viewed'] = viewed
         shuffle(qs)
         viewed = qs[:10]
-        viewed.sort(key=lambda o:o.id, reverse=True)
+        viewed.sort(key=lambda o: o.id, reverse=True)
         context['favorited'] = viewed
         print context
         return context
