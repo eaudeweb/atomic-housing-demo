@@ -410,7 +410,7 @@ body {
     background-color: #fff; }
 
 .layout-passage {
-  overflow: hidden; }
+  min-height: 0; }
   .layout-passage .logo {
     margin-top: 5em;
     text-align: center; }
