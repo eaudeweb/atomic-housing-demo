@@ -95,7 +95,6 @@ class HSReport(TemplateView):
         viewed = qs[:10]
         viewed.sort(key=lambda o: o.id, reverse=True)
         context['favorited'] = viewed
-        print context
         return context
 
 
@@ -103,6 +102,11 @@ class HSReport(TemplateView):
 class LandLordListings(ListView):
     model = models.Listing
     template_name = 'landlord/listings.html'
+
+    def get_queryset(self):
+        qs = super(LandLordListings, self).get_queryset()
+        qs = qs.order_by('status')
+        return qs
 
 
 class LandLordListingsAdd(CreateView):
