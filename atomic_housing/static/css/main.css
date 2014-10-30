@@ -409,15 +409,17 @@ body {
     float: left;
     background-color: #fff; }
 
-.layout-passage .logo {
-  margin-top: 5em;
-  text-align: center; }
-  .layout-passage .logo .img {
-    display: inline-block; }
-.layout-passage .content {
-  max-width: 40em; }
-  .layout-passage .content h1 {
-    color: #396ccf; }
+.layout-passage {
+  overflow: hidden; }
+  .layout-passage .logo {
+    margin-top: 5em;
+    text-align: center; }
+    .layout-passage .logo .img {
+      display: inline-block; }
+  .layout-passage .content {
+    max-width: 40em; }
+    .layout-passage .content h1 {
+      color: #396ccf; }
 
 .table, .table-list, .table-overview, .table-data {
   width: 100%; }
