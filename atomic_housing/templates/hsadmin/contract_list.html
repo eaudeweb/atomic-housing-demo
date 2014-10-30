@@ -6,7 +6,7 @@
 		<h1>Contracts</h1>
 		<div class="badge counter">{{ object_list|length }}</div>
     <div class="actions">
-      <a class="btn primary" href="#"
+      <a class="btn primary demo" href="#"
          title="Use this button to link a customer with a contract">Add Contract</a>
     </div>
 	</div>
@@ -27,9 +27,9 @@
 		<tbody>
 		{% for contract in object_list %}
 			<tr>
-				<td><a href="">{{ contract.listing.title }}</a></td>
-				<td><a href="">{{ contract.listing.landlord }}</a></td>
-				<td><a href="">{{ contract.customer }}</a></td>
+				<td><a class="demo" href="">{{ contract.listing.title }}</a></td>
+				<td><a class="demo" href="">{{ contract.listing.landlord }}</a></td>
+				<td><a class="demo" href="">{{ contract.customer }}</a></td>
 				<td>
 					<span class="td-badge {{ contract.get_status_display }}">
 						{{ contract.get_status_display }}
